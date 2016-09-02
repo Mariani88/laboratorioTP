@@ -11,6 +11,7 @@
       <itemPath>keyboard.h</itemPath>
       <itemPath>head.h</itemPath>
       <itemPath>reloj.h</itemPath>
+      <itemPath>lcd_vision.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +25,7 @@
       <itemPath>keyboard.c</itemPath>
       <itemPath>../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c</itemPath>
       <itemPath>reloj.c</itemPath>
+      <itemPath>lcd_vision.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Source owner" projectFiles="true">
     </logicalFolder>

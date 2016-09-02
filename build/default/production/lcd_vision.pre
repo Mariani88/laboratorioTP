@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "lcd_vision.c"
 
 # 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9881,12 +9881,6 @@ void lcd_putrs(const char *ptr);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key;
 
-# 5 "keyboard.h"
-char read_keyboard();
-
-# 11 "reloj.h"
-void setClock(int8 x);
-
 # 5 "lcd_vision.h"
 typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
@@ -9895,72 +9889,22 @@ ACTIVE,DESACTIVE, TRIGGED
 state state_alarm = ACTIVE;
 void set_vision();
 
-# 31 "main.c"
-void caratula(void)
-{
-lcd_comand(0b00001100);
+# 4 "lcd_vision.c"
+void set_vision(){
 
-# 40
-lcd_gotoxy(1,2);
-
-
-}
-
-# 51
-void Setup(void)
-{
-OSCTUNEbits.INTSRC=1;
-OSCTUNEbits.PLLEN=0;
-OSCCONbits.IRCF0=1;
-OSCCONbits.IRCF1=1;
-OSCCONbits.IRCF2=1;
-OSCCONbits.SCS0=0;
-OSCCONbits.SCS1=0;
-TRISA = 0b11110000;
-TRISB = 0;
-TRISC = 0b00000111;
-
-
-
-ANCON0=0b11111111;
-
-ANCON1=0b11111111;
-ADCON0=0b00101101;
-ADCON1=0b00010000;
-RTCCFGbits.RTCEN=1;
-RTCCFGbits.RTCWREN=1;
-T1CONbits.T1OSCEN=1;
-Write_RTC();
-lcd_init();
-lcd_comand(0b00001100);
-LATBbits.LATB1 = 1;;
-LATBbits.LATB0 = 1;;
-}
-
-# 87
-int main(void){
-Setup();
-caratula();
-while(1){
-
-
-
-set_vision();
-
-char input = read_keyboard();
-
-if (input == 16){
+if (state_alarm == ACTIVE){
 lcd_gotoxy(1,1);
-lcd_putrs("                                ");
-lcd_gotoxy(1,1);
-lcd_putrs("null pointer");
-lcd_gotoxy(1,2);
-lcd_putrs("exception");
-input = 0;
-key = 0;
-_delay((unsigned long)((98)*(8000000/4000.0)));
-}
+lcd_putrs("Alarm on");
 }
 
-return 0;
+if (state_alarm == DESACTIVE){
+lcd_gotoxy(1,1);
+lcd_putrs("Alarm off");
+}
+
+if (state_alarm == TRIGGED){
+lcd_gotoxy(1,1);
+lcd_putrs("Alarm trigged");
+}
+
 }

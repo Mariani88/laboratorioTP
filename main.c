@@ -18,17 +18,9 @@
  * IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
  * CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
  ***********************************************************************/
-/*#include <xc.h>
-#include<delays.h>
-#include<stdio.h>
-#include <unmc_lcd_216.h>
-#include <unmc_rtcc_01.h>
-#include <unmc_config_01.h>
-#include <unmc_inout_02.h>
-*/
-
 #include "keyboard.h"
 #include "reloj.h"
+#include "lcd_vision.h"
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
@@ -39,8 +31,8 @@
     void caratula(void)
     {
         lcd_comand(0b00001100);             //Enciende display sin cursor y sin blink  
-        lcd_gotoxy(1,1);        
-        lcd_putrs("UNIMIC  TECLADO ");
+        //lcd_gotoxy(1,1);        
+        //lcd_putrs("UNIMIC  TECLADO ");
         //sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
         //lcd_gotoxy(9,1);
         //lcd_putrs(buffer2);
@@ -90,43 +82,7 @@
 Funcion main
 Funcion principal del programa
 ********************************************************************************
---------------------------------------------------------------------------------*/
-
-/*char read_keyboard(){
-    row1=1;row2=0;row3=0;row4=0;
-    {
-        if (column1==1){key=1;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column1==1){};}
-        if (column2==1){key=2;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column2==1){};}
-        if (column3==1){key=3;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column3==1){};}
-        if (column4==1){key=11;lcd_putrs("A");while(column4==1){};}
-    }
-    row1=0;row2=1;row3=0;row4=0;
-    {
-        if (column1==1){key=4;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column1==1){};}
-        if (column2==1){key=5;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column2==1){};}
-        if (column3==1){key=6;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column3==1){};}
-        if (column4==1){key=12;lcd_putrs("B");while(column4==1){};}
-    }
-    row1=0;row2=0;row3=1;row4=0;
-    {
-        if (column1==1){key=7;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column1==1){};}
-        if (column2==1){key=8;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column2==1){};}
-        if (column3==1){key=9;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column3==1){};}
-        if (column4==1){key=13;lcd_putrs("C");while(column4==1){};}
-    }
-    row1=0;row2=0;row3=0;row4=1;
-    {
-        if (column1==1){key=14;lcd_putrs("*");while(column1==1){};}
-        if (column2==1){key=0;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(column2==1){};}
-        if (column3==1){key=15;lcd_putrs("#");while(column3==1){};}
-        if (column4==1){key=16;lcd_putrs("D");while(column4==1){};}
-    }
-    __delay_ms(98);             // 98ms retardo maximo para esta funcion
-
-    
-     return key;   
-}
-*/    
+--------------------------------------------------------------------------------*/ 
     
 int main(void){
 Setup();
@@ -135,16 +91,7 @@ while(1){
     //Read_RTC();
     //caratula();
     //lcd_gotoxy(1,2);
-    
-    int8 teclado[16][16];
-    int8 i = 0;
-    int8 j = 0;
-    
-    for (i = 0; i < 4; i++ ){
-        for (j = 0; j < 4; j++){
-            teclado [i][j] = 0;
-        }
-    }
+    set_vision();
     
     char input = read_keyboard();
     
