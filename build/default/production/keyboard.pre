@@ -1,5 +1,5 @@
 
-# 1 "../Program Files/Unimic/unmc_01/sources/keyboard.c"
+# 1 "keyboard.c"
 
 # 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9881,7 +9881,7 @@ void lcd_putrs(const char *ptr);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key;
 
-# 5 "C:/Archivos de programa/Unimic/unmc_01/headers\keyboard.h"
+# 5 "keyboard.h"
 char read_keyboard();
 
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
@@ -9933,7 +9933,7 @@ void Write_RTC(void);
 # 112
 void Read_RTC(void);
 
-# 4 "../Program Files/Unimic/unmc_01/sources/keyboard.c"
+# 4 "keyboard.c"
 char read_keyboard(){
 LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;
 {

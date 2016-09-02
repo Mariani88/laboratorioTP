@@ -106,7 +106,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6401
 [v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
 [p mainexit ]
-"5 C:/Archivos de programa/Unimic/unmc_01/headers\keyboard.h
+"5 keyboard.h
 [v _read_keyboard `(uc ~T0 @X0 0 ef ]
 [v F8145 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
@@ -7734,8 +7734,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
 [; ;headers\unmc_inout_02.h: 14: char key;
-[; ;headers\keyboard.h: 5: char read_keyboard();
-[; ;headers\reloj.h: 11: void setClock(int8 x);
+[; ;keyboard.h: 5: char read_keyboard();
+[; ;reloj.h: 11: void setClock(int8 x);
 "39 main.c
 [v _caratula `(v ~T0 @X0 1 ef ]
 "40
@@ -7838,74 +7838,123 @@ Version 3.2 HI-TECH Software Intermediate Code
 "87
 [e :UE 1036 ]
 }
-"97
+"131
 [v _main `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 97: int main(void){
+[; ;main.c: 131: int main(void){
 [e :U _main ]
 [f ]
-[; ;main.c: 98: Setup();
-"98
+[; ;main.c: 132: Setup();
+"132
 [e ( _Setup ..  ]
-[; ;main.c: 99: caratula();
-"99
+[; ;main.c: 133: caratula();
+"133
 [e ( _caratula ..  ]
-[; ;main.c: 100: while(1){
-"100
+[; ;main.c: 134: while(1){
+"134
 [e :U 1039 ]
 {
-"106
-[v _input `uc ~T0 @X0 1 a ]
-[; ;main.c: 106: char input = read_keyboard();
-[e = _input ( _read_keyboard ..  ]
-[; ;main.c: 108: if (input == 16){
-"108
-[e $ ! == -> _input `i -> 16 `i 1041  ]
+[v F8252 `uc ~T0 @X0 -> 16 `i t ]
+"139
+[v _teclado `F8252 ~T0 @X0 -> 16 `i a ]
+"140
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 139: int8 teclado[16][16];
+[; ;main.c: 140: int8 i = 0;
+[e = _i -> -> 0 `i `uc ]
+"141
+[v _j `uc ~T0 @X0 1 a ]
+[; ;main.c: 141: int8 j = 0;
+[e = _j -> -> 0 `i `uc ]
+[; ;main.c: 143: for (i = 0; i < 4; i++ ){
+"143
 {
-[; ;main.c: 109: lcd_gotoxy(1,1);
-"109
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 110: lcd_putrs("                                ");
-"110
-[e ( _lcd_putrs (1 :s 2C ]
-[; ;main.c: 111: lcd_gotoxy(1,1);
-"111
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 112: lcd_putrs("null pointer");
-"112
-[e ( _lcd_putrs (1 :s 3C ]
-[; ;main.c: 113: lcd_gotoxy(1,2);
-"113
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 114: lcd_putrs("exception");
-"114
-[e ( _lcd_putrs (1 :s 4C ]
-[; ;main.c: 115: input = 0;
-"115
-[e = _input -> -> 0 `i `uc ]
-[; ;main.c: 116: key = 0;
-"116
-[e = _key -> -> 0 `i `uc ]
-[; ;main.c: 117: _delay((unsigned long)((98)*(8000000/4000.0)));
-"117
-[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"118
-}
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 1041  ]
+[e $U 1042  ]
 [e :U 1041 ]
-"119
+{
+[; ;main.c: 144: for (j = 0; j < 4; j++){
+"144
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 4 `i 1044  ]
+[e $U 1045  ]
+[e :U 1044 ]
+{
+[; ;main.c: 145: teclado [i][j] = 0;
+"145
+[e = *U + &U *U + &U _teclado * -> _i `ux -> * -> # *U &U *U &U _teclado `ui -> -> 16 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _teclado * -> _i `ux -> * -> # *U &U *U &U _teclado `ui -> -> 16 `i `ui `ux `ui `ux -> -> 0 `i `uc ]
+"146
+}
+"144
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 4 `i 1044  ]
+[e :U 1045 ]
+"146
+}
+"147
+}
+"143
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 1041  ]
+[e :U 1042 ]
+"147
+}
+"149
+[v _input `uc ~T0 @X0 1 a ]
+[; ;main.c: 146: }
+[; ;main.c: 147: }
+[; ;main.c: 149: char input = read_keyboard();
+[e = _input ( _read_keyboard ..  ]
+[; ;main.c: 151: if (input == 16){
+"151
+[e $ ! == -> _input `i -> 16 `i 1047  ]
+{
+[; ;main.c: 152: lcd_gotoxy(1,1);
+"152
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 153: lcd_putrs("                                ");
+"153
+[e ( _lcd_putrs (1 :s 2C ]
+[; ;main.c: 154: lcd_gotoxy(1,1);
+"154
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 155: lcd_putrs("null pointer");
+"155
+[e ( _lcd_putrs (1 :s 3C ]
+[; ;main.c: 156: lcd_gotoxy(1,2);
+"156
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 157: lcd_putrs("exception");
+"157
+[e ( _lcd_putrs (1 :s 4C ]
+[; ;main.c: 158: input = 0;
+"158
+[e = _input -> -> 0 `i `uc ]
+[; ;main.c: 159: key = 0;
+"159
+[e = _key -> -> 0 `i `uc ]
+[; ;main.c: 160: _delay((unsigned long)((98)*(8000000/4000.0)));
+"160
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"161
+}
+[e :U 1047 ]
+"162
 }
 [e :U 1038 ]
-"100
+"134
 [e $U 1039  ]
 [e :U 1040 ]
-[; ;main.c: 118: }
-[; ;main.c: 119: }
-[; ;main.c: 121: return 0;
-"121
+[; ;main.c: 161: }
+[; ;main.c: 162: }
+[; ;main.c: 164: return 0;
+"164
 [e ) -> 0 `i ]
 [e $UE 1037  ]
-[; ;main.c: 122: }
-"122
+[; ;main.c: 165: }
+"165
 [e :UE 1037 ]
 }
 [a 3C 110 117 108 108 32 112 111 105 110 116 101 114 0 ]
