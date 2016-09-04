@@ -9879,7 +9879,7 @@ void lcd_putrs(const char *ptr);
 #pragma config WPDIS=OFF
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-char key;
+char key = 18;
 
 # 5 "lcd_vision.h"
 typedef enum{
@@ -9939,6 +9939,7 @@ void Write_RTC(void);
 void Read_RTC(void);
 
 # 5 "keyboard.h"
+void clear_keyboard();
 char read_keyboard();
 
 # 5 "lcd_vision.c"
@@ -9993,8 +9994,18 @@ break;
 case DESACTIVE:lcd_putrs("OFF");
 lcd_gotoxy(7,2);
 lcd_putrs("pass:____");
-lcd_gotoxy(12,2);
+short digit = 12;
+lcd_gotoxy(digit,2);
 lcd_setcursor_vb(1,1);
+
+while(read_keyboard() != 16){
+if(0<read_keyboard()&& read_keyboard()<10){
+clear_keyboard();
+digit++;
+lcd_gotoxy(digit, 2);
+}
+}
+
 break;
 default:lcd_putrs("TRIGGED");
 twinkle();

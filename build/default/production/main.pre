@@ -9879,9 +9879,10 @@ void lcd_putrs(const char *ptr);
 #pragma config WPDIS=OFF
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-char key;
+char key = 18;
 
 # 5 "keyboard.h"
+void clear_keyboard();
 char read_keyboard();
 
 # 11 "reloj.h"

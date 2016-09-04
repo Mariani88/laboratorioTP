@@ -7646,7 +7646,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WPDIS=OFF ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_inout_02.h: 14: char key;
+[i _key
+-> -> 18 `i `uc
+]
+[; ;headers\unmc_inout_02.h: 14: char key = 18;
 [; ;reloj.h: 11: void setClock(int8 x);
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]

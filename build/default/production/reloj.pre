@@ -9879,7 +9879,7 @@ void lcd_putrs(const char *ptr);
 #pragma config WPDIS=OFF
 
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-char key;
+char key = 18;
 
 # 11 "reloj.h"
 void setClock(int8 x);

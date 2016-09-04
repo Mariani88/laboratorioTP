@@ -53,8 +53,22 @@ void set_vision(){
         case DESACTIVE:lcd_putrs("OFF");
         lcd_gotoxy(7,2);
         lcd_putrs("pass:____");
-        lcd_gotoxy(12,2);
+        short digit = 12;
+        lcd_gotoxy(digit,2);
         lcd_setcursor_vb(1,1);
+        
+        while(read_keyboard() != 16){
+            if(0<read_keyboard()&& read_keyboard()<10){
+            clear_keyboard();
+            digit++;
+            lcd_gotoxy(digit, 2);
+            }
+            
+            if(digit == 17){
+                //CORROBORAR PASSWORD ACA
+            }
+        }
+        
         break;
         default:lcd_putrs("TRIGGED");
                 twinkle();

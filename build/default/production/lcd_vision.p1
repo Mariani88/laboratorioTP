@@ -32,10 +32,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
-"5 keyboard.h
+"6 keyboard.h
 [v _read_keyboard `(uc ~T0 @X0 0 ef ]
 "107 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_setcursor_vb `(v ~T0 @X0 0 ef2`uc`uc ]
+"5 keyboard.h
+[v _clear_keyboard `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7657,7 +7659,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WPDIS=OFF ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_inout_02.h: 14: char key;
+[i _key
+-> -> 18 `i `uc
+]
+[; ;headers\unmc_inout_02.h: 14: char key = 18;
 [; ;lcd_vision.h: 5: typedef enum{
 [; ;lcd_vision.h: 6: ACTIVE,DESACTIVE, TRIGGED
 [; ;lcd_vision.h: 7: } state;
@@ -7812,7 +7817,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
 [; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
-[; ;keyboard.h: 5: char read_keyboard();
+[; ;keyboard.h: 5: void clear_keyboard();
+[; ;keyboard.h: 6: char read_keyboard();
 "5 lcd_vision.c
 [v _clear `(v ~T0 @X0 1 ef ]
 {
@@ -7982,35 +7988,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd_vision.c: 55: lcd_putrs("pass:____");
 "55
 [e ( _lcd_putrs (1 :s 7C ]
-[; ;lcd_vision.c: 56: lcd_gotoxy(12,2);
 "56
-[e ( _lcd_gotoxy (2 , -> -> 12 `i `uc -> -> 2 `i `uc ]
-[; ;lcd_vision.c: 57: lcd_setcursor_vb(1,1);
+[v _digit `s ~T0 @X0 1 a ]
+[; ;lcd_vision.c: 56: short digit = 12;
+[e = _digit -> -> 12 `i `s ]
+[; ;lcd_vision.c: 57: lcd_gotoxy(digit,2);
 "57
-[e ( _lcd_setcursor_vb (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 58: break;
+[e ( _lcd_gotoxy (2 , -> _digit `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 58: lcd_setcursor_vb(1,1);
 "58
-[e $U 1047  ]
-[; ;lcd_vision.c: 59: default:lcd_putrs("TRIGGED");
-"59
-[e :U 1051 ]
-[e ( _lcd_putrs (1 :s 8C ]
-[; ;lcd_vision.c: 60: twinkle();
+[e ( _lcd_setcursor_vb (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 60: while(read_keyboard() != 16){
 "60
-[e ( _twinkle ..  ]
+[e $U 1051  ]
+[e :U 1052 ]
+{
+[; ;lcd_vision.c: 61: if(0<read_keyboard()&& read_keyboard()<10){
 "61
+[e $ ! && < -> 0 `i -> ( _read_keyboard ..  `i < -> ( _read_keyboard ..  `i -> 10 `i 1054  ]
+{
+[; ;lcd_vision.c: 62: clear_keyboard();
+"62
+[e ( _clear_keyboard ..  ]
+[; ;lcd_vision.c: 63: digit++;
+"63
+[e ++ _digit -> -> 1 `i `s ]
+[; ;lcd_vision.c: 64: lcd_gotoxy(digit, 2);
+"64
+[e ( _lcd_gotoxy (2 , -> _digit `uc -> -> 2 `i `uc ]
+"65
 }
-[; ;lcd_vision.c: 61: }
+[e :U 1054 ]
+"66
+}
+[e :U 1051 ]
+"60
+[e $ != -> ( _read_keyboard ..  `i -> 16 `i 1052  ]
+[e :U 1053 ]
+[; ;lcd_vision.c: 65: }
+[; ;lcd_vision.c: 66: }
+[; ;lcd_vision.c: 68: break;
+"68
+[e $U 1047  ]
+[; ;lcd_vision.c: 69: default:lcd_putrs("TRIGGED");
+"69
+[e :U 1055 ]
+[e ( _lcd_putrs (1 :s 8C ]
+[; ;lcd_vision.c: 70: twinkle();
+"70
+[e ( _twinkle ..  ]
+"71
+}
+[; ;lcd_vision.c: 71: }
 [e $U 1047  ]
 "50
 [e :U 1048 ]
 [e [\ _state_alarm , $ . `E8241 0 1049
  , $ . `E8241 1 1050
- 1051 ]
-"61
+ 1055 ]
+"71
 [e :U 1047 ]
-[; ;lcd_vision.c: 62: }
-"62
+[; ;lcd_vision.c: 72: }
+"72
 [e :UE 1046 ]
 }
 [p f _sprintf 8422404 ]
