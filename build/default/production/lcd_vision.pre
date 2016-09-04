@@ -9886,7 +9886,7 @@ typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = TRIGGED;
+state state_alarm = DESACTIVE;
 void set_vision();
 
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
@@ -9991,6 +9991,8 @@ switch (state_alarm){
 case ACTIVE:lcd_putrs("ON");
 break;
 case DESACTIVE:lcd_putrs("OFF");
+lcd_gotoxy(7,2);
+lcd_putrs("pass:____");
 break;
 default:lcd_putrs("TRIGGED");
 twinkle();

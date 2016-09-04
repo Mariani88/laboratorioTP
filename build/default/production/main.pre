@@ -9892,7 +9892,7 @@ typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = TRIGGED;
+state state_alarm = DESACTIVE;
 void set_vision();
 
 # 31 "main.c"
