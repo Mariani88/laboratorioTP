@@ -1,5 +1,6 @@
 #include "lcd_vision.h"
 #include "unmc_rtcc_01.h"
+#include "keyboard.h"
 
 void clear(){
     lcd_comand(0b00000001);
@@ -15,9 +16,31 @@ void write_Date(){
     lcd_putrs(buffer2);
 }
 
+void _delay_s(int8 seg){
+    short it = 10 * seg;
+    short index = 1;
+    
+    for(index = 1; index <= it; index++){
+        __delay_ms(98);
+    }
+}
+
+void twinkle(){
+    char input = 1;
+    
+    while(input != 16){
+        input = read_keyboard();
+        lcd_gotoxy(7,2);
+        lcd_putrs("WARNING!!!");
+        _delay_s(1);
+        lcd_gotoxy(7,2);
+        lcd_putrs("          ");
+    }
+}
 
 void set_vision(){
     clear();
+    write_Date();
     lcd_gotoxy(1,1);
     
     switch (state_alarm){
@@ -25,8 +48,7 @@ void set_vision(){
         break;
         case DESACTIVE:lcd_putrs("OFF");
         break;
-        default:lcd_putrs("TRIGGED"); 
+        default:lcd_putrs("TRIGGED");
+                twinkle();
     }
-    
-    write_Date();
 }

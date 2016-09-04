@@ -32,6 +32,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
+"5 keyboard.h
+[v _read_keyboard `(uc ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7660,9 +7662,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [v _state_alarm `E8241 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8241 1
+. `E8241 2
 ]
-[; ;lcd_vision.h: 9: state state_alarm = DESACTIVE;
+[; ;lcd_vision.h: 9: state state_alarm = TRIGGED;
 [; ;lcd_vision.h: 10: void set_vision();
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
@@ -7808,105 +7810,194 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
 [; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
-"4 lcd_vision.c
+[; ;keyboard.h: 5: char read_keyboard();
+"5 lcd_vision.c
 [v _clear `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd_vision.c: 4: void clear(){
+[; ;lcd_vision.c: 5: void clear(){
 [e :U _clear ]
 [f ]
-[; ;lcd_vision.c: 5: lcd_comand(0b00000001);
-"5
-[e ( _lcd_comand (1 -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 6: _delay((unsigned long)((5)*(8000000/4000.0)));
+[; ;lcd_vision.c: 6: lcd_comand(0b00000001);
 "6
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;lcd_vision.c: 7: }
+[e ( _lcd_comand (1 -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 7: _delay((unsigned long)((5)*(8000000/4000.0)));
 "7
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;lcd_vision.c: 8: }
+"8
 [e :UE 1035 ]
 }
-"9
+"10
 [v _write_Date `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd_vision.c: 9: void write_Date(){
+[; ;lcd_vision.c: 10: void write_Date(){
 [e :U _write_Date ]
 [f ]
-[; ;lcd_vision.c: 10: lcd_gotoxy(9,1);
-"10
-[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 11: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+[; ;lcd_vision.c: 11: lcd_gotoxy(9,1);
 "11
-[e ( _sprintf (1 , , , (. , &U _buffer2 :s 1C _dia _mes _anio ]
-[; ;lcd_vision.c: 12: lcd_putrs(buffer2);
+[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 12: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
 "12
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;lcd_vision.c: 13: sprintf(buffer2,"%02u:%02u",hora,minuto);
+[e ( _sprintf (1 , , , (. , &U _buffer2 :s 1C _dia _mes _anio ]
+[; ;lcd_vision.c: 13: lcd_putrs(buffer2);
 "13
-[e ( _sprintf (1 , , (. , &U _buffer2 :s 2C _hora _minuto ]
-[; ;lcd_vision.c: 14: lcd_gotoxy(1,2);
-"14
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;lcd_vision.c: 15: lcd_putrs(buffer2);
-"15
 [e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;lcd_vision.c: 16: }
+[; ;lcd_vision.c: 14: sprintf(buffer2,"%02u:%02u",hora,minuto);
+"14
+[e ( _sprintf (1 , , (. , &U _buffer2 :s 2C _hora _minuto ]
+[; ;lcd_vision.c: 15: lcd_gotoxy(1,2);
+"15
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 16: lcd_putrs(buffer2);
 "16
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;lcd_vision.c: 17: }
+"17
 [e :UE 1036 ]
 }
 "19
+[v __delay_s `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;lcd_vision.c: 19: void _delay_s(int8 seg){
+[e :U __delay_s ]
+[v _seg `uc ~T0 @X0 1 r1 ]
+[f ]
+"20
+[v _it `s ~T0 @X0 1 a ]
+[; ;lcd_vision.c: 20: short it = 10 * seg;
+[e = _it -> * -> 10 `i -> _seg `i `s ]
+"21
+[v _index `s ~T0 @X0 1 a ]
+[; ;lcd_vision.c: 21: short index = 1;
+[e = _index -> -> 1 `i `s ]
+[; ;lcd_vision.c: 23: for(index = 1; index <= it; index++){
+"23
+{
+[e = _index -> -> 1 `i `s ]
+[e $U 1041  ]
+[e :U 1038 ]
+{
+[; ;lcd_vision.c: 24: _delay((unsigned long)((98)*(8000000/4000.0)));
+"24
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"25
+}
+"23
+[e ++ _index -> -> 1 `i `s ]
+[e :U 1041 ]
+[e $ <= -> _index `i -> _it `i 1038  ]
+[e :U 1039 ]
+"25
+}
+[; ;lcd_vision.c: 25: }
+[; ;lcd_vision.c: 26: }
+"26
+[e :UE 1037 ]
+}
+"28
+[v _twinkle `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd_vision.c: 28: void twinkle(){
+[e :U _twinkle ]
+[f ]
+"29
+[v _input `uc ~T0 @X0 1 a ]
+[; ;lcd_vision.c: 29: char input = 1;
+[e = _input -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 31: while(input != 16){
+"31
+[e $U 1043  ]
+[e :U 1044 ]
+{
+[; ;lcd_vision.c: 32: input = read_keyboard();
+"32
+[e = _input ( _read_keyboard ..  ]
+[; ;lcd_vision.c: 33: lcd_gotoxy(7,2);
+"33
+[e ( _lcd_gotoxy (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 34: lcd_putrs("WARNING!!!");
+"34
+[e ( _lcd_putrs (1 :s 3C ]
+[; ;lcd_vision.c: 35: _delay_s(1);
+"35
+[e ( __delay_s (1 -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 36: lcd_gotoxy(7,2);
+"36
+[e ( _lcd_gotoxy (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 37: lcd_putrs("          ");
+"37
+[e ( _lcd_putrs (1 :s 4C ]
+"38
+}
+[e :U 1043 ]
+"31
+[e $ != -> _input `i -> 16 `i 1044  ]
+[e :U 1045 ]
+[; ;lcd_vision.c: 38: }
+[; ;lcd_vision.c: 39: }
+"39
+[e :UE 1042 ]
+}
+"41
 [v _set_vision `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd_vision.c: 19: void set_vision(){
+[; ;lcd_vision.c: 41: void set_vision(){
 [e :U _set_vision ]
 [f ]
-[; ;lcd_vision.c: 20: clear();
-"20
+[; ;lcd_vision.c: 42: clear();
+"42
 [e ( _clear ..  ]
-[; ;lcd_vision.c: 21: lcd_gotoxy(1,1);
-"21
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 23: switch (state_alarm){
-"23
-[e $U 1039  ]
-{
-[; ;lcd_vision.c: 24: case ACTIVE:lcd_putrs("ACTIVE");
-"24
-[e :U 1040 ]
-[e ( _lcd_putrs (1 :s 3C ]
-[; ;lcd_vision.c: 25: break;
-"25
-[e $U 1038  ]
-[; ;lcd_vision.c: 26: case DESACTIVE:lcd_putrs("INACTIVE");
-"26
-[e :U 1041 ]
-[e ( _lcd_putrs (1 :s 4C ]
-[; ;lcd_vision.c: 27: break;
-"27
-[e $U 1038  ]
-[; ;lcd_vision.c: 28: default:lcd_putrs("TRIGGED");
-"28
-[e :U 1042 ]
-[e ( _lcd_putrs (1 :s 5C ]
-"29
-}
-[; ;lcd_vision.c: 29: }
-[e $U 1038  ]
-"23
-[e :U 1039 ]
-[e [\ _state_alarm , $ . `E8241 0 1040
- , $ . `E8241 1 1041
- 1042 ]
-"29
-[e :U 1038 ]
-[; ;lcd_vision.c: 31: write_Date();
-"31
+[; ;lcd_vision.c: 43: write_Date();
+"43
 [e ( _write_Date ..  ]
-[; ;lcd_vision.c: 32: }
-"32
-[e :UE 1037 ]
+[; ;lcd_vision.c: 44: lcd_gotoxy(1,1);
+"44
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 46: switch (state_alarm){
+"46
+[e $U 1048  ]
+{
+[; ;lcd_vision.c: 47: case ACTIVE:lcd_putrs("ON");
+"47
+[e :U 1049 ]
+[e ( _lcd_putrs (1 :s 5C ]
+[; ;lcd_vision.c: 48: break;
+"48
+[e $U 1047  ]
+[; ;lcd_vision.c: 49: case DESACTIVE:lcd_putrs("OFF");
+"49
+[e :U 1050 ]
+[e ( _lcd_putrs (1 :s 6C ]
+[; ;lcd_vision.c: 50: break;
+"50
+[e $U 1047  ]
+[; ;lcd_vision.c: 51: default:lcd_putrs("TRIGGED");
+"51
+[e :U 1051 ]
+[e ( _lcd_putrs (1 :s 7C ]
+[; ;lcd_vision.c: 52: twinkle();
+"52
+[e ( _twinkle ..  ]
+"53
+}
+[; ;lcd_vision.c: 53: }
+[e $U 1047  ]
+"46
+[e :U 1048 ]
+[e [\ _state_alarm , $ . `E8241 0 1049
+ , $ . `E8241 1 1050
+ 1051 ]
+"53
+[e :U 1047 ]
+[; ;lcd_vision.c: 54: }
+"54
+[e :UE 1046 ]
 }
 [p f _sprintf 8422404 ]
 [a 2C 37 48 50 117 58 37 48 50 117 0 ]
 [a 1C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
-[a 4C 73 78 65 67 84 73 86 69 0 ]
-[a 3C 65 67 84 73 86 69 0 ]
-[a 5C 84 82 73 71 71 69 68 0 ]
+[a 5C 79 78 0 ]
+[a 6C 79 70 70 0 ]
+[a 7C 84 82 73 71 71 69 68 0 ]
+[a 3C 87 65 82 78 73 78 71 33 33 33 0 ]
+[a 4C 32 32 32 32 32 32 32 32 32 32 0 ]
