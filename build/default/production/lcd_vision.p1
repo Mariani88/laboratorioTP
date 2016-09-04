@@ -34,6 +34,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 "5 keyboard.h
 [v _read_keyboard `(uc ~T0 @X0 0 ef ]
+"107 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+[v _lcd_setcursor_vb `(v ~T0 @X0 0 ef2`uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7980,29 +7982,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd_vision.c: 55: lcd_putrs("pass:____");
 "55
 [e ( _lcd_putrs (1 :s 7C ]
-[; ;lcd_vision.c: 56: break;
+[; ;lcd_vision.c: 56: lcd_gotoxy(12,2);
 "56
-[e $U 1047  ]
-[; ;lcd_vision.c: 57: default:lcd_putrs("TRIGGED");
+[e ( _lcd_gotoxy (2 , -> -> 12 `i `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 57: lcd_setcursor_vb(1,1);
 "57
+[e ( _lcd_setcursor_vb (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 58: break;
+"58
+[e $U 1047  ]
+[; ;lcd_vision.c: 59: default:lcd_putrs("TRIGGED");
+"59
 [e :U 1051 ]
 [e ( _lcd_putrs (1 :s 8C ]
-[; ;lcd_vision.c: 58: twinkle();
-"58
+[; ;lcd_vision.c: 60: twinkle();
+"60
 [e ( _twinkle ..  ]
-"59
+"61
 }
-[; ;lcd_vision.c: 59: }
+[; ;lcd_vision.c: 61: }
 [e $U 1047  ]
 "50
 [e :U 1048 ]
 [e [\ _state_alarm , $ . `E8241 0 1049
  , $ . `E8241 1 1050
  1051 ]
-"59
+"61
 [e :U 1047 ]
-[; ;lcd_vision.c: 60: }
-"60
+[; ;lcd_vision.c: 62: }
+"62
 [e :UE 1046 ]
 }
 [p f _sprintf 8422404 ]

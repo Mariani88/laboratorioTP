@@ -53,6 +53,8 @@ void set_vision(){
         case DESACTIVE:lcd_putrs("OFF");
         lcd_gotoxy(7,2);
         lcd_putrs("pass:____");
+        lcd_gotoxy(12,2);
+        lcd_setcursor_vb(1,1);
         break;
         default:lcd_putrs("TRIGGED");
                 twinkle();
