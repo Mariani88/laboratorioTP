@@ -6,7 +6,7 @@ typedef enum{
     ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = ACTIVE;
+state state_alarm = DESACTIVE;
 void set_vision();
 
 #endif	/* LCD_VISION_H */

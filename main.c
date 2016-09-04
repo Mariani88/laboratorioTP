@@ -37,7 +37,7 @@
         //lcd_gotoxy(9,1);
         //lcd_putrs(buffer2);
         //sprintf(buffer2,"%01u",key);
-        lcd_gotoxy(1,2);
+        //lcd_gotoxy(1,2);
         //lcd_putrs(buffer2);
      
     }

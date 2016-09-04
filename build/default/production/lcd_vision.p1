@@ -2,9 +2,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [c E8241 0 1 2 .. ]
 [n E8241 . ACTIVE DESACTIVE TRIGGED  ]
+"144 C:\Program Files\Microchip\xc8\v1.34\include\plib\rtcc.h
+[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1028 . year rsvd mday mon hour wday sec min ]
+"142
+[u S1027 `S1028 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
+[n S1027 . f b w l ]
+"113
+[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1024 . rsvd sec min hour ]
+"111
+[u S1023 `S1024 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1023 . f b w l ]
+"128
+[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1026 . wday mday mon year ]
+"126
+[u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1025 . f b w l ]
+"106 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+[v _lcd_comand `(v ~T0 @X0 0 ef1`uc ]
+[v F8145 `(v ~T0 @X0 1 tf1`ul ]
+"161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
+[v __delay `JF8145 ~T0 @X0 0 e ]
+[p i __delay ]
 "104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
-"109
+"206 C:\Program Files\Microchip\xc8\v1.34\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7634,62 +7660,253 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [v _state_alarm `E8241 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8241 0
+. `E8241 1
 ]
-[; ;lcd_vision.h: 9: state state_alarm = ACTIVE;
+[; ;lcd_vision.h: 9: state state_alarm = DESACTIVE;
 [; ;lcd_vision.h: 10: void set_vision();
-"4 lcd_vision.c
-[v _set_vision `(v ~T0 @X0 1 ef ]
-{
-[; ;lcd_vision.c: 4: void set_vision(){
-[e :U _set_vision ]
-[f ]
-[; ;lcd_vision.c: 6: if (state_alarm == ACTIVE){
-"6
-[e $ ! == -> _state_alarm `i -> . `E8241 0 `i 1036  ]
-{
-[; ;lcd_vision.c: 7: lcd_gotoxy(1,1);
-"7
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 8: lcd_putrs("Alarm on");
-"8
-[e ( _lcd_putrs (1 :s 1C ]
-"9
-}
-[e :U 1036 ]
-[; ;lcd_vision.c: 9: }
-[; ;lcd_vision.c: 11: if (state_alarm == DESACTIVE){
-"11
-[e $ ! == -> _state_alarm `i -> . `E8241 1 `i 1037  ]
-{
-[; ;lcd_vision.c: 12: lcd_gotoxy(1,1);
-"12
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 13: lcd_putrs("Alarm off");
-"13
-[e ( _lcd_putrs (1 :s 2C ]
-"14
-}
-[e :U 1037 ]
-[; ;lcd_vision.c: 14: }
-[; ;lcd_vision.c: 16: if (state_alarm == TRIGGED){
-"16
-[e $ ! == -> _state_alarm `i -> . `E8241 2 `i 1038  ]
-{
-[; ;lcd_vision.c: 17: lcd_gotoxy(1,1);
-"17
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 18: lcd_putrs("Alarm trigged");
-"18
-[e ( _lcd_putrs (1 :s 3C ]
+"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
+[v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
+[v _Rtcc_read_TimeDate `S1027 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 "19
-}
-[e :U 1038 ]
-[; ;lcd_vision.c: 19: }
-[; ;lcd_vision.c: 21: }
+[v _segundo_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
+"20
+[v _segundo_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
 "21
+[v _minuto_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
+"22
+[v _minuto_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
+"23
+[v _hora_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
+"24
+[v _hora_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
+"25
+[v _fecha_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
+"26
+[v _fecha_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
+"27
+[v _mes_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
+"28
+[v _mes_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
+"29
+[v _dia_semana `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
+"30
+[v _anio_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
+"31
+[v _anio_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
+"32
+[v _flag `b ~T0 @X0 1 e ]
+[i _flag
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
+"33
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 33: int i=0;
+"34
+[v _j `i ~T0 @X0 1 e ]
+[i _j
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 34: int j=0;
+"35
+[v _a `i ~T0 @X0 1 e ]
+[i _a
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 35: int a=0;
+"36
+[v _b `i ~T0 @X0 1 e ]
+[i _b
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 36: int b=0;
+"37
+[v _c `i ~T0 @X0 1 e ]
+[i _c
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 37: int c=0;
+"38
+[v _k `i ~T0 @X0 1 e ]
+[i _k
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 38: int k=0;
+"39
+[v _anio `i ~T0 @X0 1 e ]
+[i _anio
+-> 15 `i
+]
+[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
+"40
+[v _mes `i ~T0 @X0 1 e ]
+[i _mes
+-> 9 `i
+]
+[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
+"41
+[v _diasem `i ~T0 @X0 1 e ]
+[i _diasem
+-> 3 `i
+]
+[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
+"42
+[v _dia `i ~T0 @X0 1 e ]
+[i _dia
+-> 8 `i
+]
+[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
+"43
+[v _hora `i ~T0 @X0 1 e ]
+[i _hora
+-> 18 `i
+]
+[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
+"44
+[v _minuto `i ~T0 @X0 1 e ]
+[i _minuto
+-> 30 `i
+]
+[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
+"45
+[v _segundo `i ~T0 @X0 1 e ]
+[i _segundo
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
+"51
+[v _RtccTime `S1023 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
+"52
+[v _RtccTimeVal `S1023 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
+"53
+[v _RtccDate `S1025 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
+"55
+[v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
+[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
+[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
+[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
+[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
+[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
+"4 lcd_vision.c
+[v _clear `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd_vision.c: 4: void clear(){
+[e :U _clear ]
+[f ]
+[; ;lcd_vision.c: 5: lcd_comand(0b00000001);
+"5
+[e ( _lcd_comand (1 -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 6: _delay((unsigned long)((5)*(8000000/4000.0)));
+"6
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;lcd_vision.c: 7: }
+"7
 [e :UE 1035 ]
 }
-[a 1C 65 108 97 114 109 32 111 110 0 ]
-[a 2C 65 108 97 114 109 32 111 102 102 0 ]
-[a 3C 65 108 97 114 109 32 116 114 105 103 103 101 100 0 ]
+"9
+[v _write_Date `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd_vision.c: 9: void write_Date(){
+[e :U _write_Date ]
+[f ]
+[; ;lcd_vision.c: 10: lcd_gotoxy(9,1);
+"10
+[e ( _lcd_gotoxy (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 11: sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+"11
+[e ( _sprintf (1 , , , (. , &U _buffer2 :s 1C _dia _mes _anio ]
+[; ;lcd_vision.c: 12: lcd_putrs(buffer2);
+"12
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;lcd_vision.c: 13: sprintf(buffer2,"%02u:%02u",hora,minuto);
+"13
+[e ( _sprintf (1 , , (. , &U _buffer2 :s 2C _hora _minuto ]
+[; ;lcd_vision.c: 14: lcd_gotoxy(1,2);
+"14
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;lcd_vision.c: 15: lcd_putrs(buffer2);
+"15
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;lcd_vision.c: 16: }
+"16
+[e :UE 1036 ]
+}
+"19
+[v _set_vision `(v ~T0 @X0 1 ef ]
+{
+[; ;lcd_vision.c: 19: void set_vision(){
+[e :U _set_vision ]
+[f ]
+[; ;lcd_vision.c: 20: clear();
+"20
+[e ( _clear ..  ]
+[; ;lcd_vision.c: 21: lcd_gotoxy(1,1);
+"21
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 23: switch (state_alarm){
+"23
+[e $U 1039  ]
+{
+[; ;lcd_vision.c: 24: case ACTIVE:lcd_putrs("ACTIVE");
+"24
+[e :U 1040 ]
+[e ( _lcd_putrs (1 :s 3C ]
+[; ;lcd_vision.c: 25: break;
+"25
+[e $U 1038  ]
+[; ;lcd_vision.c: 26: case DESACTIVE:lcd_putrs("INACTIVE");
+"26
+[e :U 1041 ]
+[e ( _lcd_putrs (1 :s 4C ]
+[; ;lcd_vision.c: 27: break;
+"27
+[e $U 1038  ]
+[; ;lcd_vision.c: 28: default:lcd_putrs("TRIGGED");
+"28
+[e :U 1042 ]
+[e ( _lcd_putrs (1 :s 5C ]
+"29
+}
+[; ;lcd_vision.c: 29: }
+[e $U 1038  ]
+"23
+[e :U 1039 ]
+[e [\ _state_alarm , $ . `E8241 0 1040
+ , $ . `E8241 1 1041
+ 1042 ]
+"29
+[e :U 1038 ]
+[; ;lcd_vision.c: 31: write_Date();
+"31
+[e ( _write_Date ..  ]
+[; ;lcd_vision.c: 32: }
+"32
+[e :UE 1037 ]
+}
+[p f _sprintf 8422404 ]
+[a 2C 37 48 50 117 58 37 48 50 117 0 ]
+[a 1C 37 48 50 117 47 37 48 50 117 47 37 48 50 117 0 ]
+[a 4C 73 78 65 67 84 73 86 69 0 ]
+[a 3C 65 67 84 73 86 69 0 ]
+[a 5C 84 82 73 71 71 69 68 0 ]

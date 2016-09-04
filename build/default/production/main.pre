@@ -9892,7 +9892,7 @@ typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = ACTIVE;
+state state_alarm = DESACTIVE;
 void set_vision();
 
 # 31 "main.c"
@@ -9900,10 +9900,7 @@ void caratula(void)
 {
 lcd_comand(0b00001100);
 
-# 40
-lcd_gotoxy(1,2);
-
-
+# 43
 }
 
 # 51

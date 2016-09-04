@@ -4,8 +4,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E8244 . ACTIVE DESACTIVE TRIGGED  ]
 "106 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_comand `(v ~T0 @X0 0 ef1`uc ]
-"104
-[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
 "7249 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S503 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S503 . TUN PLLEN INTSRC ]
@@ -111,7 +109,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _set_vision `(v ~T0 @X0 0 ef ]
 "5 keyboard.h
 [v _read_keyboard `(uc ~T0 @X0 0 ef ]
-"109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+"104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
+"109
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 [v F8145 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
@@ -7747,9 +7747,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [v _state_alarm `E8244 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8244 0
+. `E8244 1
 ]
-[; ;lcd_vision.h: 9: state state_alarm = ACTIVE;
+[; ;lcd_vision.h: 9: state state_alarm = DESACTIVE;
 [; ;lcd_vision.h: 10: void set_vision();
 "31 main.c
 [v _caratula `(v ~T0 @X0 1 ef ]
@@ -7762,9 +7762,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 33: lcd_comand(0b00001100);
 "33
 [e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 40: lcd_gotoxy(1,2);
-"40
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
 [; ;main.c: 43: }
 "43
 [e :UE 1035 ]

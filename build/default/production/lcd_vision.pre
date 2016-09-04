@@ -9886,25 +9886,85 @@ typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = ACTIVE;
+state state_alarm = DESACTIVE;
 void set_vision();
 
+# 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
+rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+
+char segundo_u;
+char segundo_d;
+char minuto_u;
+char minuto_d;
+char hora_u;
+char hora_d;
+char fecha_u;
+char fecha_d;
+char mes_u;
+char mes_d;
+char dia_semana;
+char anio_u;
+char anio_d;
+bit flag=0;
+int i=0;
+int j=0;
+int a=0;
+int b=0;
+int c=0;
+int k=0;
+int anio=15;
+int mes=9;
+int diasem=3;
+int dia=8;
+int hora=18;
+int minuto=30;
+int segundo=0;
+
+# 51
+rtccTime RtccTime;
+rtccTime RtccTimeVal;
+rtccDate RtccDate;
+
+unsigned char buffer2[20];
+
+void DelayFor18TCY(void);
+
+# 63
+void DelayPORXLCD(void);
+
+# 75
+void Write_RTC(void);
+
+# 112
+void Read_RTC(void);
+
 # 4 "lcd_vision.c"
+void clear(){
+lcd_comand(0b00000001);
+_delay((unsigned long)((5)*(8000000/4000.0)));
+}
+
+void write_Date(){
+lcd_gotoxy(9,1);
+sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
+lcd_putrs(buffer2);
+sprintf(buffer2,"%02u:%02u",hora,minuto);
+lcd_gotoxy(1,2);
+lcd_putrs(buffer2);
+}
+
+
 void set_vision(){
-
-if (state_alarm == ACTIVE){
+clear();
 lcd_gotoxy(1,1);
-lcd_putrs("Alarm on");
+
+switch (state_alarm){
+case ACTIVE:lcd_putrs("ACTIVE");
+break;
+case DESACTIVE:lcd_putrs("INACTIVE");
+break;
+default:lcd_putrs("TRIGGED");
 }
 
-if (state_alarm == DESACTIVE){
-lcd_gotoxy(1,1);
-lcd_putrs("Alarm off");
-}
-
-if (state_alarm == TRIGGED){
-lcd_gotoxy(1,1);
-lcd_putrs("Alarm trigged");
-}
-
+write_Date();
 }
