@@ -7856,16 +7856,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1036 ]
 }
 "19
-[v __delay_s `(v ~T0 @X0 1 ef1`uc ]
+[v __delay_s `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;lcd_vision.c: 19: void _delay_s(int8 seg){
+[; ;lcd_vision.c: 19: void _delay_s(int millis){
 [e :U __delay_s ]
-[v _seg `uc ~T0 @X0 1 r1 ]
+[v _millis `i ~T0 @X0 1 r1 ]
 [f ]
 "20
 [v _it `s ~T0 @X0 1 a ]
-[; ;lcd_vision.c: 20: short it = 10 * seg;
-[e = _it -> * -> 10 `i -> _seg `i `s ]
+[; ;lcd_vision.c: 20: short it = millis/100;
+[e = _it -> / _millis -> 100 `i `s ]
 "21
 [v _index `s ~T0 @X0 1 a ]
 [; ;lcd_vision.c: 21: short index = 1;
@@ -7909,88 +7909,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1043  ]
 [e :U 1044 ]
 {
-[; ;lcd_vision.c: 32: input = read_keyboard();
+[; ;lcd_vision.c: 32: _delay_s(500);
 "32
-[e = _input ( _read_keyboard ..  ]
+[e ( __delay_s (1 -> 500 `i ]
 [; ;lcd_vision.c: 33: lcd_gotoxy(7,2);
 "33
 [e ( _lcd_gotoxy (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
 [; ;lcd_vision.c: 34: lcd_putrs("WARNING!!!");
 "34
 [e ( _lcd_putrs (1 :s 3C ]
-[; ;lcd_vision.c: 35: _delay_s(1);
+[; ;lcd_vision.c: 35: _delay_s(500);
 "35
-[e ( __delay_s (1 -> -> 1 `i `uc ]
+[e ( __delay_s (1 -> 500 `i ]
 [; ;lcd_vision.c: 36: lcd_gotoxy(7,2);
 "36
 [e ( _lcd_gotoxy (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
 [; ;lcd_vision.c: 37: lcd_putrs("          ");
 "37
 [e ( _lcd_putrs (1 :s 4C ]
+[; ;lcd_vision.c: 38: input = read_keyboard();
 "38
+[e = _input ( _read_keyboard ..  ]
+"39
 }
 [e :U 1043 ]
 "31
 [e $ != -> _input `i -> 16 `i 1044  ]
 [e :U 1045 ]
-[; ;lcd_vision.c: 38: }
 [; ;lcd_vision.c: 39: }
-"39
+[; ;lcd_vision.c: 42: state_alarm = ACTIVE;
+"42
+[e = _state_alarm . `E8241 0 ]
+[; ;lcd_vision.c: 43: }
+"43
 [e :UE 1042 ]
 }
-"41
+"45
 [v _set_vision `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd_vision.c: 41: void set_vision(){
+[; ;lcd_vision.c: 45: void set_vision(){
 [e :U _set_vision ]
 [f ]
-[; ;lcd_vision.c: 42: clear();
-"42
-[e ( _clear ..  ]
-[; ;lcd_vision.c: 43: write_Date();
-"43
-[e ( _write_Date ..  ]
-[; ;lcd_vision.c: 44: lcd_gotoxy(1,1);
-"44
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 46: switch (state_alarm){
+[; ;lcd_vision.c: 46: clear();
 "46
+[e ( _clear ..  ]
+[; ;lcd_vision.c: 47: write_Date();
+"47
+[e ( _write_Date ..  ]
+[; ;lcd_vision.c: 48: lcd_gotoxy(1,1);
+"48
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;lcd_vision.c: 50: switch (state_alarm){
+"50
 [e $U 1048  ]
 {
-[; ;lcd_vision.c: 47: case ACTIVE:lcd_putrs("ON");
-"47
+[; ;lcd_vision.c: 51: case ACTIVE:lcd_putrs("ON");
+"51
 [e :U 1049 ]
 [e ( _lcd_putrs (1 :s 5C ]
-[; ;lcd_vision.c: 48: break;
-"48
+[; ;lcd_vision.c: 52: break;
+"52
 [e $U 1047  ]
-[; ;lcd_vision.c: 49: case DESACTIVE:lcd_putrs("OFF");
-"49
+[; ;lcd_vision.c: 53: case DESACTIVE:lcd_putrs("OFF");
+"53
 [e :U 1050 ]
 [e ( _lcd_putrs (1 :s 6C ]
-[; ;lcd_vision.c: 50: break;
-"50
+[; ;lcd_vision.c: 54: break;
+"54
 [e $U 1047  ]
-[; ;lcd_vision.c: 51: default:lcd_putrs("TRIGGED");
-"51
+[; ;lcd_vision.c: 55: default:lcd_putrs("TRIGGED");
+"55
 [e :U 1051 ]
 [e ( _lcd_putrs (1 :s 7C ]
-[; ;lcd_vision.c: 52: twinkle();
-"52
+[; ;lcd_vision.c: 56: twinkle();
+"56
 [e ( _twinkle ..  ]
-"53
+"57
 }
-[; ;lcd_vision.c: 53: }
+[; ;lcd_vision.c: 57: }
 [e $U 1047  ]
-"46
+"50
 [e :U 1048 ]
 [e [\ _state_alarm , $ . `E8241 0 1049
  , $ . `E8241 1 1050
  1051 ]
-"53
+"57
 [e :U 1047 ]
-[; ;lcd_vision.c: 54: }
-"54
+[; ;lcd_vision.c: 58: }
+"58
 [e :UE 1046 ]
 }
 [p f _sprintf 8422404 ]

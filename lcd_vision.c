@@ -16,8 +16,8 @@ void write_Date(){
     lcd_putrs(buffer2);
 }
 
-void _delay_s(int8 seg){
-    short it = 10 * seg;
+void _delay_s(int millis){
+    short it = millis/100;
     short index = 1;
     
     for(index = 1; index <= it; index++){
@@ -29,13 +29,17 @@ void twinkle(){
     char input = 1;
     
     while(input != 16){
-        input = read_keyboard();
+        _delay_s(500);
         lcd_gotoxy(7,2);
         lcd_putrs("WARNING!!!");
-        _delay_s(1);
+        _delay_s(500);
         lcd_gotoxy(7,2);
         lcd_putrs("          ");
+        input = read_keyboard();
     }
+    
+    //PEDIR PASSWORD ACA PARA DESACTIVAR
+    state_alarm = ACTIVE;
 }
 
 void set_vision(){
