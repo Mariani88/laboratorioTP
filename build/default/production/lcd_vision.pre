@@ -10003,6 +10003,23 @@ _delay((unsigned long)((98)*(8000000/4000.0)));
 }
 }
 
+bool is_not_letter(char input){
+return input != 16 && input != 11 && input !=12 && input!=13;
+}
+
+bool not_fill_pass(short digit){
+return digit !=16;
+}
+
+
+void next_code(short *digit, char *input){
+clear_keyboard();
+*digit = *digit + 1;
+lcd_gotoxy(*digit, 2);
+*input = 18;
+}
+
+
 void twinkle(){
 char input = 1;
 
@@ -10038,23 +10055,20 @@ lcd_setcursor_vb(1,1);
 char input = read_keyboard();
 int pass = 0;
 
-while(input != 16 && input != 11 && input !=12 && input!=13 && digit !=16){
+while(is_not_letter(input) && not_fill_pass(digit)){
 
 if(0<input && input<10){
 
 pass = pass + input * pow(10, 15 - digit);
+next_code(&digit, &input);
 
-clear_keyboard();
-digit++;
-lcd_gotoxy(digit, 2);
-input = 18;
+# 92
 }
 input = read_keyboard();
 
 if(digit == 16){
 if(checkPass(pass)){
 state_alarm = ACTIVE;
-
 }
 }
 }
