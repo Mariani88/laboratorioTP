@@ -1,6 +1,8 @@
 #include "lcd_vision.h"
 #include "unmc_rtcc_01.h"
 #include "keyboard.h"
+#include "config.h"
+#include <math.h>
 
 void clear(){
     lcd_comand(0b00000001);
@@ -57,15 +59,27 @@ void set_vision(){
         lcd_gotoxy(digit,2);
         lcd_setcursor_vb(1,1);
         
-        while(read_keyboard() != 16){
-            if(0<read_keyboard()&& read_keyboard()<10){
-            clear_keyboard();
-            digit++;
-            lcd_gotoxy(digit, 2);
-            }
+        char input = read_keyboard(); 
+        int pass = 0;
+        
+        while(input != 16 && input != 11 && input !=12 && input!=13 && digit !=16){
             
-            if(digit == 17){
-                //CORROBORAR PASSWORD ACA
+            if(0<input && input<10){
+                
+                pass = pass + input * pow(10, 15 - digit);
+    
+                clear_keyboard();
+                digit++;
+                lcd_gotoxy(digit, 2);
+                input = 18;
+            }
+            input = read_keyboard();
+            
+            if(digit == 16){
+                if(checkPass(pass)){
+                    state_alarm = ACTIVE;
+                    
+                }
             }
         }
         

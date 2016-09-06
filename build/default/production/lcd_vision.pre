@@ -9942,7 +9942,44 @@ void Read_RTC(void);
 void clear_keyboard();
 char read_keyboard();
 
-# 5 "lcd_vision.c"
+# 12 "C:\Program Files\Microchip\xc8\v1.34\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "config.h"
+int password = 1234;
+
+bool checkPass(int pass);
+void changePass(int pass);
+
+# 30 "C:\Program Files\Microchip\xc8\v1.34\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 7 "lcd_vision.c"
 void clear(){
 lcd_comand(0b00000001);
 _delay((unsigned long)((5)*(8000000/4000.0)));
@@ -9998,11 +10035,27 @@ short digit = 12;
 lcd_gotoxy(digit,2);
 lcd_setcursor_vb(1,1);
 
-while(read_keyboard() != 16){
-if(0<read_keyboard()&& read_keyboard()<10){
+char input = read_keyboard();
+int pass = 0;
+
+while(input != 16 && input != 11 && input !=12 && input!=13 && digit !=16){
+
+if(0<input && input<10){
+
+pass = pass + input * pow(10, 15 - digit);
+
 clear_keyboard();
 digit++;
 lcd_gotoxy(digit, 2);
+input = 18;
+}
+input = read_keyboard();
+
+if(digit == 16){
+if(checkPass(pass)){
+state_alarm = ACTIVE;
+
+}
 }
 }
 

@@ -59,7 +59,7 @@
     OSCCONbits.SCS1=0;
     TRISA = 0b11110000;
     TRISB = 0;
-    TRISC = 0b00000111;
+    TRISC = 0b0110111;
     //TRISAbits.TRISA0=1;
     //TRISBbits.TRISB0=0;
     //TRISCbits.TRISC0=0;

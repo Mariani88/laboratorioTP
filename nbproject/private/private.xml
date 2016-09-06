@@ -6,6 +6,8 @@
         <group>
             <file>file:/C:/laboratorioTP/main.c</file>
             <file>file:/C:/laboratorioTP/lcd_vision.c</file>
+            <file>file:/C:/laboratorioTP/keyboard.c</file>
+            <file>file:/C:/Archivos%20de%20programa/Unimic/unmc_01/headers/unmc_lcd_216.h</file>
             <file>file:/C:/laboratorioTP/lcd_vision.h</file>
         </group>
     </open-files>

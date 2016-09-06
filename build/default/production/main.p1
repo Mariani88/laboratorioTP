@@ -7805,9 +7805,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 61: TRISB = 0;
 "61
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 62: TRISC = 0b00000111;
+[; ;main.c: 62: TRISC = 0b0110111;
 "62
-[e = _TRISC -> -> 7 `i `uc ]
+[e = _TRISC -> -> 55 `i `uc ]
 [; ;main.c: 66: ANCON0=0b11111111;
 "66
 [e = _ANCON0 -> -> 255 `i `uc ]
