@@ -43,6 +43,23 @@ void next_code(short *digit, char *input){
     *input = 18;
 }
 
+void review_code(short digit, int pass){
+    if(digit == 16){
+        if(checkPass(pass)){
+            state_alarm = ACTIVE;
+        }
+    }
+}
+
+int obtain_pass(int pass, char input, short *digit){
+    
+    if(0<input && input<10){
+        pass = pass + input * pow(10, 15 - *digit);
+        next_code(digit, &input);
+    }
+    return pass;
+}
+
 
 void twinkle(){
     char input = 1;
@@ -56,9 +73,13 @@ void twinkle(){
         lcd_putrs("          ");
         input = read_keyboard();
     }
-    
-    //PEDIR PASSWORD ACA PARA DESACTIVAR
-    state_alarm = ACTIVE;
+}
+
+void set_desactive_vision(short digit){
+    lcd_gotoxy(7,2);
+    lcd_putrs("pass:____");
+    lcd_gotoxy(digit,2);
+    lcd_setcursor_vb(1,1);
 }
 
 void set_vision(){
@@ -69,32 +90,28 @@ void set_vision(){
     switch (state_alarm){
         case ACTIVE:lcd_putrs("ON");
         break;
+        
         case DESACTIVE:lcd_putrs("OFF");
-        lcd_gotoxy(7,2);
-        lcd_putrs("pass:____");
         short digit = 12;
-        lcd_gotoxy(digit,2);
-        lcd_setcursor_vb(1,1);
+        int pass = 0;
+        set_desactive_vision(digit);
         
         char input = read_keyboard(); 
-        int pass = 0;
         
         while(is_not_letter(input) && not_fill_pass(digit)){
-            if(0<input && input<10){
-                pass = pass + input * pow(10, 15 - digit);
-                next_code(&digit, &input);
-            }
+            pass = obtain_pass(pass,input,&digit);
             input = read_keyboard();
-            
-            if(digit == 16){
-                if(checkPass(pass)){
-                    state_alarm = ACTIVE;
-                }
-            }
+            review_code(digit, pass);
         }
         
         break;
         default:lcd_putrs("TRIGGED");
                 twinkle();
+                //PEDIR PASSWORD ACA PARA DESACTIVAR
+                
+                //short digit = 12; 
+                //set_desactive_vision(digit);
+                
+                state_alarm = ACTIVE;
     }
 }
