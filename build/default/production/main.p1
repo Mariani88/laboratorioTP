@@ -7751,9 +7751,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [v _state_alarm `E8245 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8245 1
+. `E8245 2
 ]
-[; ;lcd_vision.h: 9: state state_alarm = DESACTIVE;
+[; ;lcd_vision.h: 9: state state_alarm = TRIGGED;
 [; ;lcd_vision.h: 10: void set_vision();
 "31 main.c
 [v _caratula `(v ~T0 @X0 1 ef ]

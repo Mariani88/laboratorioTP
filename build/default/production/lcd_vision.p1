@@ -7673,9 +7673,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 lcd_vision.h
 [v _state_alarm `E8241 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8241 1
+. `E8241 2
 ]
-[; ;lcd_vision.h: 9: state state_alarm = DESACTIVE;
+[; ;lcd_vision.h: 9: state state_alarm = TRIGGED;
 [; ;lcd_vision.h: 10: void set_vision();
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
@@ -8100,125 +8100,158 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != -> _input `i -> 16 `i 1052  ]
 [e :U 1053 ]
 [; ;lcd_vision.c: 75: }
-[; ;lcd_vision.c: 78: state_alarm = ACTIVE;
-"78
-[e = _state_alarm . `E8241 0 ]
-[; ;lcd_vision.c: 79: }
-"79
+[; ;lcd_vision.c: 76: clear_keyboard();
+"76
+[e ( _clear_keyboard ..  ]
+[; ;lcd_vision.c: 77: }
+"77
 [e :UE 1050 ]
 }
-"81
+"79
 [v _set_desactive_vision `(v ~T0 @X0 1 ef1`s ]
 {
-[; ;lcd_vision.c: 81: void set_desactive_vision(short digit){
+[; ;lcd_vision.c: 79: void set_desactive_vision(short digit){
 [e :U _set_desactive_vision ]
 [v _digit `s ~T0 @X0 1 r1 ]
 [f ]
-[; ;lcd_vision.c: 82: lcd_gotoxy(7,2);
-"82
+[; ;lcd_vision.c: 80: lcd_gotoxy(7,2);
+"80
 [e ( _lcd_gotoxy (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
-[; ;lcd_vision.c: 83: lcd_putrs("pass:____");
-"83
+[; ;lcd_vision.c: 81: lcd_putrs("pass:____");
+"81
 [e ( _lcd_putrs (1 :s 5C ]
-[; ;lcd_vision.c: 84: lcd_gotoxy(digit,2);
-"84
+[; ;lcd_vision.c: 82: lcd_gotoxy(digit,2);
+"82
 [e ( _lcd_gotoxy (2 , -> _digit `uc -> -> 2 `i `uc ]
-[; ;lcd_vision.c: 85: lcd_setcursor_vb(1,1);
-"85
+[; ;lcd_vision.c: 83: lcd_setcursor_vb(1,1);
+"83
 [e ( _lcd_setcursor_vb (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 86: }
-"86
+[; ;lcd_vision.c: 84: }
+"84
 [e :UE 1054 ]
 }
-"88
+"86
 [v _set_vision `(v ~T0 @X0 1 ef ]
 {
-[; ;lcd_vision.c: 88: void set_vision(){
+[; ;lcd_vision.c: 86: void set_vision(){
 [e :U _set_vision ]
 [f ]
-[; ;lcd_vision.c: 89: clear();
-"89
+[; ;lcd_vision.c: 87: clear();
+"87
 [e ( _clear ..  ]
-[; ;lcd_vision.c: 90: write_Date();
-"90
+[; ;lcd_vision.c: 88: write_Date();
+"88
 [e ( _write_Date ..  ]
-[; ;lcd_vision.c: 91: lcd_gotoxy(1,1);
-"91
+[; ;lcd_vision.c: 89: lcd_gotoxy(1,1);
+"89
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;lcd_vision.c: 93: switch (state_alarm){
-"93
+[; ;lcd_vision.c: 91: switch (state_alarm){
+"91
 [e $U 1057  ]
 {
-[; ;lcd_vision.c: 94: case ACTIVE:lcd_putrs("ON");
-"94
+[; ;lcd_vision.c: 92: case ACTIVE:lcd_putrs("ON");
+"92
 [e :U 1058 ]
 [e ( _lcd_putrs (1 :s 6C ]
-[; ;lcd_vision.c: 95: break;
-"95
+[; ;lcd_vision.c: 93: break;
+"93
 [e $U 1056  ]
-[; ;lcd_vision.c: 97: case DESACTIVE:lcd_putrs("OFF");
-"97
+[; ;lcd_vision.c: 95: case DESACTIVE:lcd_putrs("OFF");
+"95
 [e :U 1059 ]
 [e ( _lcd_putrs (1 :s 7C ]
-"98
+"96
 [v _digit `s ~T0 @X0 1 a ]
-[; ;lcd_vision.c: 98: short digit = 12;
+[; ;lcd_vision.c: 96: short digit = 12;
 [e = _digit -> -> 12 `i `s ]
-"99
+"97
 [v _pass `i ~T0 @X0 1 a ]
-[; ;lcd_vision.c: 99: int pass = 0;
+[; ;lcd_vision.c: 97: int pass = 0;
 [e = _pass -> 0 `i ]
-[; ;lcd_vision.c: 100: set_desactive_vision(digit);
-"100
+[; ;lcd_vision.c: 98: set_desactive_vision(digit);
+"98
 [e ( _set_desactive_vision (1 _digit ]
-"102
+"100
 [v _input `uc ~T0 @X0 1 a ]
-[; ;lcd_vision.c: 102: char input = read_keyboard();
+[; ;lcd_vision.c: 100: char input = read_keyboard();
 [e = _input ( _read_keyboard ..  ]
-[; ;lcd_vision.c: 104: while(is_not_letter(input) && not_fill_pass(digit)){
-"104
+[; ;lcd_vision.c: 102: while(is_not_letter(input) && not_fill_pass(digit)){
+"102
 [e $U 1060  ]
 [e :U 1061 ]
 {
-[; ;lcd_vision.c: 105: pass = obtain_pass(pass,input,&digit);
-"105
+[; ;lcd_vision.c: 103: pass = obtain_pass(pass,input,&digit);
+"103
 [e = _pass ( _obtain_pass (3 , , _pass _input &U _digit ]
-[; ;lcd_vision.c: 106: input = read_keyboard();
-"106
+[; ;lcd_vision.c: 104: input = read_keyboard();
+"104
 [e = _input ( _read_keyboard ..  ]
-[; ;lcd_vision.c: 107: review_code(digit, pass);
-"107
+[; ;lcd_vision.c: 105: review_code(digit, pass);
+"105
 [e ( _review_code (2 , _digit _pass ]
-"108
+"106
 }
 [e :U 1060 ]
-"104
+"102
 [e $ && != -> ( _is_not_letter (1 _input `i -> -> -> 0 `i `uc `i != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i 1061  ]
 [e :U 1062 ]
-[; ;lcd_vision.c: 108: }
-[; ;lcd_vision.c: 110: break;
-"110
+[; ;lcd_vision.c: 106: }
+[; ;lcd_vision.c: 108: break;
+"108
 [e $U 1056  ]
-[; ;lcd_vision.c: 111: default:lcd_putrs("TRIGGED");
-"111
+[; ;lcd_vision.c: 109: default:lcd_putrs("TRIGGED");
+"109
 [e :U 1063 ]
 [e ( _lcd_putrs (1 :s 8C ]
-[; ;lcd_vision.c: 112: twinkle();
-"112
+[; ;lcd_vision.c: 110: twinkle();
+"110
 [e ( _twinkle ..  ]
+[; ;lcd_vision.c: 112: short digit = 12;
+"112
+[e = _digit -> -> 12 `i `s ]
+[; ;lcd_vision.c: 113: int pass = 0;
 "113
+[e = _pass -> 0 `i ]
+[; ;lcd_vision.c: 114: set_desactive_vision(digit);
+"114
+[e ( _set_desactive_vision (1 _digit ]
+[; ;lcd_vision.c: 116: char input = 18;
+"116
+[e = _input -> -> 18 `i `uc ]
+[; ;lcd_vision.c: 118: while(is_not_letter(input) && not_fill_pass(digit)){
+"118
+[e $U 1064  ]
+[e :U 1065 ]
+{
+[; ;lcd_vision.c: 119: pass = obtain_pass(pass,input,&digit);
+"119
+[e = _pass ( _obtain_pass (3 , , _pass _input &U _digit ]
+[; ;lcd_vision.c: 120: input = read_keyboard();
+"120
+[e = _input ( _read_keyboard ..  ]
+[; ;lcd_vision.c: 121: review_code(digit, pass);
+"121
+[e ( _review_code (2 , _digit _pass ]
+"122
 }
-[; ;lcd_vision.c: 113: }
+[e :U 1064 ]
+"118
+[e $ && != -> ( _is_not_letter (1 _input `i -> -> -> 0 `i `uc `i != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i 1065  ]
+[e :U 1066 ]
+"123
+}
+[; ;lcd_vision.c: 122: }
+[; ;lcd_vision.c: 123: }
 [e $U 1056  ]
-"93
+"91
 [e :U 1057 ]
 [e [\ _state_alarm , $ . `E8241 0 1058
  , $ . `E8241 1 1059
  1063 ]
-"113
+"123
 [e :U 1056 ]
-[; ;lcd_vision.c: 114: }
-"114
+[; ;lcd_vision.c: 124: }
+"124
 [e :UE 1055 ]
 }
 [p f _sprintf 8422404 ]

@@ -218,9 +218,9 @@ RTCCPTR_MASK_YEAR 3
 [v _obtain_pass obtain_pass `(i  1 e 2 0 ]
 "64
 [v _twinkle twinkle `(v  1 e 0 0 ]
-"81
+"79
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
-"88
+"86
 [v _set_vision set_vision `(v  1 e 0 0 ]
 "31 C:\laboratorioTP\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
@@ -663,16 +663,16 @@ RTCCPTR_MASK_YEAR 3
 [v main@input input `uc  1 a 1 22 ]
 "112
 } 0
-"88 C:\laboratorioTP\lcd_vision.c
+"86 C:\laboratorioTP\lcd_vision.c
 [v _set_vision set_vision `(v  1 e 0 0 ]
 {
-"98
+"96
 [v set_vision@digit digit `s  1 a 2 20 ]
-"99
+"97
 [v set_vision@pass pass `i  1 a 2 17 ]
-"102
+"100
 [v set_vision@input input `uc  1 a 1 19 ]
-"114
+"124
 } 0
 "12
 [v _write_Date write_Date `(v  1 e 0 0 ]
@@ -684,7 +684,7 @@ RTCCPTR_MASK_YEAR 3
 {
 "65
 [v twinkle@input input `uc  1 a 1 36 ]
-"79
+"77
 } 0
 "8 C:\laboratorioTP\keyboard.c
 [v _read_keyboard read_keyboard `(uc  1 e 1 0 ]
@@ -753,11 +753,11 @@ RTCCPTR_MASK_YEAR 3
 [v __delay_s@millis millis `i  1 p 2 8 ]
 "28
 } 0
-"81
+"79
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
 {
 [v set_desactive_vision@digit digit `s  1 p 2 10 ]
-"86
+"84
 } 0
 "210 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
 [v _lcd_setcursor_vb lcd_setcursor_vb `(v  1 e 0 0 ]

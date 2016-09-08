@@ -73,6 +73,7 @@ void twinkle(){
         lcd_putrs("          ");
         input = read_keyboard();
     }
+    clear_keyboard();
 }
 
 void set_desactive_vision(short digit){
@@ -108,10 +109,16 @@ void set_vision(){
         default:lcd_putrs("TRIGGED");
                 twinkle();
                 //PEDIR PASSWORD ACA PARA DESACTIVAR
-                
-                //short digit = 12; 
-                //set_desactive_vision(digit);
-                
-                state_alarm = ACTIVE;
+                short digit = 12;
+                int pass = 0;
+                set_desactive_vision(digit);
+        
+                char input = 18; 
+        
+                while(is_not_letter(input) && not_fill_pass(digit)){
+                    pass = obtain_pass(pass,input,&digit);
+                    input = read_keyboard();
+                    review_code(digit, pass);
+                }
     }
 }

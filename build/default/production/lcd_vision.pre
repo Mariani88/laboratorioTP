@@ -9886,7 +9886,7 @@ typedef enum{
 ACTIVE,DESACTIVE, TRIGGED
 } state;
 
-state state_alarm = DESACTIVE;
+state state_alarm = TRIGGED;
 void set_vision();
 
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
@@ -10049,9 +10049,7 @@ lcd_gotoxy(7,2);
 lcd_putrs("          ");
 input = read_keyboard();
 }
-
-
-state_alarm = ACTIVE;
+clear_keyboard();
 }
 
 void set_desactive_vision(short digit){
@@ -10086,5 +10084,17 @@ review_code(digit, pass);
 break;
 default:lcd_putrs("TRIGGED");
 twinkle();
+
+short digit = 12;
+int pass = 0;
+set_desactive_vision(digit);
+
+char input = 18;
+
+while(is_not_letter(input) && not_fill_pass(digit)){
+pass = obtain_pass(pass,input,&digit);
+input = read_keyboard();
+review_code(digit, pass);
+}
 }
 }
