@@ -1,5 +1,10 @@
 #include "reloj.h"
 #include <unmc_rtcc_01.h>
+
+void configurar_reloj(){
+    
+}
+
 void evalueChanceOfRaw(int8 *x, int8 *y){
 	if (*x == 17){
          *x = 1;

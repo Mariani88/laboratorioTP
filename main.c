@@ -21,6 +21,7 @@
 #include "keyboard.h"
 #include "reloj.h"
 #include "lcd_vision.h"
+#include "menu.h"
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
@@ -74,8 +75,8 @@
     Write_RTC();
     lcd_init();
     lcd_comand(0b00001100);     //Display=on / Cursor=off / Blink=off
-    LED_2_On;
-    LED_3_On;
+ //   LED_2_On;
+ //   LED_3_On;
     }
 /*------------------------------------------------------------------------------
 ********************************************************************************
@@ -91,21 +92,11 @@ while(1){
     //Read_RTC();
     //caratula();
     //lcd_gotoxy(1,2);
-    set_vision();
-    
-    char input = read_keyboard();
-    
-    if (input == 16){
-        lcd_gotoxy(1,1);
-        lcd_putrs("                                ");
-        lcd_gotoxy(1,1);
-        lcd_putrs("null pointer");
-        lcd_gotoxy(1,2);
-        lcd_putrs("exception");
-        input = 0;
-        key = 0;
-        __delay_ms(98);
-    }
+    clear();
+    lcd_gotoxy(1,1);
+    lcd_puts("INICIO");
+    select_menu();
+    __delay_ms(98);
 }    
        
 return 0;
