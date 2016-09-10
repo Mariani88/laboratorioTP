@@ -75,10 +75,14 @@ void twinkle(){
     char input = 1;
     
     while(input != 16){
-        _delay_s(500);
+        _delay_s(200);
         lcd_gotoxy(7,2);
+        LED_2_Off;
+        LED_3_On;
         lcd_putrs("WARNING!!!");
-        _delay_s(500);
+        _delay_s(200);
+        LED_3_Off;
+        LED_2_On;
         lcd_gotoxy(7,2);
         lcd_putrs("          ");
         input = read_keyboard();
@@ -115,10 +119,12 @@ void set_vision(){
     
     switch (state_alarm){
         case ACTIVE:lcd_putrs("ON");
+            LED_3_On;
             input_password();
         break;
         
         case DESACTIVE:lcd_putrs("OFF");
+            LED_3_Off;
             input_password();
         
         break;
