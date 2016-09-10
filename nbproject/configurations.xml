@@ -13,6 +13,7 @@
       <itemPath>reloj.h</itemPath>
       <itemPath>lcd_vision.h</itemPath>
       <itemPath>config.h</itemPath>
+      <itemPath>menu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,10 +25,11 @@
       <itemPath>main.c</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c</itemPath>
       <itemPath>keyboard.c</itemPath>
-      <itemPath>../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c</itemPath>
       <itemPath>reloj.c</itemPath>
       <itemPath>lcd_vision.c</itemPath>
       <itemPath>config.c</itemPath>
+      <itemPath>menu.c</itemPath>
+      <itemPath>Unimic/sources/unmc_rtcc_01.c</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Source owner" projectFiles="true">
     </logicalFolder>

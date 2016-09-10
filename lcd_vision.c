@@ -43,10 +43,20 @@ void next_code(short *digit, char *input){
     *input = 18;
 }
 
+void change_state(){
+    switch (state_alarm){
+        case DESACTIVE:state_alarm = ACTIVE;
+        break;
+        case ACTIVE:state_alarm = DESACTIVE;
+        break;
+        default:state_alarm = DESACTIVE;
+    }
+}
+
 void review_code(short digit, int pass){
     if(digit == 16){
         if(checkPass(pass)){
-            state_alarm = ACTIVE;
+            change_state();
         }
     }
 }
@@ -83,6 +93,21 @@ void set_desactive_vision(short digit){
     lcd_setcursor_vb(1,1);
 }
 
+void input_password(){
+    short digit = 12;
+    int pass = 0;
+        
+    set_desactive_vision(digit);
+    char input = read_keyboard(); 
+        
+    while(is_not_letter(input) && not_fill_pass(digit)){
+        pass = obtain_pass(pass,input,&digit);
+        input = read_keyboard();
+        review_code(digit, pass);
+    }
+}
+
+
 void set_vision(){
     clear();
     write_Date();
@@ -90,35 +115,16 @@ void set_vision(){
     
     switch (state_alarm){
         case ACTIVE:lcd_putrs("ON");
+            input_password();
         break;
         
         case DESACTIVE:lcd_putrs("OFF");
-        short digit = 12;
-        int pass = 0;
-        set_desactive_vision(digit);
-        
-        char input = read_keyboard(); 
-        
-        while(is_not_letter(input) && not_fill_pass(digit)){
-            pass = obtain_pass(pass,input,&digit);
-            input = read_keyboard();
-            review_code(digit, pass);
-        }
+            input_password();
         
         break;
         default:lcd_putrs("TRIGGED");
-                twinkle();
-                //PEDIR PASSWORD ACA PARA DESACTIVAR
-                short digit = 12;
-                int pass = 0;
-                set_desactive_vision(digit);
-        
-                char input = 18; 
-        
-                while(is_not_letter(input) && not_fill_pass(digit)){
-                    pass = obtain_pass(pass,input,&digit);
-                    input = read_keyboard();
-                    review_code(digit, pass);
-                }
+            twinkle();
+            input_password();
     }
+    
 }

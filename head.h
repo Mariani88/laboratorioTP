@@ -16,6 +16,12 @@ typedef enum {
 } state;
 
 state state_alarm = DESACTIVE;
+int8 sensorDisparado = 0;
+int diaDisparo = 0;
+int mesDisparo = 0;
+int horaDisparo = 0;
+int minDisparo = 0;
+
 
 #endif	/* HEAD_H */
 

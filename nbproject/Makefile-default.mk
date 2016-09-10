@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c "C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c" keyboard.c "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c" reloj.c lcd_vision.c config.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c "C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c" keyboard.c reloj.c lcd_vision.c config.c menu.c Unimic/sources/unmc_rtcc_01.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1 ${OBJECTDIR}/keyboard.p1 ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1 ${OBJECTDIR}/reloj.p1 ${OBJECTDIR}/lcd_vision.p1 ${OBJECTDIR}/config.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1.d ${OBJECTDIR}/keyboard.p1.d ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d ${OBJECTDIR}/reloj.p1.d ${OBJECTDIR}/lcd_vision.p1.d ${OBJECTDIR}/config.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1 ${OBJECTDIR}/keyboard.p1 ${OBJECTDIR}/reloj.p1 ${OBJECTDIR}/lcd_vision.p1 ${OBJECTDIR}/config.p1 ${OBJECTDIR}/menu.p1 ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1.d ${OBJECTDIR}/keyboard.p1.d ${OBJECTDIR}/reloj.p1.d ${OBJECTDIR}/lcd_vision.p1.d ${OBJECTDIR}/config.p1.d ${OBJECTDIR}/menu.p1.d ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1 ${OBJECTDIR}/keyboard.p1 ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1 ${OBJECTDIR}/reloj.p1 ${OBJECTDIR}/lcd_vision.p1 ${OBJECTDIR}/config.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/_ext/1807342946/unmc_lcd_216.p1 ${OBJECTDIR}/keyboard.p1 ${OBJECTDIR}/reloj.p1 ${OBJECTDIR}/lcd_vision.p1 ${OBJECTDIR}/config.p1 ${OBJECTDIR}/menu.p1 ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1
 
 # Source Files
-SOURCEFILES=main.c C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c keyboard.c ../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c reloj.c lcd_vision.c config.c
+SOURCEFILES=main.c C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c keyboard.c reloj.c lcd_vision.c config.c menu.c Unimic/sources/unmc_rtcc_01.c
 
 
 CFLAGS=
@@ -105,14 +105,6 @@ ${OBJECTDIR}/keyboard.p1: keyboard.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/keyboard.d ${OBJECTDIR}/keyboard.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/keyboard.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1: ../../Program\ Files/Unimic/unmc_01/sources/unmc_rtcc_01.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/968420362" 
-	@${RM} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1  "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c" 
-	@-${MV} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.d ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/reloj.p1: reloj.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/reloj.p1.d 
@@ -136,6 +128,22 @@ ${OBJECTDIR}/config.p1: config.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/config.p1  config.c 
 	@-${MV} ${OBJECTDIR}/config.d ${OBJECTDIR}/config.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/menu.p1: menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/menu.p1.d 
+	@${RM} ${OBJECTDIR}/menu.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/menu.p1  menu.c 
+	@-${MV} ${OBJECTDIR}/menu.d ${OBJECTDIR}/menu.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1: Unimic/sources/unmc_rtcc_01.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Unimic/sources" 
+	@${RM} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d 
+	@${RM} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1  Unimic/sources/unmc_rtcc_01.c 
+	@-${MV} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.d ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -162,14 +170,6 @@ ${OBJECTDIR}/keyboard.p1: keyboard.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/keyboard.d ${OBJECTDIR}/keyboard.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/keyboard.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1: ../../Program\ Files/Unimic/unmc_01/sources/unmc_rtcc_01.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/968420362" 
-	@${RM} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1  "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c" 
-	@-${MV} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.d ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/968420362/unmc_rtcc_01.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/reloj.p1: reloj.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/reloj.p1.d 
@@ -193,6 +193,22 @@ ${OBJECTDIR}/config.p1: config.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/config.p1  config.c 
 	@-${MV} ${OBJECTDIR}/config.d ${OBJECTDIR}/config.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/menu.p1: menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/menu.p1.d 
+	@${RM} ${OBJECTDIR}/menu.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/menu.p1  menu.c 
+	@-${MV} ${OBJECTDIR}/menu.d ${OBJECTDIR}/menu.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1: Unimic/sources/unmc_rtcc_01.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Unimic/sources" 
+	@${RM} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d 
+	@${RM} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"C:/Archivos de programa/Unimic/unmc_01/headers" -I"C:/Archivos de programa/Microchip/xc8/v1.32/include/plib" --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1  Unimic/sources/unmc_rtcc_01.c 
+	@-${MV} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.d ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Unimic/sources/unmc_rtcc_01.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

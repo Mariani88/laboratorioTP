@@ -91,6 +91,15 @@ void ver_opcion_cambio(){
     }
 }
 
+void dispararSensor(int8 sensor){
+    state_alarm = TRIGGED;
+    sensorDisparado = sensor;
+    diaDisparo = dia;
+    mesDisparo = mes;
+    horaDisparo = hora;
+    minDisparo = minuto;
+}
+
 
 void select_menu(){
     if (state_alarm == DESACTIVE){
@@ -103,7 +112,20 @@ void select_menu(){
             case 13:menu = 8;
             default: ;
         }
+    }else{
+        if (state_alarm == ACTIVE){
+            menu = read_keyboard(); 
+            switch (menu){
+                case 11:dispararSensor(1);
+                break;
+                case 12:dispararSensor(2);
+                break;
+                case 13:dispararSensor(3);
+                default: ;
+            } 
+        }
     }        
+    menu = 0;
 }
 
 

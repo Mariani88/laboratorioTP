@@ -75,7 +75,7 @@
     Write_RTC();
     lcd_init();
     lcd_comand(0b00001100);     //Display=on / Cursor=off / Blink=off
- //   LED_2_On;
+    LED_2_On;
  //   LED_3_On;
     }
 /*------------------------------------------------------------------------------
@@ -90,12 +90,10 @@ Setup();
 caratula();
 while(1){
     //Read_RTC();
-    //caratula();
+    caratula();
     //lcd_gotoxy(1,2);
-    clear();
-    lcd_gotoxy(1,1);
-    lcd_puts("INICIO");
     select_menu();
+    set_vision();
     __delay_ms(98);
 }    
        
