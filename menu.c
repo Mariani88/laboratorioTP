@@ -13,6 +13,7 @@
 
 char menu = 1;
 int newpass = 0;
+
 bool input_old_pass(){
     short digit = 12;
     int pass = 0;
@@ -91,7 +92,29 @@ void ver_opcion_cambio(){
     }
 }
 
-void dispararSensor(int8 sensor){
+void ver_info(){
+    clear();
+    char input = 18;
+    while (input != 16){
+        lcd_gotoxy(1,1);
+        lcd_putrs("Sensor: ");
+        sprintf(buffer2,"%02u",sensorDisparado);
+        lcd_putrs(buffer2);
+        lcd_gotoxy(1,2);
+        lcd_putrs("Date:");
+        sprintf(buffer2,"%02u/%02u",diaDisparo,mesDisparo);
+        lcd_putrs(buffer2);
+        lcd_putrs(" ");
+        sprintf(buffer2,"%02u:%02u",horaDisparo,minDisparo);
+        lcd_putrs(buffer2);
+        input = read_keyboard();
+    }
+    menu = 18;
+}
+
+
+void dispararSensor(int sensor){
+    Read_RTC();
     state_alarm = TRIGGED;
     sensorDisparado = sensor;
     diaDisparo = dia;
@@ -109,7 +132,8 @@ void select_menu(){
                 break;
             case 12:configurar_reloj();
             break;
-            case 13:menu = 8;
+            case 13:ver_info();
+            break;
             default: ;
         }
     }else{
@@ -121,11 +145,12 @@ void select_menu(){
                 case 12:dispararSensor(2);
                 break;
                 case 13:dispararSensor(3);
+                break;
                 default: ;
             } 
         }
-    }        
-    menu = 0;
+    }    
+    menu = 18;
 }
 
 

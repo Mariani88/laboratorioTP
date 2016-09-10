@@ -89,7 +89,7 @@ int main(void){
 Setup();
 caratula();
 while(1){
-    //Read_RTC();
+    Read_RTC();
     caratula();
     //lcd_gotoxy(1,2);
     select_menu();
