@@ -10,6 +10,7 @@ void clear(){
 }
 
 void write_Date(){
+    lcd_setcursor_vb(0,0);
     lcd_gotoxy(9,1);
     sprintf(buffer2,"%02u/%02u/%02u",dia,mes,anio);
     lcd_putrs(buffer2);

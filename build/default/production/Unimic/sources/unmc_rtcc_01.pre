@@ -1,15 +1,15 @@
 
-# 1 "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c"
+# 1 "Unimic/sources/unmc_rtcc_01.c"
 
-# 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 
-# 13 "C:\Program Files\Microchip\xc8\v1.34\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h"
 extern volatile unsigned char RPOR0 @ 0xEC6;
 
 asm("RPOR0 equ 0EC6h");
@@ -8576,7 +8576,7 @@ extern volatile __bit nWRITE1 @ (((unsigned) &SSP1STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files\Microchip\xc8\v1.34\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h"
 __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
 
@@ -8593,7 +8593,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 2 "C:\Program Files\Microchip\xc8\v1.34\include\stddef.h"
+# 2 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
 typedef int ptrdiff_t;
 typedef unsigned size_t;
 typedef unsigned short wchar_t;
@@ -8601,7 +8601,7 @@ typedef unsigned short wchar_t;
 # 13
 extern int errno;
 
-# 65 "C:\Program Files\Microchip\xc8\v1.34\include\GenericTypeDefs.h"
+# 65 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\GenericTypeDefs.h"
 typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
 
 
@@ -9036,7 +9036,7 @@ struct
 } bits;
 } QWORD_VAL;
 
-# 43 "C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h"
 typedef union _WORD_VAL
 {
 unsigned int Val;
@@ -9212,7 +9212,7 @@ void Open_RTCC(void);
 void Close_RTCC(void);
 unsigned char update_RTCC(void);
 
-# 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
+# 5 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
 char segundo_u;
@@ -9243,32 +9243,28 @@ int hora=18;
 int minuto=30;
 int segundo=0;
 
-# 51
 rtccTime RtccTime;
 rtccTime RtccTimeVal;
 rtccDate RtccDate;
 
 unsigned char buffer2[20];
 
-void DelayFor18TCY(void);
+void DelayFor18TC2(void);
 
-# 63
 void DelayPORXLCD(void);
 
-# 75
-void Write_RTC(void);
+void Write_RTC2(void);
 
-# 112
-void Read_RTC(void);
+void Read_RTC2(void);
 
-# 13 "C:\Program Files\Microchip\xc8\v1.34\include\plib\delays.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h"
 void Delay1TCYx(unsigned char);
 
 # 19
 void Delay10TCYx(unsigned char);
 
 # 25
-void Delay100TCYx(unsigned char);
+Delay100TCYx(unsigned char);
 
 # 31
 void Delay1KTCYx(unsigned char);
@@ -9276,7 +9272,7 @@ void Delay1KTCYx(unsigned char);
 # 37
 void Delay10KTCYx(unsigned char);
 
-# 4 "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c"
+# 4 "Unimic/sources/unmc_rtcc_01.c"
 void DelayFor18TCY(void)
 {
 Delay10TCYx(10);

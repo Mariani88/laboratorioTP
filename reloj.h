@@ -8,7 +8,7 @@
 #ifndef CLOCK_H
 #define	CLOCK_H
 #include "head.h"
-void setClock(int8 x);
+
 void configurar_reloj();
 
 #ifdef	__cplusplus
