@@ -3,38 +3,38 @@
 [d edition pro ]
 [d chip 18F26J50 ]
 [d frameptr 4065 ]
-"18 C:\laboratorioTP\head.h
-[e E8281 . `uc
+"18 C:\Users\seba\Documents\GitHub\laboratorioTP\head.h
+[e E8282 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
 ]
-[e E8281 . `uc
+[e E8282 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
 ]
-[e E8281 . `uc
+[e E8282 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
 ]
-[e E8281 . `uc
+[e E8282 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
 ]
-[e E8458 . `uc
+[e E8459 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
 ]
-"47 C:\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
+"47 C:\Users\seba\Documents\GitHub\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
 [e E7121 _BOOL `uc
 FALSE 0
 TRUE 1
 ]
-"28 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
+"28 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
 [e E7527 . `uc
 RTCCFG_MASK_RTCEN 128
 RTCCFG_MASK_FRZ 64
@@ -51,7 +51,7 @@ RTCCPTR_MASK_HRSWEEK 1
 RTCCPTR_MASK_DAYMON 2
 RTCCPTR_MASK_YEAR 3
 ]
-"29 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
+"29 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
 [e E7527 . `uc
 RTCCFG_MASK_RTCEN 128
 RTCCFG_MASK_FRZ 64
@@ -68,7 +68,7 @@ RTCCPTR_MASK_HRSWEEK 1
 RTCCPTR_MASK_DAYMON 2
 RTCCPTR_MASK_YEAR 3
 ]
-"36 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
+"36 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
 [e E7121 _BOOL `uc
 FALSE 0
 TRUE 1
@@ -90,7 +90,7 @@ RTCCPTR_MASK_HRSWEEK 1
 RTCCPTR_MASK_DAYMON 2
 RTCCPTR_MASK_YEAR 3
 ]
-"35 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
+"35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
 [e E7121 _BOOL `uc
 FALSE 0
 TRUE 1
@@ -128,125 +128,125 @@ RTCCPTR_MASK_YEAR 3
 [v _lcd_setcursor_vb lcd_setcursor_vb `(v  1 e 0 0 ]
 "221
 [v _lcd_putrs lcd_putrs `(v  1 e 0 0 ]
-"42 C:\Program Files\Microchip\xc8\v1.34\sources\common\altoft.c
+"42 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\altoft.c
 [v ___altoft __altoft `(f  1 e 3 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\awdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"32 C:\Program Files\Microchip\xc8\v1.34\sources\common\awtoft.c
+"32 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
-"492 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
+"492 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"63 C:\Program Files\Microchip\xc8\v1.34\sources\common\double.c
+"63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
-"4 C:\Program Files\Microchip\xc8\v1.34\sources\common\evalpoly.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\evalpoly.c
 [v _eval_poly eval_poly `(d  1 e 3 0 ]
-"12 C:\Program Files\Microchip\xc8\v1.34\sources\common\exp.c
+"12 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\exp.c
 [v _exp exp `(d  1 e 3 0 ]
-"88 C:\Program Files\Microchip\xc8\v1.34\sources\common\fladd.c
+"88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
-"54 C:\Program Files\Microchip\xc8\v1.34\sources\common\fldiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fldiv.c
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
-"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\flmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
-"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"13 C:\Program Files\Microchip\xc8\v1.34\sources\common\floor.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\floor.c
 [v _floor floor `(d  1 e 3 0 ]
-"20 C:\Program Files\Microchip\xc8\v1.34\sources\common\flsub.c
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flsub.c
 [v ___flsub __flsub `(d  1 e 3 0 ]
-"254 C:\Program Files\Microchip\xc8\v1.34\sources\common\frexp.c
+"254 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\frexp.c
 [v _frexp frexp `(d  1 e 3 0 ]
 "277
 [v _ldexp ldexp `(d  1 e 3 0 ]
-"86 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"54 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftdiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"4 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftge.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftge.c
 [v ___ftge __ftge `(b  1 e 0 0 ]
-"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
-"15 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftneg.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftneg.c
 [v ___ftneg __ftneg `(f  1 e 3 0 ]
-"20 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftsub.c
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"44 C:\Program Files\Microchip\xc8\v1.34\sources\common\fttol.c
+"44 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\isdigit.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
-"27 C:\Program Files\Microchip\xc8\v1.34\sources\common\lbtoft.c
+"27 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lbtoft.c
 [v ___lbtoft __lbtoft `(f  1 e 3 0 ]
-"35 C:\Program Files\Microchip\xc8\v1.34\sources\common\lltoft.c
+"35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lltoft.c
 [v ___lltoft __lltoft `(f  1 e 3 0 ]
-"5 C:\Program Files\Microchip\xc8\v1.34\sources\common\log.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\log.c
 [v _log log `(d  1 e 3 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwmod.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v1.34\sources\common\pow.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
-"15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul32.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-[v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d10tcyx.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+[v _Delay100TCYx Delay100TCYx `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10tcyx.c
 [v _Delay10TCYx Delay10TCYx `(v  1 e 0 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
-"23 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
+"23 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
 [v _RtccReadDate RtccReadDate `(v  1 e 0 0 ]
-"23 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
+"23 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
 [v _RtccReadTime RtccReadTime `(v  1 e 0 0 ]
-"35 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
+"35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
 [v _RtccWriteDate RtccWriteDate `(E7121  1 e 1 0 ]
-"34 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
+"34 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
 [v _RtccWriteTime RtccWriteTime `(E7121  1 e 1 0 ]
-"21 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
+"21 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
 [v _RtccWrOn RtccWrOn `(v  1 e 0 0 ]
-"3 C:\laboratorioTP\config.c
+"3 C:\Users\seba\Documents\GitHub\laboratorioTP\config.c
 [v _checkPass checkPass `(uc  1 e 1 0 ]
 "7
 [v _changePass changePass `(v  1 e 0 0 ]
-"4 C:\laboratorioTP\keyboard.c
+"4 C:\Users\seba\Documents\GitHub\laboratorioTP\keyboard.c
 [v _clear_keyboard clear_keyboard `(v  1 e 0 0 ]
 "8
 [v _read_keyboard read_keyboard `(uc  1 e 1 0 ]
-"7 C:\laboratorioTP\lcd_vision.c
+"7 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
 [v _clear clear `(v  1 e 0 0 ]
 "12
-[v _write_Date write_Date `(v  1 e 0 0 ]
-"21
+[v _write_Date write_Date `(i  1 e 2 0 ]
+"22
 [v __delay_s _delay_s `(v  1 e 0 0 ]
-"30
+"31
 [v _is_not_letter is_not_letter `(uc  1 e 1 0 ]
-"34
+"35
 [v _not_fill_pass not_fill_pass `(uc  1 e 1 0 ]
-"39
+"40
 [v _next_code next_code `(v  1 e 0 0 ]
-"46
+"47
 [v _change_state change_state `(v  1 e 0 0 ]
-"56
+"57
 [v _review_code review_code `(v  1 e 0 0 ]
-"64
+"65
 [v _obtain_pass obtain_pass `(i  1 e 2 0 ]
-"74
+"75
 [v _twinkle twinkle `(v  1 e 0 0 ]
-"93
+"94
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
-"100
+"101
 [v _input_password input_password `(v  1 e 0 0 ]
-"115
+"116
 [v _set_vision set_vision `(v  1 e 0 0 ]
-"32 C:\laboratorioTP\main.c
+"32 C:\Users\seba\Documents\GitHub\laboratorioTP\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
 "52
 [v _Setup Setup `(v  1 e 0 0 ]
 "88
 [v _main main `(i  1 e 2 0 ]
-"17 C:\laboratorioTP\menu.c
+"17 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
 [v _input_old_pass input_old_pass `(uc  1 e 1 0 ]
 "36
 [v _show_success show_success `(v  1 e 0 0 ]
@@ -262,67 +262,71 @@ RTCCPTR_MASK_YEAR 3
 [v _dispararSensor dispararSensor `(v  1 e 0 0 ]
 "127
 [v _select_menu select_menu `(i  1 e 2 0 ]
-"4 C:\laboratorioTP\reloj.c
+"5 C:\Users\seba\Documents\GitHub\laboratorioTP\reloj.c
+[v _evalueChanceOfRaw evalueChanceOfRaw `(v  1 e 0 0 ]
+"38
+[v _setClock setClock `(v  1 e 0 0 ]
+"76
 [v _configurar_reloj configurar_reloj `(v  1 e 0 0 ]
-"22 C:\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
-[v _Write_RTC Write_RTC `(v  1 e 0 0 ]
+"22 C:\Users\seba\Documents\GitHub\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
+[v _Write_RTC Write_RTC `(i  1 e 2 0 ]
 "59
-[v _Read_RTC Read_RTC `(v  1 e 0 0 ]
+[v _Read_RTC Read_RTC `(i  1 e 2 0 ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key key `uc  1 e 1 0 ]
-"19 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+"7 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _segundo_u segundo_u `uc  1 e 1 0 ]
-"20
+"8
 [v _segundo_d segundo_d `uc  1 e 1 0 ]
-"21
+"9
 [v _minuto_u minuto_u `uc  1 e 1 0 ]
-"22
+"10
 [v _minuto_d minuto_d `uc  1 e 1 0 ]
-"23
+"11
 [v _hora_u hora_u `uc  1 e 1 0 ]
-"24
+"12
 [v _hora_d hora_d `uc  1 e 1 0 ]
-"25
+"13
 [v _fecha_u fecha_u `uc  1 e 1 0 ]
-"26
+"14
 [v _fecha_d fecha_d `uc  1 e 1 0 ]
-"27
+"15
 [v _mes_u mes_u `uc  1 e 1 0 ]
-"28
+"16
 [v _mes_d mes_d `uc  1 e 1 0 ]
-"29
+"17
 [v _dia_semana dia_semana `uc  1 e 1 0 ]
-"30
+"18
 [v _anio_u anio_u `uc  1 e 1 0 ]
-"31
+"19
 [v _anio_d anio_d `uc  1 e 1 0 ]
-"39
+"27
 [v _anio anio `i  1 e 2 0 ]
-"40
+"28
 [v _mes mes `i  1 e 2 0 ]
-"41
+"29
 [v _diasem diasem `i  1 e 2 0 ]
-"42
+"30
 [v _dia dia `i  1 e 2 0 ]
-"43
+"31
 [v _hora hora `i  1 e 2 0 ]
-"44
+"32
 [v _minuto minuto `i  1 e 2 0 ]
-"45
+"33
 [v _segundo segundo `i  1 e 2 0 ]
 [s S35 . 4 `uc 1 rsvd 1 0 `uc 1 sec 1 1 `uc 1 min 1 2 `uc 1 hour 1 3 ]
-"51
+"35
 [u S40 . 4 `S35 1 f 4 0 `[4]uc 1 b 4 0 `[2]ui 1 w 4 0 `ul 1 l 4 0 ]
 [v _RtccTime RtccTime `S40  1 e 4 0 ]
 [s S45 . 4 `uc 1 wday 1 0 `uc 1 mday 1 1 `uc 1 mon 1 2 `uc 1 year 1 3 ]
-"53
+"37
 [u S50 . 4 `S45 1 f 4 0 `[4]uc 1 b 4 0 `[2]ui 1 w 4 0 `ul 1 l 4 0 ]
 [v _RtccDate RtccDate `S50  1 e 4 0 ]
-"55
+"39
 [v _buffer2 buffer2 `[20]uc  1 e 20 0 ]
 "16 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
 [v _LCD_INIT_STRING LCD_INIT_STRING `C[4]uc  1 e 4 0 ]
-"2403 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"2403 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [v _RTCCFG RTCCFG `VEuc  1 e 1 @3903 ]
 [s S127 . 1 `uc 1 RTCPTR0 1 0 :1:0 
 `uc 1 RTCPTR1 1 0 :1:1 
@@ -527,21 +531,21 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S251 . 1 `S219 1 . 1 0 `S228 1 . 1 0 `S230 1 . 1 0 `S233 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 `S242 1 . 1 0 `S245 1 . 1 0 `S248 1 . 1 0 ]
 [v _LATBbits LATBbits `VES251  1 e 1 @3978 ]
-[s S2045 . 1 `uc 1 ALRMPTR 1 0 :2:0 
+[s S2123 . 1 `uc 1 ALRMPTR 1 0 :2:0 
 `uc 1 AMASK 1 0 :4:2 
 `uc 1 CHIME 1 0 :1:6 
 `uc 1 ALRMEN 1 0 :1:7 
 ]
 "6740
-[s S2050 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
+[s S2128 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
 `uc 1 ALRMPTR1 1 0 :1:1 
 `uc 1 AMASK0 1 0 :1:2 
 `uc 1 AMASK1 1 0 :1:3 
 `uc 1 AMASK2 1 0 :1:4 
 `uc 1 AMASK3 1 0 :1:5 
 ]
-[u S2057 . 1 `S2045 1 . 1 0 `S2050 1 . 1 0 ]
-[v _ALRMCFGbits ALRMCFGbits `VES2057  1 e 1 @3985 ]
+[u S2135 . 1 `S2123 1 . 1 0 `S2128 1 . 1 0 ]
+[v _ALRMCFGbits ALRMCFGbits `VES2135  1 e 1 @3985 ]
 "6794
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "6850
@@ -578,7 +582,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S75 . 1 `S64 1 . 1 0 `S68 1 . 1 0 ]
 [v _OSCTUNEbits OSCTUNEbits `VES75  1 e 1 @3995 ]
-[s S1485 . 1 `uc 1 RTCCIE 1 0 :1:0 
+[s S1563 . 1 `uc 1 RTCCIE 1 0 :1:0 
 `uc 1 TMR3GIE 1 0 :1:1 
 `uc 1 CTMUIE 1 0 :1:2 
 `uc 1 TMR4IE 1 0 :1:3 
@@ -588,28 +592,28 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 SSP2IE 1 0 :1:7 
 ]
 "7958
-[s S1494 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S1572 . 1 `uc 1 RXB0IE 1 0 :1:0 
 ]
-[s S1496 . 1 `uc 1 . 1 0 :1:0 
+[s S1574 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 ]
-[s S1499 . 1 `uc 1 . 1 0 :1:0 
+[s S1577 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIE 1 0 :1:1 
 ]
-[s S1502 . 1 `uc 1 . 1 0 :2:0 
+[s S1580 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TXB0IE 1 0 :1:2 
 ]
-[s S1505 . 1 `uc 1 . 1 0 :3:0 
+[s S1583 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TXB1IE 1 0 :1:3 
 ]
-[s S1508 . 1 `uc 1 . 1 0 :4:0 
+[s S1586 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXB2IE 1 0 :1:4 
 ]
-[s S1511 . 1 `uc 1 . 1 0 :4:0 
+[s S1589 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXBNIE 1 0 :1:4 
 ]
-[u S1514 . 1 `S1485 1 . 1 0 `S1494 1 . 1 0 `S1496 1 . 1 0 `S1499 1 . 1 0 `S1502 1 . 1 0 `S1505 1 . 1 0 `S1508 1 . 1 0 `S1511 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1514  1 e 1 @4003 ]
+[u S1592 . 1 `S1563 1 . 1 0 `S1572 1 . 1 0 `S1574 1 . 1 0 `S1577 1 . 1 0 `S1580 1 . 1 0 `S1583 1 . 1 0 `S1586 1 . 1 0 `S1589 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1592  1 e 1 @4003 ]
 "8239
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "10682
@@ -663,7 +667,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S103 . 1 `S90 1 . 1 0 `S96 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES103  1 e 1 @4051 ]
-[s S1852 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1930 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -673,7 +677,7 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "14949
-[s S1861 . 1 `uc 1 . 1 0 :1:0 
+[s S1939 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -682,20 +686,20 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1870 . 1 `uc 1 . 1 0 :6:0 
+[s S1948 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1887 . 1 `S1852 1 . 1 0 `S1861 1 . 1 0 `S1870 1 . 1 0 `S1861 1 . 1 0 `S1870 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1887  1 e 1 @4082 ]
-"354 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
+[u S1965 . 1 `S1930 1 . 1 0 `S1939 1 . 1 0 `S1948 1 . 1 0 `S1939 1 . 1 0 `S1948 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1965  1 e 1 @4082 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"3 C:\Program Files\Microchip\xc8\v1.34\sources\common\errno.c
+"3 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"4 C:\laboratorioTP\config.h
+"4 C:\Users\seba\Documents\GitHub\laboratorioTP\config.h
 [v _password password `i  1 e 2 0 ]
-"18 C:\laboratorioTP\head.h
-[v _state_alarm state_alarm `E8281  1 e 1 0 ]
+"18 C:\Users\seba\Documents\GitHub\laboratorioTP\head.h
+[v _state_alarm state_alarm `E8282  1 e 1 0 ]
 "19
 [v _sensorDisparado sensorDisparado `uc  1 e 1 0 ]
 "20
@@ -706,94 +710,80 @@ RTCCPTR_MASK_YEAR 3
 [v _horaDisparo horaDisparo `i  1 e 2 0 ]
 "23
 [v _minDisparo minDisparo `i  1 e 2 0 ]
-"14 C:\laboratorioTP\menu.c
+"14 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
 [v _menu menu `uc  1 e 1 0 ]
 "15
 [v _newpass newpass `i  1 e 2 0 ]
-"88 C:\laboratorioTP\main.c
+"88 C:\Users\seba\Documents\GitHub\laboratorioTP\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "101
 } 0
-"115 C:\laboratorioTP\lcd_vision.c
+"116 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
 [v _set_vision set_vision `(v  1 e 0 0 ]
 {
-"136
+"137
 } 0
-"12
-[v _write_Date write_Date `(v  1 e 0 0 ]
-{
-"19
-} 0
-"74
+"75
 [v _twinkle twinkle `(v  1 e 0 0 ]
 {
-"75
+"76
 [v twinkle@input input `uc  1 a 1 36 ]
-"91
+"92
 } 0
-"100
+"101
 [v _input_password input_password `(v  1 e 0 0 ]
 {
-"101
-[v input_password@digit digit `s  1 a 2 20 ]
 "102
+[v input_password@digit digit `s  1 a 2 20 ]
+"103
 [v input_password@pass pass `i  1 a 2 17 ]
-"105
+"106
 [v input_password@input input `uc  1 a 1 19 ]
-"112
+"113
 } 0
-"93
+"94
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
 {
 [v set_desactive_vision@digit digit `s  1 p 2 10 ]
-"98
+"99
 } 0
-"210 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
-[v _lcd_setcursor_vb lcd_setcursor_vb `(v  1 e 0 0 ]
-{
-[v lcd_setcursor_vb@visible visible `uc  1 a 1 wreg ]
-[v lcd_setcursor_vb@visible visible `uc  1 a 1 wreg ]
-[v lcd_setcursor_vb@blink blink `uc  1 p 1 4 ]
-[v lcd_setcursor_vb@visible visible `uc  1 a 1 5 ]
-"212
-} 0
-"56 C:\laboratorioTP\lcd_vision.c
+"57
 [v _review_code review_code `(v  1 e 0 0 ]
 {
 [v review_code@digit digit `s  1 p 2 2 ]
 [v review_code@pass pass `i  1 p 2 4 ]
-"62
+"63
 } 0
-"46
+"47
 [v _change_state change_state `(v  1 e 0 0 ]
 {
-"54
+"55
 } 0
-"64
+"65
 [v _obtain_pass obtain_pass `(i  1 e 2 0 ]
 {
 [v obtain_pass@pass pass `i  1 p 2 87 ]
 [v obtain_pass@input input `uc  1 p 1 89 ]
 [v obtain_pass@digit digit `*.39s  1 p 2 90 ]
-"71
+"72
 } 0
-"39
+"40
 [v _next_code next_code `(v  1 e 0 0 ]
 {
 [v next_code@digit digit `*.39s  1 p 2 7 ]
 [v next_code@input input `*.39uc  1 p 2 9 ]
-"44
+"45
 } 0
-"30
+"31
 [v _is_not_letter is_not_letter `(uc  1 e 1 0 ]
 {
 [v is_not_letter@input input `uc  1 a 1 wreg ]
 [v is_not_letter@input input `uc  1 a 1 wreg ]
 [v is_not_letter@input input `uc  1 a 1 1 ]
-"32
+"33
 } 0
-"127 C:\laboratorioTP\menu.c
+"127 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
 [v _select_menu select_menu `(i  1 e 2 0 ]
 {
 "154
@@ -828,13 +818,13 @@ RTCCPTR_MASK_YEAR 3
 [v input_old_pass@input input `uc  1 a 1 19 ]
 "34
 } 0
-"3 C:\laboratorioTP\config.c
+"3 C:\Users\seba\Documents\GitHub\laboratorioTP\config.c
 [v _checkPass checkPass `(uc  1 e 1 0 ]
 {
 [v checkPass@pass pass `i  1 p 2 0 ]
 "5
 } 0
-"54 C:\laboratorioTP\menu.c
+"54 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
 [v _input_new_pass input_new_pass `(v  1 e 0 0 ]
 {
 "55
@@ -843,7 +833,7 @@ RTCCPTR_MASK_YEAR 3
 [v input_new_pass@input input `uc  1 a 1 17 ]
 "69
 } 0
-"5 C:\Program Files\Microchip\xc8\v1.34\sources\common\pow.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
 {
 "8
@@ -855,7 +845,7 @@ RTCCPTR_MASK_YEAR 3
 [v pow@y y `d  1 p 3 84 ]
 "31
 } 0
-"5 C:\Program Files\Microchip\xc8\v1.34\sources\common\log.c
+"5 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\log.c
 [v _log log `(d  1 e 3 0 ]
 {
 "7
@@ -866,7 +856,7 @@ RTCCPTR_MASK_YEAR 3
 [v log@coeff coeff `C[9]d  1 s 27 coeff ]
 "36
 } 0
-"12 C:\Program Files\Microchip\xc8\v1.34\sources\common\exp.c
+"12 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\exp.c
 [v _exp exp `(d  1 e 3 0 ]
 {
 "14
@@ -879,14 +869,14 @@ RTCCPTR_MASK_YEAR 3
 [v exp@coeff coeff `C[10]d  1 s 30 coeff ]
 "57
 } 0
-"277 C:\Program Files\Microchip\xc8\v1.34\sources\common\frexp.c
+"277 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\frexp.c
 [v _ldexp ldexp `(d  1 e 3 0 ]
 {
 [v ldexp@value value `d  1 p 3 51 ]
 [v ldexp@newexp newexp `i  1 p 2 54 ]
 "307
 } 0
-"13 C:\Program Files\Microchip\xc8\v1.34\sources\common\floor.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\floor.c
 [v _floor floor `(d  1 e 3 0 ]
 {
 "15
@@ -897,14 +887,14 @@ RTCCPTR_MASK_YEAR 3
 [v floor@x x `d  1 p 3 64 ]
 "30
 } 0
-"254 C:\Program Files\Microchip\xc8\v1.34\sources\common\frexp.c
+"254 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\frexp.c
 [v _frexp frexp `(d  1 e 3 0 ]
 {
 [v frexp@value value `d  1 p 3 0 ]
 [v frexp@eptr eptr `*.39i  1 p 2 3 ]
 "274
 } 0
-"44 C:\Program Files\Microchip\xc8\v1.34\sources\common\fttol.c
+"44 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
@@ -916,14 +906,14 @@ RTCCPTR_MASK_YEAR 3
 [v ___fttol@f1 f1 `f  1 p 3 39 ]
 "73
 } 0
-"4 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftge.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftge.c
 [v ___ftge __ftge `(b  1 e 0 0 ]
 {
 [v ___ftge@ff1 ff1 `f  1 p 3 0 ]
 [v ___ftge@ff2 ff2 `f  1 p 3 3 ]
 "13
 } 0
-"42 C:\Program Files\Microchip\xc8\v1.34\sources\common\altoft.c
+"42 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\altoft.c
 [v ___altoft __altoft `(f  1 e 3 0 ]
 {
 "44
@@ -933,7 +923,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___altoft@c c `l  1 p 4 54 ]
 "57
 } 0
-"4 C:\Program Files\Microchip\xc8\v1.34\sources\common\evalpoly.c
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\evalpoly.c
 [v _eval_poly eval_poly `(d  1 e 3 0 ]
 {
 "6
@@ -944,7 +934,7 @@ RTCCPTR_MASK_YEAR 3
 [v eval_poly@n n `i  1 p 2 44 ]
 "12
 } 0
-"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 {
 "65
@@ -958,14 +948,14 @@ RTCCPTR_MASK_YEAR 3
 [v ___ftmul@f2 f2 `f  1 p 3 15 ]
 "157
 } 0
-"20 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftsub.c
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
 {
 [v ___ftsub@f1 f1 `f  1 p 3 39 ]
 [v ___ftsub@f2 f2 `f  1 p 3 42 ]
 "27
 } 0
-"86 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 {
 "88
@@ -977,13 +967,13 @@ RTCCPTR_MASK_YEAR 3
 [v ___ftadd@f2 f2 `f  1 p 3 30 ]
 "148
 } 0
-"15 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftneg.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftneg.c
 [v ___ftneg __ftneg `(f  1 e 3 0 ]
 {
 [v ___ftneg@f1 f1 `f  1 p 3 0 ]
 "20
 } 0
-"54 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftdiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 {
 "60
@@ -997,7 +987,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___ftdiv@f2 f2 `f  1 p 3 11 ]
 "86
 } 0
-"32 C:\Program Files\Microchip\xc8\v1.34\sources\common\awtoft.c
+"32 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
 {
 "34
@@ -1006,7 +996,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___awtoft@c c `i  1 p 2 8 ]
 "42
 } 0
-"35 C:\Program Files\Microchip\xc8\v1.34\sources\common\lltoft.c
+"35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lltoft.c
 [v ___lltoft __lltoft `(f  1 e 3 0 ]
 {
 "37
@@ -1015,29 +1005,29 @@ RTCCPTR_MASK_YEAR 3
 [v ___lltoft@c c `ul  1 p 4 8 ]
 "46
 } 0
-"34 C:\laboratorioTP\lcd_vision.c
+"35 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
 [v _not_fill_pass not_fill_pass `(uc  1 e 1 0 ]
 {
 [v not_fill_pass@digit digit `s  1 p 2 0 ]
-"36
+"37
 } 0
-"4 C:\laboratorioTP\keyboard.c
+"4 C:\Users\seba\Documents\GitHub\laboratorioTP\keyboard.c
 [v _clear_keyboard clear_keyboard `(v  1 e 0 0 ]
 {
 "6
 } 0
-"21 C:\laboratorioTP\lcd_vision.c
+"22 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
 [v __delay_s _delay_s `(v  1 e 0 0 ]
 {
-"23
+"24
 [v __delay_s@index index `s  1 a 2 13 ]
-"22
+"23
 [v __delay_s@it it `s  1 a 2 11 ]
-"21
+"22
 [v __delay_s@millis millis `i  1 p 2 8 ]
-"28
+"29
 } 0
-"27 C:\Program Files\Microchip\xc8\v1.34\sources\common\lbtoft.c
+"27 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lbtoft.c
 [v ___lbtoft __lbtoft `(f  1 e 3 0 ]
 {
 [v ___lbtoft@c c `uc  1 a 1 wreg ]
@@ -1046,7 +1036,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___lbtoft@c c `uc  1 a 1 11 ]
 "30
 } 0
-"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
 [v ___ftpack@arg arg `um  1 p 3 0 ]
@@ -1054,25 +1044,69 @@ RTCCPTR_MASK_YEAR 3
 [v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"7 C:\laboratorioTP\config.c
+"7 C:\Users\seba\Documents\GitHub\laboratorioTP\config.c
 [v _changePass changePass `(v  1 e 0 0 ]
 {
 [v changePass@pass pass `i  1 p 2 0 ]
 "9
 } 0
-"95 C:\laboratorioTP\menu.c
+"95 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
 [v _ver_info ver_info `(v  1 e 0 0 ]
 {
 "97
 [v ver_info@input input `uc  1 a 1 36 ]
 "113
 } 0
-"8 C:\laboratorioTP\keyboard.c
+"7 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
+[v _clear clear `(v  1 e 0 0 ]
+{
+"10
+} 0
+"116 C:\Users\seba\Documents\GitHub\laboratorioTP\menu.c
+[v _dispararSensor dispararSensor `(v  1 e 0 0 ]
+{
+[v dispararSensor@sensor sensor `i  1 p 2 18 ]
+"124
+} 0
+"76 C:\Users\seba\Documents\GitHub\laboratorioTP\reloj.c
+[v _configurar_reloj configurar_reloj `(v  1 e 0 0 ]
+{
+"78
+[v configurar_reloj@x x `uc  1 a 1 39 ]
+"79
+[v configurar_reloj@y y `uc  1 a 1 38 ]
+"77
+[v configurar_reloj@input input `uc  1 a 1 37 ]
+"103
+} 0
+"12 C:\Users\seba\Documents\GitHub\laboratorioTP\lcd_vision.c
+[v _write_Date write_Date `(i  1 e 2 0 ]
+{
+"20
+} 0
+"210 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
+[v _lcd_setcursor_vb lcd_setcursor_vb `(v  1 e 0 0 ]
+{
+[v lcd_setcursor_vb@visible visible `uc  1 a 1 wreg ]
+[v lcd_setcursor_vb@visible visible `uc  1 a 1 wreg ]
+[v lcd_setcursor_vb@blink blink `uc  1 p 1 4 ]
+[v lcd_setcursor_vb@visible visible `uc  1 a 1 5 ]
+"212
+} 0
+"38 C:\Users\seba\Documents\GitHub\laboratorioTP\reloj.c
+[v _setClock setClock `(v  1 e 0 0 ]
+{
+[v setClock@x x `uc  1 a 1 wreg ]
+[v setClock@x x `uc  1 a 1 wreg ]
+[v setClock@x x `uc  1 a 1 14 ]
+"72
+} 0
+"8 C:\Users\seba\Documents\GitHub\laboratorioTP\keyboard.c
 [v _read_keyboard read_keyboard `(uc  1 e 1 0 ]
 {
 "41
 } 0
-"492 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
+"492 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 "501
@@ -1092,7 +1126,7 @@ RTCCPTR_MASK_YEAR 3
 [v sprintf@f f `*.25Cuc  1 p 2 14 ]
 "1541
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\isdigit.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
 {
 [v isdigit@c c `uc  1 a 1 wreg ]
@@ -1101,7 +1135,7 @@ RTCCPTR_MASK_YEAR 3
 [v isdigit@c c `uc  1 a 1 2 ]
 "15
 } 0
-"15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -1111,7 +1145,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwmod.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
@@ -1121,7 +1155,7 @@ RTCCPTR_MASK_YEAR 3
 [v ___lwmod@divisor divisor `ui  1 p 2 9 ]
 "26
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
@@ -1160,23 +1194,19 @@ RTCCPTR_MASK_YEAR 3
 [v lcd_gotoxy@x x `uc  1 a 1 5 ]
 "168
 } 0
-"7 C:\laboratorioTP\lcd_vision.c
-[v _clear clear `(v  1 e 0 0 ]
+"5 C:\Users\seba\Documents\GitHub\laboratorioTP\reloj.c
+[v _evalueChanceOfRaw evalueChanceOfRaw `(v  1 e 0 0 ]
 {
-"10
+[v evalueChanceOfRaw@x x `*.39uc  1 p 2 0 ]
+[v evalueChanceOfRaw@y y `*.39uc  1 p 2 2 ]
+"18
 } 0
-"116 C:\laboratorioTP\menu.c
-[v _dispararSensor dispararSensor `(v  1 e 0 0 ]
-{
-[v dispararSensor@sensor sensor `i  1 p 2 18 ]
-"124
-} 0
-"59 C:\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
-[v _Read_RTC Read_RTC `(v  1 e 0 0 ]
+"59 C:\Users\seba\Documents\GitHub\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
+[v _Read_RTC Read_RTC `(i  1 e 2 0 ]
 {
 "85
 } 0
-"23 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
+"23 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadTime.c
 [v _RtccReadTime RtccReadTime `(v  1 e 0 0 ]
 {
 [s S21 . 8 `uc 1 year 1 0 `uc 1 rsvd 1 1 `uc 1 mday 1 2 `uc 1 mon 1 3 `uc 1 hour 1 4 `uc 1 wday 1 5 `uc 1 sec 1 6 `uc 1 min 1 7 ]
@@ -1190,7 +1220,7 @@ RTCCPTR_MASK_YEAR 3
 [v RtccReadTime@pTm pTm `*.39S40  1 p 2 0 ]
 "52
 } 0
-"23 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
+"23 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccReadDate.c
 [v _RtccReadDate RtccReadDate `(v  1 e 0 0 ]
 {
 [s S21 . 8 `uc 1 year 1 0 `uc 1 rsvd 1 1 `uc 1 mday 1 2 `uc 1 mon 1 3 `uc 1 hour 1 4 `uc 1 wday 1 5 `uc 1 sec 1 6 `uc 1 min 1 7 ]
@@ -1204,12 +1234,7 @@ RTCCPTR_MASK_YEAR 3
 [v RtccReadDate@pDt pDt `*.39S50  1 p 2 0 ]
 "55
 } 0
-"4 C:\laboratorioTP\reloj.c
-[v _configurar_reloj configurar_reloj `(v  1 e 0 0 ]
-{
-"6
-} 0
-"32 C:\laboratorioTP\main.c
+"32 C:\Users\seba\Documents\GitHub\laboratorioTP\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
 {
 "44
@@ -1226,7 +1251,7 @@ RTCCPTR_MASK_YEAR 3
 [v lcd_init@i i `uc  1 a 1 4 ]
 "156
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
 {
 [v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
@@ -1261,20 +1286,20 @@ RTCCPTR_MASK_YEAR 3
 [v lcd_send_nibble@nibble nibble `uc  1 a 1 1 ]
 "36
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-[v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+[v _Delay100TCYx Delay100TCYx `(i  1 e 2 0 ]
 {
 [v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
 [v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
 [v Delay100TCYx@unit unit `uc  1 a 1 0 ]
 "13
 } 0
-"22 C:\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
-[v _Write_RTC Write_RTC `(v  1 e 0 0 ]
+"22 C:\Users\seba\Documents\GitHub\laboratorioTP\Unimic/sources/unmc_rtcc_01.c
+[v _Write_RTC Write_RTC `(i  1 e 2 0 ]
 {
 "50
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\awdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11
@@ -1287,12 +1312,12 @@ RTCCPTR_MASK_YEAR 3
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"34 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
+"34 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
 [v _RtccWriteTime RtccWriteTime `(E7121  1 e 1 0 ]
 {
-[s S1965 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S2043 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "36
-[s S1968 . 2 `uc 1 b0 1 0 :1:0 
+[s S2046 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1309,10 +1334,10 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S1985 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1965 1 byte 2 0 `S1968 1 bits 2 0 ]
-[v RtccWriteTime@tempHourWDay tempHourWDay `S1985  1 a 2 9 ]
+[u S2063 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2043 1 byte 2 0 `S2046 1 bits 2 0 ]
+[v RtccWriteTime@tempHourWDay tempHourWDay `S2063  1 a 2 9 ]
 "37
-[v RtccWriteTime@tempMinSec tempMinSec `S1985  1 a 2 7 ]
+[v RtccWriteTime@tempMinSec tempMinSec `S2063  1 a 2 7 ]
 "40
 [v RtccWriteTime@wasWrEn wasWrEn `E7121  1 a 1 6 ]
 "42
@@ -1326,12 +1351,12 @@ RTCCPTR_MASK_YEAR 3
 [v RtccWriteTime@di di `E7121  1 p 1 2 ]
 "113
 } 0
-"35 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
+"35 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
 [v _RtccWriteDate RtccWriteDate `(E7121  1 e 1 0 ]
 {
-[s S1965 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S2043 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "37
-[s S1968 . 2 `uc 1 b0 1 0 :1:0 
+[s S2046 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1348,12 +1373,12 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S1985 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S1965 1 byte 2 0 `S1968 1 bits 2 0 ]
-[v RtccWriteDate@tempHourWDay tempHourWDay `S1985  1 a 2 11 ]
+[u S2063 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2043 1 byte 2 0 `S2046 1 bits 2 0 ]
+[v RtccWriteDate@tempHourWDay tempHourWDay `S2063  1 a 2 11 ]
 "38
-[v RtccWriteDate@tempDayMonth tempDayMonth `S1985  1 a 2 9 ]
+[v RtccWriteDate@tempDayMonth tempDayMonth `S2063  1 a 2 9 ]
 "39
-[v RtccWriteDate@tempYear tempYear `S1985  1 a 2 6 ]
+[v RtccWriteDate@tempYear tempYear `S2063  1 a 2 6 ]
 "41
 [v RtccWriteDate@wasWrEn wasWrEn `E7121  1 a 1 8 ]
 "43
@@ -1367,7 +1392,7 @@ RTCCPTR_MASK_YEAR 3
 [v RtccWriteDate@di di `E7121  1 p 1 2 ]
 "118
 } 0
-"21 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
+"21 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWrOn.c
 [v _RtccWrOn RtccWrOn `(v  1 e 0 0 ]
 {
 "46

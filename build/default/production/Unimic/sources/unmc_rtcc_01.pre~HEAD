@@ -1,5 +1,5 @@
 
-# 1 "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c"
+# 1 "Unimic/sources/unmc_rtcc_01.c"
 
 # 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9276,7 +9276,7 @@ void Delay1KTCYx(unsigned char);
 # 37
 void Delay10KTCYx(unsigned char);
 
-# 4 "../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c"
+# 4 "Unimic/sources/unmc_rtcc_01.c"
 void DelayFor18TCY(void)
 {
 Delay10TCYx(10);

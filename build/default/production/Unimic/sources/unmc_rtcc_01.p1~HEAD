@@ -52,7 +52,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S532 . . . . . . . . . ]
 "7958
 [v _PIE3bits `VS532 ~T0 @X0 0 e@4003 ]
-"47 ../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c
+"47 Unimic/sources/unmc_rtcc_01.c
 [c E7121 0 1 .. ]
 [n E7121 _BOOL FALSE TRUE  ]
 "676 C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h
@@ -7439,7 +7439,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;delays.h: 25: void Delay100TCYx(unsigned char);
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
-"4 ../../Program Files/Unimic/unmc_01/sources/unmc_rtcc_01.c
+"4 Unimic/sources/unmc_rtcc_01.c
 [v _DelayFor18TCY `(v ~T0 @X0 1 ef ]
 "5
 {

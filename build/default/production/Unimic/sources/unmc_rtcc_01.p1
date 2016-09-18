@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h
+"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
 [s S1020 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1020 . year rsvd mday mon hour wday sec min ]
 "142
@@ -17,13 +17,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "126
 [u S1017 `S1018 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1017 . f b w l ]
-"19 C:\Program Files\Microchip\xc8\v1.34\include\plib\delays.h
+"19 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay10TCYx `(v ~T0 @X0 0 ef1`uc ]
 "31
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"680 C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h
+"680 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
 [v _RtccWrOn `(v ~T0 @X0 0 ef ]
-"7920 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"7920 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S533 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S533 . RTCCIE TMR3GIE CTMUIE TMR4IE TX2IE RC2IE BCL2IE SSP2IE ]
 "7930
@@ -55,11 +55,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "47 Unimic/sources/unmc_rtcc_01.c
 [c E7121 0 1 .. ]
 [n E7121 _BOOL FALSE TRUE  ]
-"676 C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h
+"676 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
 [v _RtccWriteTime `(E7121 ~T0 @X0 0 ef2`*CS1015`E7121 ]
 "674
 [v _RtccWriteDate `(E7121 ~T0 @X0 0 ef2`*CS1017`E7121 ]
-"2409 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"2409 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S175 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S175 . RTCPTR0 RTCPTR1 RTCOE HALFSEC RTCSYNC RTCWREN . RTCEN ]
 "2408
@@ -67,14 +67,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S174 . . ]
 "2420
 [v _RTCCFGbits `VS174 ~T0 @X0 0 e@3903 ]
-"656 C:\Program Files\Microchip\xc8\v1.34\include\plib/rtcc.h
+"656 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib/rtcc.h
 [v _RtccReadTime `(v ~T0 @X0 0 ef1`*S1015 ]
 "654
 [v _RtccReadDate `(v ~T0 @X0 0 ef1`*S1017 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
-"51 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [; ;pic18f26j50.h: 51: asm("RPOR0 equ 0EC6h");
 [; <" RPOR0 equ 0EC6h ;# ">
 [; ;pic18f26j50.h: 55: extern volatile unsigned char RPOR1 @ 0xEC7;
@@ -7290,153 +7290,153 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;rtcc.h: 687: void Open_RTCC(void);
 [; ;rtcc.h: 688: void Close_RTCC(void);
 [; ;rtcc.h: 689: unsigned char update_RTCC(void);
-"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+"5 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1019 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1019 ~T0 @X0 1 e ]
 [v _Rtcc_read_TimeDate `S1019 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
-"19
+[; ;headers\unmc_rtcc_01.h: 5: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+"7
 [v _segundo_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
-"20
+[; ;headers\unmc_rtcc_01.h: 7: char segundo_u;
+"8
 [v _segundo_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
-"21
+[; ;headers\unmc_rtcc_01.h: 8: char segundo_d;
+"9
 [v _minuto_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
-"22
+[; ;headers\unmc_rtcc_01.h: 9: char minuto_u;
+"10
 [v _minuto_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
-"23
+[; ;headers\unmc_rtcc_01.h: 10: char minuto_d;
+"11
 [v _hora_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
-"24
+[; ;headers\unmc_rtcc_01.h: 11: char hora_u;
+"12
 [v _hora_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
-"25
+[; ;headers\unmc_rtcc_01.h: 12: char hora_d;
+"13
 [v _fecha_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
-"26
+[; ;headers\unmc_rtcc_01.h: 13: char fecha_u;
+"14
 [v _fecha_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
-"27
+[; ;headers\unmc_rtcc_01.h: 14: char fecha_d;
+"15
 [v _mes_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
-"28
+[; ;headers\unmc_rtcc_01.h: 15: char mes_u;
+"16
 [v _mes_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
-"29
+[; ;headers\unmc_rtcc_01.h: 16: char mes_d;
+"17
 [v _dia_semana `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
-"30
+[; ;headers\unmc_rtcc_01.h: 17: char dia_semana;
+"18
 [v _anio_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
-"31
+[; ;headers\unmc_rtcc_01.h: 18: char anio_u;
+"19
 [v _anio_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
-"32
+[; ;headers\unmc_rtcc_01.h: 19: char anio_d;
+"20
 [v _flag `b ~T0 @X0 1 e ]
 [i _flag
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
-"33
+[; ;headers\unmc_rtcc_01.h: 20: bit flag=0;
+"21
 [v _i `i ~T0 @X0 1 e ]
 [i _i
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 33: int i=0;
-"34
+[; ;headers\unmc_rtcc_01.h: 21: int i=0;
+"22
 [v _j `i ~T0 @X0 1 e ]
 [i _j
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 34: int j=0;
-"35
+[; ;headers\unmc_rtcc_01.h: 22: int j=0;
+"23
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 35: int a=0;
-"36
+[; ;headers\unmc_rtcc_01.h: 23: int a=0;
+"24
 [v _b `i ~T0 @X0 1 e ]
 [i _b
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 36: int b=0;
-"37
+[; ;headers\unmc_rtcc_01.h: 24: int b=0;
+"25
 [v _c `i ~T0 @X0 1 e ]
 [i _c
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 37: int c=0;
-"38
+[; ;headers\unmc_rtcc_01.h: 25: int c=0;
+"26
 [v _k `i ~T0 @X0 1 e ]
 [i _k
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 38: int k=0;
-"39
+[; ;headers\unmc_rtcc_01.h: 26: int k=0;
+"27
 [v _anio `i ~T0 @X0 1 e ]
 [i _anio
 -> 15 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
-"40
+[; ;headers\unmc_rtcc_01.h: 27: int anio=15;
+"28
 [v _mes `i ~T0 @X0 1 e ]
 [i _mes
 -> 9 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
-"41
+[; ;headers\unmc_rtcc_01.h: 28: int mes=9;
+"29
 [v _diasem `i ~T0 @X0 1 e ]
 [i _diasem
 -> 3 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
-"42
+[; ;headers\unmc_rtcc_01.h: 29: int diasem=3;
+"30
 [v _dia `i ~T0 @X0 1 e ]
 [i _dia
 -> 8 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
-"43
+[; ;headers\unmc_rtcc_01.h: 30: int dia=8;
+"31
 [v _hora `i ~T0 @X0 1 e ]
 [i _hora
 -> 18 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
-"44
+[; ;headers\unmc_rtcc_01.h: 31: int hora=18;
+"32
 [v _minuto `i ~T0 @X0 1 e ]
 [i _minuto
 -> 30 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
-"45
+[; ;headers\unmc_rtcc_01.h: 32: int minuto=30;
+"33
 [v _segundo `i ~T0 @X0 1 e ]
 [i _segundo
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
-"51
+[; ;headers\unmc_rtcc_01.h: 33: int segundo=0;
+"35
 [v _RtccTime `S1015 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
-"52
+[; ;headers\unmc_rtcc_01.h: 35: rtccTime RtccTime;
+"36
 [v _RtccTimeVal `S1015 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
-"53
+[; ;headers\unmc_rtcc_01.h: 36: rtccTime RtccTimeVal;
+"37
 [v _RtccDate `S1017 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
-"55
+[; ;headers\unmc_rtcc_01.h: 37: rtccDate RtccDate;
+"39
 [v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
-[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
-[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
-[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
-[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
-[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
+[; ;headers\unmc_rtcc_01.h: 39: unsigned char buffer2[20];
+[; ;headers\unmc_rtcc_01.h: 41: void DelayFor18TC2(void);
+[; ;headers\unmc_rtcc_01.h: 43: void DelayPORXLCD(void);
+[; ;headers\unmc_rtcc_01.h: 45: void Write_RTC2(void);
+[; ;headers\unmc_rtcc_01.h: 47: void Read_RTC2(void);
 [; ;delays.h: 13: void Delay1TCYx(unsigned char);
 [; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;delays.h: 25: Delay100TCYx(unsigned char);
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
 "4 Unimic/sources/unmc_rtcc_01.c

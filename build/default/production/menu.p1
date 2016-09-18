@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files\Microchip\xc8\v1.34\include\plib\rtcc.h
+"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\rtcc.h
 [s S1033 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1033 . year rsvd mday mon hour wday sec min ]
 "142
@@ -18,11 +18,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S1030 `S1031 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1030 . f b w l ]
 "18 head.h
-[c E8458 0 1 2 .. ]
-[n E8458 . ACTIVE DESACTIVE TRIGGED  ]
+[c E8459 0 1 2 .. ]
+[n E8459 . ACTIVE DESACTIVE TRIGGED  ]
 "5 keyboard.h
 [v _read_keyboard `(uc ~T0 @X0 0 ef ]
-"45 C:\Program Files\Microchip\xc8\v1.34\include\math.h
+"45 C:\Program Files (x86)\Microchip\xc8\v1.34\include\math.h
 [v _pow `(d ~T0 @X0 0 ef2`d`d ]
 "104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
@@ -40,10 +40,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 "7 config.h
 [v _changePass `(v ~T0 @X0 0 ef1`i ]
-"206 C:\Program Files\Microchip\xc8\v1.34\include\stdio.h
+"206 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"112 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
-[v _Read_RTC `(v ~T0 @X0 0 ef ]
+"117 menu.c
+[v _Read_RTC `(i ~T0 @X0 0 ef ]
 "12 reloj.h
 [v _configurar_reloj `(v ~T0 @X0 0 ef ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
@@ -157,7 +157,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 55: extern double round(double);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
-"51 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [; ;pic18f26j50.h: 51: asm("RPOR0 equ 0EC6h");
 [; <" RPOR0 equ 0EC6h ;# ">
 [; ;pic18f26j50.h: 55: extern volatile unsigned char RPOR1 @ 0xEC7;
@@ -7676,7 +7676,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xlcd.h: 142: extern void DelayXLCD(void);
 [; ;delays.h: 13: void Delay1TCYx(unsigned char);
 [; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;delays.h: 25: Delay100TCYx(unsigned char);
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
@@ -7742,161 +7742,158 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WPDIS=OFF ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
-[i _key
--> -> 18 `i `uc
-]
-[; ;headers\unmc_inout_02.h: 14: char key = 18;
-"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[; ;headers\unmc_inout_02.h: 14: char key;
+"5 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1032 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1032 ~T0 @X0 1 e ]
 [v _Rtcc_read_TimeDate `S1032 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
-"19
+[; ;headers\unmc_rtcc_01.h: 5: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+"7
 [v _segundo_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
-"20
+[; ;headers\unmc_rtcc_01.h: 7: char segundo_u;
+"8
 [v _segundo_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
-"21
+[; ;headers\unmc_rtcc_01.h: 8: char segundo_d;
+"9
 [v _minuto_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
-"22
+[; ;headers\unmc_rtcc_01.h: 9: char minuto_u;
+"10
 [v _minuto_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
-"23
+[; ;headers\unmc_rtcc_01.h: 10: char minuto_d;
+"11
 [v _hora_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
-"24
+[; ;headers\unmc_rtcc_01.h: 11: char hora_u;
+"12
 [v _hora_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
-"25
+[; ;headers\unmc_rtcc_01.h: 12: char hora_d;
+"13
 [v _fecha_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
-"26
+[; ;headers\unmc_rtcc_01.h: 13: char fecha_u;
+"14
 [v _fecha_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
-"27
+[; ;headers\unmc_rtcc_01.h: 14: char fecha_d;
+"15
 [v _mes_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
-"28
+[; ;headers\unmc_rtcc_01.h: 15: char mes_u;
+"16
 [v _mes_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
-"29
+[; ;headers\unmc_rtcc_01.h: 16: char mes_d;
+"17
 [v _dia_semana `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
-"30
+[; ;headers\unmc_rtcc_01.h: 17: char dia_semana;
+"18
 [v _anio_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
-"31
+[; ;headers\unmc_rtcc_01.h: 18: char anio_u;
+"19
 [v _anio_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
-"32
+[; ;headers\unmc_rtcc_01.h: 19: char anio_d;
+"20
 [v _flag `b ~T0 @X0 1 e ]
 [i _flag
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
-"33
+[; ;headers\unmc_rtcc_01.h: 20: bit flag=0;
+"21
 [v _i `i ~T0 @X0 1 e ]
 [i _i
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 33: int i=0;
-"34
+[; ;headers\unmc_rtcc_01.h: 21: int i=0;
+"22
 [v _j `i ~T0 @X0 1 e ]
 [i _j
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 34: int j=0;
-"35
+[; ;headers\unmc_rtcc_01.h: 22: int j=0;
+"23
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 35: int a=0;
-"36
+[; ;headers\unmc_rtcc_01.h: 23: int a=0;
+"24
 [v _b `i ~T0 @X0 1 e ]
 [i _b
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 36: int b=0;
-"37
+[; ;headers\unmc_rtcc_01.h: 24: int b=0;
+"25
 [v _c `i ~T0 @X0 1 e ]
 [i _c
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 37: int c=0;
-"38
+[; ;headers\unmc_rtcc_01.h: 25: int c=0;
+"26
 [v _k `i ~T0 @X0 1 e ]
 [i _k
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 38: int k=0;
-"39
+[; ;headers\unmc_rtcc_01.h: 26: int k=0;
+"27
 [v _anio `i ~T0 @X0 1 e ]
 [i _anio
 -> 15 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
-"40
+[; ;headers\unmc_rtcc_01.h: 27: int anio=15;
+"28
 [v _mes `i ~T0 @X0 1 e ]
 [i _mes
 -> 9 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
-"41
+[; ;headers\unmc_rtcc_01.h: 28: int mes=9;
+"29
 [v _diasem `i ~T0 @X0 1 e ]
 [i _diasem
 -> 3 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
-"42
+[; ;headers\unmc_rtcc_01.h: 29: int diasem=3;
+"30
 [v _dia `i ~T0 @X0 1 e ]
 [i _dia
 -> 8 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
-"43
+[; ;headers\unmc_rtcc_01.h: 30: int dia=8;
+"31
 [v _hora `i ~T0 @X0 1 e ]
 [i _hora
 -> 18 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
-"44
+[; ;headers\unmc_rtcc_01.h: 31: int hora=18;
+"32
 [v _minuto `i ~T0 @X0 1 e ]
 [i _minuto
 -> 30 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
-"45
+[; ;headers\unmc_rtcc_01.h: 32: int minuto=30;
+"33
 [v _segundo `i ~T0 @X0 1 e ]
 [i _segundo
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
-"51
+[; ;headers\unmc_rtcc_01.h: 33: int segundo=0;
+"35
 [v _RtccTime `S1028 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
-"52
+[; ;headers\unmc_rtcc_01.h: 35: rtccTime RtccTime;
+"36
 [v _RtccTimeVal `S1028 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
-"53
+[; ;headers\unmc_rtcc_01.h: 36: rtccTime RtccTimeVal;
+"37
 [v _RtccDate `S1030 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
-"55
+[; ;headers\unmc_rtcc_01.h: 37: rtccDate RtccDate;
+"39
 [v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
-[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
-[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
-[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
-[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
-[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
+[; ;headers\unmc_rtcc_01.h: 39: unsigned char buffer2[20];
+[; ;headers\unmc_rtcc_01.h: 41: void DelayFor18TC2(void);
+[; ;headers\unmc_rtcc_01.h: 43: void DelayPORXLCD(void);
+[; ;headers\unmc_rtcc_01.h: 45: void Write_RTC2(void);
+[; ;headers\unmc_rtcc_01.h: 47: void Read_RTC2(void);
 [; ;head.h: 14: typedef enum {
 [; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
 [; ;head.h: 16: } state;
 "18 head.h
-[v _state_alarm `E8458 ~T0 @X0 1 e ]
+[v _state_alarm `E8459 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8458 1
+. `E8459 1
 ]
 [; ;head.h: 18: state state_alarm = DESACTIVE;
 "19
@@ -7930,7 +7927,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;head.h: 23: int minDisparo = 0;
 [; ;keyboard.h: 5: char read_keyboard();
-[; ;reloj.h: 11: void setClock(int8 x);
 [; ;reloj.h: 12: void configurar_reloj();
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "4 config.h
@@ -8313,7 +8309,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _Read_RTC ..  ]
 [; ;menu.c: 118: state_alarm = TRIGGED;
 "118
-[e = _state_alarm . `E8458 2 ]
+[e = _state_alarm . `E8459 2 ]
 [; ;menu.c: 119: sensorDisparado = sensor;
 "119
 [e = _sensorDisparado -> _sensor `uc ]
@@ -8341,7 +8337,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;menu.c: 128: if (state_alarm == DESACTIVE){
 "128
-[e $ ! == -> _state_alarm `i -> . `E8458 1 `i 1063  ]
+[e $ ! == -> _state_alarm `i -> . `E8459 1 `i 1063  ]
 {
 [; ;menu.c: 129: menu = read_keyboard();
 "129
@@ -8394,7 +8390,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;menu.c: 140: if (state_alarm == ACTIVE){
 "140
-[e $ ! == -> _state_alarm `i -> . `E8458 0 `i 1071  ]
+[e $ ! == -> _state_alarm `i -> . `E8459 0 `i 1071  ]
 {
 [; ;menu.c: 141: menu = read_keyboard();
 "141

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files\Microchip\xc8\v1.34\include\plib\rtcc.h
+"144 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\rtcc.h
 [s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1028 . year rsvd mday mon hour wday sec min ]
 "142
@@ -18,20 +18,66 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1025 . f b w l ]
 "18 head.h
-[c E8281 0 1 2 .. ]
-[n E8281 . ACTIVE DESACTIVE TRIGGED  ]
+[c E8282 0 1 2 .. ]
+[n E8282 . ACTIVE DESACTIVE TRIGGED  ]
 "107 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_setcursor_vb `(v ~T0 @X0 0 ef2`uc`uc ]
-"75 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
-[v _Write_RTC `(v ~T0 @X0 0 ef ]
+"70 reloj.c
+[v _Write_RTC `(i ~T0 @X0 0 ef ]
 [v F8145 `(v ~T0 @X0 1 tf1`ul ]
-"161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
+"161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
 [v __delay `JF8145 ~T0 @X0 0 e ]
 [p i __delay ]
+"82 reloj.c
+[v _Read_RTC `(i ~T0 @X0 0 ef ]
+"104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
+"5791 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . RC0 RC1 RC2 . RC4 RC5 RC6 RC7 ]
+"5801
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . T1OSO T1OSI AN11 . D_MINUS D_PLUS ]
+"5809
+[s S418 :1 `uc 1 :1 `uc 1 ]
+[n S418 . . NOT_UOE ]
+"5813
+[s S419 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S419 . T1CK nUOE CTPLS . VM VP TX1 RX1 ]
+"5823
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . RP11 RP12 RP13 . CK1 DT1 ]
+"5831
+[s S421 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S421 . . RP17 SDO1 ]
+"5836
+[s S422 :7 `uc 1 :1 `uc 1 ]
+[n S422 . . RP18 ]
+"5840
+[s S423 :1 `uc 1 :1 `uc 1 ]
+[n S423 . . CCP2 ]
+"5844
+[s S424 :2 `uc 1 :1 `uc 1 ]
+[n S424 . . PA1 ]
+"5848
+[s S425 :1 `uc 1 :1 `uc 1 ]
+[n S425 . . PA2 ]
+"5852
+[s S426 :3 `uc 1 :1 `uc 1 ]
+[n S426 . . RC3 ]
+"5790
+[u S415 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 `S422 1 `S423 1 `S424 1 `S425 1 `S426 1 ]
+[n S415 . . . . . . . . . . . . ]
+"5857
+[v _PORTCbits `VS415 ~T0 @X0 0 e@3970 ]
+"97 reloj.c
+[v _write_Date `(i ~T0 @X0 0 ef ]
+"5 keyboard.h
+[v _read_keyboard `(uc ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
-"51 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
 [; ;pic18f26j50.h: 51: asm("RPOR0 equ 0EC6h");
 [; <" RPOR0 equ 0EC6h ;# ">
 [; ;pic18f26j50.h: 55: extern volatile unsigned char RPOR1 @ 0xEC7;
@@ -7553,7 +7599,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xlcd.h: 142: extern void DelayXLCD(void);
 [; ;delays.h: 13: void Delay1TCYx(unsigned char);
 [; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: void Delay100TCYx(unsigned char);
+[; ;delays.h: 25: Delay100TCYx(unsigned char);
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
@@ -7649,161 +7695,158 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WPDIS=OFF ]
 "14 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
 [v _key `uc ~T0 @X0 1 e ]
-[i _key
--> -> 18 `i `uc
-]
-[; ;headers\unmc_inout_02.h: 14: char key = 18;
-"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[; ;headers\unmc_inout_02.h: 14: char key;
+"5 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
 [v _Rtcc_read_TimeDate `S1027 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
-"19
+[; ;headers\unmc_rtcc_01.h: 5: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+"7
 [v _segundo_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
-"20
+[; ;headers\unmc_rtcc_01.h: 7: char segundo_u;
+"8
 [v _segundo_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
-"21
+[; ;headers\unmc_rtcc_01.h: 8: char segundo_d;
+"9
 [v _minuto_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
-"22
+[; ;headers\unmc_rtcc_01.h: 9: char minuto_u;
+"10
 [v _minuto_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
-"23
+[; ;headers\unmc_rtcc_01.h: 10: char minuto_d;
+"11
 [v _hora_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
-"24
+[; ;headers\unmc_rtcc_01.h: 11: char hora_u;
+"12
 [v _hora_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
-"25
+[; ;headers\unmc_rtcc_01.h: 12: char hora_d;
+"13
 [v _fecha_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
-"26
+[; ;headers\unmc_rtcc_01.h: 13: char fecha_u;
+"14
 [v _fecha_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
-"27
+[; ;headers\unmc_rtcc_01.h: 14: char fecha_d;
+"15
 [v _mes_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
-"28
+[; ;headers\unmc_rtcc_01.h: 15: char mes_u;
+"16
 [v _mes_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
-"29
+[; ;headers\unmc_rtcc_01.h: 16: char mes_d;
+"17
 [v _dia_semana `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
-"30
+[; ;headers\unmc_rtcc_01.h: 17: char dia_semana;
+"18
 [v _anio_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
-"31
+[; ;headers\unmc_rtcc_01.h: 18: char anio_u;
+"19
 [v _anio_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
-"32
+[; ;headers\unmc_rtcc_01.h: 19: char anio_d;
+"20
 [v _flag `b ~T0 @X0 1 e ]
 [i _flag
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
-"33
+[; ;headers\unmc_rtcc_01.h: 20: bit flag=0;
+"21
 [v _i `i ~T0 @X0 1 e ]
 [i _i
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 33: int i=0;
-"34
+[; ;headers\unmc_rtcc_01.h: 21: int i=0;
+"22
 [v _j `i ~T0 @X0 1 e ]
 [i _j
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 34: int j=0;
-"35
+[; ;headers\unmc_rtcc_01.h: 22: int j=0;
+"23
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 35: int a=0;
-"36
+[; ;headers\unmc_rtcc_01.h: 23: int a=0;
+"24
 [v _b `i ~T0 @X0 1 e ]
 [i _b
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 36: int b=0;
-"37
+[; ;headers\unmc_rtcc_01.h: 24: int b=0;
+"25
 [v _c `i ~T0 @X0 1 e ]
 [i _c
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 37: int c=0;
-"38
+[; ;headers\unmc_rtcc_01.h: 25: int c=0;
+"26
 [v _k `i ~T0 @X0 1 e ]
 [i _k
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 38: int k=0;
-"39
+[; ;headers\unmc_rtcc_01.h: 26: int k=0;
+"27
 [v _anio `i ~T0 @X0 1 e ]
 [i _anio
 -> 15 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
-"40
+[; ;headers\unmc_rtcc_01.h: 27: int anio=15;
+"28
 [v _mes `i ~T0 @X0 1 e ]
 [i _mes
 -> 9 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
-"41
+[; ;headers\unmc_rtcc_01.h: 28: int mes=9;
+"29
 [v _diasem `i ~T0 @X0 1 e ]
 [i _diasem
 -> 3 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
-"42
+[; ;headers\unmc_rtcc_01.h: 29: int diasem=3;
+"30
 [v _dia `i ~T0 @X0 1 e ]
 [i _dia
 -> 8 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
-"43
+[; ;headers\unmc_rtcc_01.h: 30: int dia=8;
+"31
 [v _hora `i ~T0 @X0 1 e ]
 [i _hora
 -> 18 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
-"44
+[; ;headers\unmc_rtcc_01.h: 31: int hora=18;
+"32
 [v _minuto `i ~T0 @X0 1 e ]
 [i _minuto
 -> 30 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
-"45
+[; ;headers\unmc_rtcc_01.h: 32: int minuto=30;
+"33
 [v _segundo `i ~T0 @X0 1 e ]
 [i _segundo
 -> 0 `i
 ]
-[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
-"51
+[; ;headers\unmc_rtcc_01.h: 33: int segundo=0;
+"35
 [v _RtccTime `S1023 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
-"52
+[; ;headers\unmc_rtcc_01.h: 35: rtccTime RtccTime;
+"36
 [v _RtccTimeVal `S1023 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
-"53
+[; ;headers\unmc_rtcc_01.h: 36: rtccTime RtccTimeVal;
+"37
 [v _RtccDate `S1025 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
-"55
+[; ;headers\unmc_rtcc_01.h: 37: rtccDate RtccDate;
+"39
 [v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
-[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
-[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
-[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
-[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
-[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
+[; ;headers\unmc_rtcc_01.h: 39: unsigned char buffer2[20];
+[; ;headers\unmc_rtcc_01.h: 41: void DelayFor18TC2(void);
+[; ;headers\unmc_rtcc_01.h: 43: void DelayPORXLCD(void);
+[; ;headers\unmc_rtcc_01.h: 45: void Write_RTC2(void);
+[; ;headers\unmc_rtcc_01.h: 47: void Read_RTC2(void);
 [; ;head.h: 14: typedef enum {
 [; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
 [; ;head.h: 16: } state;
 "18 head.h
-[v _state_alarm `E8281 ~T0 @X0 1 e ]
+[v _state_alarm `E8282 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8281 1
+. `E8282 1
 ]
 [; ;head.h: 18: state state_alarm = DESACTIVE;
 "19
@@ -7836,207 +7879,211 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;head.h: 23: int minDisparo = 0;
-[; ;reloj.h: 11: void setClock(int8 x);
 [; ;reloj.h: 12: void configurar_reloj();
-"4 reloj.c
-[v _configurar_reloj `(v ~T0 @X0 1 ef ]
-{
-[; ;reloj.c: 4: void configurar_reloj(){
-[e :U _configurar_reloj ]
-[f ]
-[; ;reloj.c: 6: }
-"6
-[e :UE 1035 ]
-}
-"8
+[; ;keyboard.h: 5: char read_keyboard();
+"5 reloj.c
 [v _evalueChanceOfRaw `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;reloj.c: 8: void evalueChanceOfRaw(int8 *x, int8 *y){
+[; ;reloj.c: 5: void evalueChanceOfRaw(int8 *x, int8 *y){
 [e :U _evalueChanceOfRaw ]
 [v _x `*uc ~T0 @X0 1 r1 ]
 [v _y `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 9: if (*x == 17){
-"9
-[e $ ! == -> *U _x `i -> 17 `i 1037  ]
+[; ;reloj.c: 6: if (*x > 16){
+"6
+[e $ ! > -> *U _x `i -> 16 `i 1036  ]
 {
-[; ;reloj.c: 10: *x = 1;
-"10
-[e = *U _x -> -> 1 `i `uc ]
-[; ;reloj.c: 11: *y = 2;
-"11
+[; ;reloj.c: 7: *x = 2;
+"7
+[e = *U _x -> -> 2 `i `uc ]
+[; ;reloj.c: 8: *y = 2;
+"8
 [e = *U _y -> -> 2 `i `uc ]
-"12
+"9
+}
+[e :U 1036 ]
+[; ;reloj.c: 9: }
+[; ;reloj.c: 11: if(*y == 2 && *x > 5){
+"11
+[e $ ! && == -> *U _y `i -> 2 `i > -> *U _x `i -> 5 `i 1037  ]
+{
+[; ;reloj.c: 13: *y = 1;
+"13
+[e = *U _y -> -> 1 `i `uc ]
+[; ;reloj.c: 14: *x = 10;
+"14
+[e = *U _x -> -> 10 `i `uc ]
+"16
 }
 [e :U 1037 ]
-[; ;reloj.c: 12: }
-[; ;reloj.c: 13: }
-"13
-[e :UE 1036 ]
+[; ;reloj.c: 16: }
+[; ;reloj.c: 18: }
+"18
+[e :UE 1035 ]
 }
-"15
+"20
 [v _jumpIfNotNumber `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
-[; ;reloj.c: 15: void jumpIfNotNumber(int8 *x, int8 y){
+[; ;reloj.c: 20: void jumpIfNotNumber(int8 *x, int8 y){
 [e :U _jumpIfNotNumber ]
 [v _x `*uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 16: if( (*x==11 && y ==1)
-[; ;reloj.c: 17: || (*x==14 && y ==1)
-[; ;reloj.c: 18: || (*x==3 && y==2)
-[; ;reloj.c: 19: || (*x==6 && y==2)){
-"19
+[; ;reloj.c: 21: if( (*x==11 && y ==1)
+[; ;reloj.c: 22: || (*x==14 && y ==1)
+[; ;reloj.c: 23: || (*x==3 && y==2)
+[; ;reloj.c: 24: || (*x==6 && y==2)){
+"24
 [e $ ! || || || && == -> *U _x `i -> 11 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 14 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 3 `i == -> _y `i -> 2 `i && == -> *U _x `i -> 6 `i == -> _y `i -> 2 `i 1039  ]
 {
-[; ;reloj.c: 21: lcd_setcursor_vb(0,0);
-"21
+[; ;reloj.c: 26: lcd_setcursor_vb(0,0);
+"26
 [e ( _lcd_setcursor_vb (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;reloj.c: 22: *x = *x + 1;
-"22
+[; ;reloj.c: 27: *x = *x + 1;
+"27
 [e = *U _x -> + -> *U _x `i -> 1 `i `uc ]
-"23
+"28
 }
 [e :U 1039 ]
-[; ;reloj.c: 23: }
-[; ;reloj.c: 24: }
-"24
+[; ;reloj.c: 28: }
+[; ;reloj.c: 29: }
+"29
 [e :UE 1038 ]
 }
-"26
+"31
 [v _evalueFinal `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;reloj.c: 26: void evalueFinal(int8 x,int8 *y){
+[; ;reloj.c: 31: void evalueFinal(int8 x,int8 *y){
 [e :U _evalueFinal ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 27: if(*y == 2 && x == 9){
-"27
-[e $ ! && == -> *U _y `i -> 2 `i == -> _x `i -> 9 `i 1041  ]
+[; ;reloj.c: 32: if(*y == 2 && x == 6){
+"32
+[e $ ! && == -> *U _y `i -> 2 `i == -> _x `i -> 6 `i 1041  ]
 {
-[; ;reloj.c: 28: *y = 1;
-"28
+[; ;reloj.c: 33: *y = 1;
+"33
 [e = *U _y -> -> 1 `i `uc ]
-"29
+"34
 }
 [e :U 1041 ]
-[; ;reloj.c: 29: }
-[; ;reloj.c: 30: }
-"30
+[; ;reloj.c: 34: }
+[; ;reloj.c: 35: }
+"35
 [e :UE 1040 ]
 }
-"33
+"38
 [v _setClock `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;reloj.c: 33: void setClock(int8 x){
+[; ;reloj.c: 38: void setClock(int8 x){
 [e :U _setClock ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;reloj.c: 34: switch (x) {
-"34
+[; ;reloj.c: 39: switch (x) {
+"39
 [e $U 1044  ]
 {
-[; ;reloj.c: 35: case 10:
-"35
+[; ;reloj.c: 40: case 10:
+"40
 [e :U 1045 ]
-[; ;reloj.c: 36: dia++;
-"36
+[; ;reloj.c: 41: dia++;
+"41
 [e ++ _dia -> 1 `i ]
-[; ;reloj.c: 37: if(dia > 31){
-"37
+[; ;reloj.c: 42: if(dia > 31){
+"42
 [e $ ! > _dia -> 31 `i 1046  ]
 {
-[; ;reloj.c: 38: dia = 1;
-"38
+[; ;reloj.c: 43: dia = 1;
+"43
 [e = _dia -> 1 `i ]
-"39
+"44
 }
 [e :U 1046 ]
-[; ;reloj.c: 39: }
-[; ;reloj.c: 40: break;
-"40
+[; ;reloj.c: 44: }
+[; ;reloj.c: 45: break;
+"45
 [e $U 1043  ]
-[; ;reloj.c: 41: case 13:
-"41
+[; ;reloj.c: 46: case 13:
+"46
 [e :U 1047 ]
-[; ;reloj.c: 42: mes++;
-"42
+[; ;reloj.c: 47: mes++;
+"47
 [e ++ _mes -> 1 `i ]
-[; ;reloj.c: 43: if(mes > 12){
-"43
+[; ;reloj.c: 48: if(mes > 12){
+"48
 [e $ ! > _mes -> 12 `i 1048  ]
 {
-[; ;reloj.c: 44: mes = 1;
-"44
+[; ;reloj.c: 49: mes = 1;
+"49
 [e = _mes -> 1 `i ]
-"45
+"50
 }
 [e :U 1048 ]
-[; ;reloj.c: 45: }
-[; ;reloj.c: 46: break;
-"46
-[e $U 1043  ]
-[; ;reloj.c: 47: case 16:
-"47
-[e :U 1049 ]
-[; ;reloj.c: 48: anio++;
-"48
-[e ++ _anio -> 1 `i ]
-[; ;reloj.c: 49: break;
-"49
-[e $U 1043  ]
-[; ;reloj.c: 50: case 2:
-"50
-[e :U 1050 ]
-[; ;reloj.c: 51: hora++;
+[; ;reloj.c: 50: }
+[; ;reloj.c: 51: break;
 "51
-[e ++ _hora -> 1 `i ]
-[; ;reloj.c: 52: if(hora > 23){
+[e $U 1043  ]
+[; ;reloj.c: 52: case 16:
 "52
+[e :U 1049 ]
+[; ;reloj.c: 53: anio++;
+"53
+[e ++ _anio -> 1 `i ]
+[; ;reloj.c: 54: break;
+"54
+[e $U 1043  ]
+[; ;reloj.c: 55: case 2:
+"55
+[e :U 1050 ]
+[; ;reloj.c: 56: hora++;
+"56
+[e ++ _hora -> 1 `i ]
+[; ;reloj.c: 57: if(hora > 23){
+"57
 [e $ ! > _hora -> 23 `i 1051  ]
 {
-[; ;reloj.c: 53: hora = 0;
-"53
+[; ;reloj.c: 58: hora = 0;
+"58
 [e = _hora -> 0 `i ]
-"54
+"59
 }
 [e :U 1051 ]
-[; ;reloj.c: 54: }
-[; ;reloj.c: 55: break;
-"55
+[; ;reloj.c: 59: }
+[; ;reloj.c: 60: break;
+"60
 [e $U 1043  ]
-[; ;reloj.c: 56: case 5:
-"56
+[; ;reloj.c: 61: case 5:
+"61
 [e :U 1052 ]
-[; ;reloj.c: 57: minuto++;
-"57
+[; ;reloj.c: 62: minuto++;
+"62
 [e ++ _minuto -> 1 `i ]
-[; ;reloj.c: 58: if(minuto > 59){
-"58
+[; ;reloj.c: 63: if(minuto > 59){
+"63
 [e $ ! > _minuto -> 59 `i 1053  ]
 {
-[; ;reloj.c: 59: minuto = 0;
-"59
+[; ;reloj.c: 64: minuto = 0;
+"64
 [e = _minuto -> 0 `i ]
-"60
+"65
 }
 [e :U 1053 ]
-[; ;reloj.c: 60: }
-[; ;reloj.c: 61: break;
-"61
+[; ;reloj.c: 65: }
+[; ;reloj.c: 66: break;
+"66
 [e $U 1043  ]
-[; ;reloj.c: 62: default:
-"62
+[; ;reloj.c: 67: default:
+"67
 [e :U 1054 ]
-[; ;reloj.c: 63: break;
-"63
+[; ;reloj.c: 68: break;
+"68
 [e $U 1043  ]
-"64
+"69
 }
-[; ;reloj.c: 64: }
+[; ;reloj.c: 69: }
 [e $U 1043  ]
-"34
+"39
 [e :U 1044 ]
 [e [\ _x , $ -> -> 10 `i `uc 1045
  , $ -> -> 13 `i `uc 1047
@@ -8044,15 +8091,100 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 2 `i `uc 1050
  , $ -> -> 5 `i `uc 1052
  1054 ]
-"64
+"69
 [e :U 1043 ]
-[; ;reloj.c: 65: Write_RTC();
-"65
+[; ;reloj.c: 70: Write_RTC();
+"70
 [e ( _Write_RTC ..  ]
-[; ;reloj.c: 66: _delay((unsigned long)((50)*(8000000/4000.0)));
-"66
+[; ;reloj.c: 71: _delay((unsigned long)((50)*(8000000/4000.0)));
+"71
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;reloj.c: 67: }
-"67
+[; ;reloj.c: 72: }
+"72
 [e :UE 1042 ]
+}
+"76
+[v _configurar_reloj `(v ~T0 @X0 1 ef ]
+{
+[; ;reloj.c: 76: void configurar_reloj(){
+[e :U _configurar_reloj ]
+[f ]
+"77
+[v _input `uc ~T0 @X0 1 a ]
+[; ;reloj.c: 77: char input = 18;
+[e = _input -> -> 18 `i `uc ]
+"78
+[v _x `uc ~T0 @X0 1 a ]
+[; ;reloj.c: 78: int8 x = 10;
+[e = _x -> -> 10 `i `uc ]
+"79
+[v _y `uc ~T0 @X0 1 a ]
+[; ;reloj.c: 79: int8 y = 1;
+[e = _y -> -> 1 `i `uc ]
+[; ;reloj.c: 81: while(input != 16){
+"81
+[e $U 1056  ]
+[e :U 1057 ]
+{
+[; ;reloj.c: 82: Read_RTC();
+"82
+[e ( _Read_RTC ..  ]
+[; ;reloj.c: 83: lcd_setcursor_vb(1,1);
+"83
+[e ( _lcd_setcursor_vb (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;reloj.c: 84: lcd_gotoxy(x,y);
+"84
+[e ( _lcd_gotoxy (2 , _x _y ]
+[; ;reloj.c: 85: if(PORTCbits.RC5 == 0)
+"85
+[e $ ! == -> . . _PORTCbits 0 5 `i -> 0 `i 1059  ]
+[; ;reloj.c: 86: {
+"86
+{
+[; ;reloj.c: 87: x=x+3;
+"87
+[e = _x -> + -> _x `i -> 3 `i `uc ]
+[; ;reloj.c: 89: _delay((unsigned long)((50)*(8000000/4000.0)));
+"89
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;reloj.c: 91: evalueChanceOfRaw(&x,&y);
+"91
+[e ( _evalueChanceOfRaw (2 , &U _x &U _y ]
+[; ;reloj.c: 92: lcd_gotoxy(x,y);
+"92
+[e ( _lcd_gotoxy (2 , _x _y ]
+"93
+}
+[e :U 1059 ]
+[; ;reloj.c: 93: }
+[; ;reloj.c: 95: if(PORTCbits.RC4 == 0){
+"95
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1060  ]
+{
+[; ;reloj.c: 96: setClock(x);
+"96
+[e ( _setClock (1 _x ]
+[; ;reloj.c: 97: write_Date();
+"97
+[e ( _write_Date ..  ]
+"98
+}
+[e :U 1060 ]
+[; ;reloj.c: 98: }
+[; ;reloj.c: 99: input = read_keyboard();
+"99
+[e = _input ( _read_keyboard ..  ]
+[; ;reloj.c: 100: _delay((unsigned long)((98)*(8000000/4000.0)));
+"100
+[e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"102
+}
+[e :U 1056 ]
+"81
+[e $ != -> _input `i -> 16 `i 1057  ]
+[e :U 1058 ]
+[; ;reloj.c: 102: }
+[; ;reloj.c: 103: }
+"103
+[e :UE 1055 ]
 }
