@@ -1,6 +1,6 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
+ build/default/production/menu.d  \
+ build/default/production/menu.p1:  \
+ menu.c  \
 reloj.h  \
 keyboard.h  \
 C:/Archivos\ de\ programa/Unimic/unmc_01/headers/unmc_lcd_216.h  \

@@ -9881,10 +9881,6 @@ void lcd_putrs(const char *ptr);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key = 18;
 
-# 5 "keyboard.h"
-void clear_keyboard();
-char read_keyboard();
-
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
@@ -9933,6 +9929,21 @@ void Write_RTC(void);
 
 # 112
 void Read_RTC(void);
+
+# 14 "head.h"
+typedef enum {
+ACTIVE, DESACTIVE, TRIGGED,
+} state;
+
+state state_alarm = DESACTIVE;
+int8 sensorDisparado = 0;
+int diaDisparo = 0;
+int mesDisparo = 0;
+int horaDisparo = 0;
+int minDisparo = 0;
+
+# 5 "keyboard.h"
+char read_keyboard();
 
 # 4 "keyboard.c"
 void clear_keyboard(){

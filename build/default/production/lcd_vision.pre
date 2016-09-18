@@ -9881,14 +9881,6 @@ void lcd_putrs(const char *ptr);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key = 18;
 
-# 5 "lcd_vision.h"
-typedef enum{
-ACTIVE,DESACTIVE, TRIGGED
-} state;
-
-state state_alarm = TRIGGED;
-void set_vision();
-
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
@@ -9938,9 +9930,17 @@ void Write_RTC(void);
 # 112
 void Read_RTC(void);
 
-# 5 "keyboard.h"
-void clear_keyboard();
-char read_keyboard();
+# 14 "head.h"
+typedef enum {
+ACTIVE, DESACTIVE, TRIGGED,
+} state;
+
+state state_alarm = DESACTIVE;
+int8 sensorDisparado = 0;
+int diaDisparo = 0;
+int mesDisparo = 0;
+int horaDisparo = 0;
+int minDisparo = 0;
 
 # 12 "C:\Program Files\Microchip\xc8\v1.34\include\stdbool.h"
 typedef unsigned char bool;
@@ -9950,6 +9950,20 @@ int password = 1234;
 
 bool checkPass(int pass);
 void changePass(int pass);
+
+# 6 "lcd_vision.h"
+void set_vision();
+void clear();
+void write_Date();
+void _delay_s(int millis);
+bool is_not_letter(char input);
+bool not_fill_pass(short digit);
+void next_code(short *digit, char *input);
+void review_code(short digit, int pass);
+int obtain_pass(int pass, char input, short *digit);
+
+# 5 "keyboard.h"
+char read_keyboard();
 
 # 30 "C:\Program Files\Microchip\xc8\v1.34\include\math.h"
 extern double fabs(double);
@@ -10019,10 +10033,20 @@ lcd_gotoxy(*digit, 2);
 *input = 18;
 }
 
+void change_state(){
+switch (state_alarm){
+case DESACTIVE:state_alarm = ACTIVE;
+break;
+case ACTIVE:state_alarm = DESACTIVE;
+break;
+default:state_alarm = DESACTIVE;
+}
+}
+
 void review_code(short digit, int pass){
 if(digit == 16){
 if(checkPass(pass)){
-state_alarm = ACTIVE;
+change_state();
 }
 }
 }
@@ -10041,10 +10065,14 @@ void twinkle(){
 char input = 1;
 
 while(input != 16){
-_delay_s(500);
+_delay_s(200);
 lcd_gotoxy(7,2);
+LATBbits.LATB1 = 0;;
+LATBbits.LATB0 = 1;;
 lcd_putrs("WARNING!!!");
-_delay_s(500);
+_delay_s(200);
+LATBbits.LATB0 = 0;;
+LATBbits.LATB1 = 1;;
 lcd_gotoxy(7,2);
 lcd_putrs("          ");
 input = read_keyboard();
@@ -10059,20 +10087,11 @@ lcd_gotoxy(digit,2);
 lcd_setcursor_vb(1,1);
 }
 
-void set_vision(){
-clear();
-write_Date();
-lcd_gotoxy(1,1);
-
-switch (state_alarm){
-case ACTIVE:lcd_putrs("ON");
-break;
-
-case DESACTIVE:lcd_putrs("OFF");
+void input_password(){
 short digit = 12;
 int pass = 0;
-set_desactive_vision(digit);
 
+set_desactive_vision(digit);
 char input = read_keyboard();
 
 while(is_not_letter(input) && not_fill_pass(digit)){
@@ -10080,21 +10099,28 @@ pass = obtain_pass(pass,input,&digit);
 input = read_keyboard();
 review_code(digit, pass);
 }
+}
+
+
+void set_vision(){
+clear();
+write_Date();
+lcd_gotoxy(1,1);
+
+switch (state_alarm){
+case ACTIVE:lcd_putrs("ON");
+LATBbits.LATB0 = 1;;
+input_password();
+break;
+
+case DESACTIVE:lcd_putrs("OFF");
+LATBbits.LATB0 = 0;;
+input_password();
 
 break;
 default:lcd_putrs("TRIGGED");
 twinkle();
-
-short digit = 12;
-int pass = 0;
-set_desactive_vision(digit);
-
-char input = 18;
-
-while(is_not_letter(input) && not_fill_pass(digit)){
-pass = obtain_pass(pass,input,&digit);
-input = read_keyboard();
-review_code(digit, pass);
+input_password();
 }
-}
+
 }

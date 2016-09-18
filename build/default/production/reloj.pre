@@ -9881,9 +9881,6 @@ void lcd_putrs(const char *ptr);
 # 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
 char key = 18;
 
-# 11 "reloj.h"
-void setClock(int8 x);
-
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
@@ -9933,7 +9930,27 @@ void Write_RTC(void);
 # 112
 void Read_RTC(void);
 
-# 3 "reloj.c"
+# 14 "head.h"
+typedef enum {
+ACTIVE, DESACTIVE, TRIGGED,
+} state;
+
+state state_alarm = DESACTIVE;
+int8 sensorDisparado = 0;
+int diaDisparo = 0;
+int mesDisparo = 0;
+int horaDisparo = 0;
+int minDisparo = 0;
+
+# 11 "reloj.h"
+void setClock(int8 x);
+void configurar_reloj();
+
+# 4 "reloj.c"
+void configurar_reloj(){
+
+}
+
 void evalueChanceOfRaw(int8 *x, int8 *y){
 if (*x == 17){
 *x = 1;

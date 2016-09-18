@@ -1,7 +1,25 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"9 lcd_vision.h
-[c E8245 0 1 2 .. ]
-[n E8245 . ACTIVE DESACTIVE TRIGGED  ]
+"144 C:\Program Files\Microchip\xc8\v1.34\include\plib\rtcc.h
+[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1028 . year rsvd mday mon hour wday sec min ]
+"142
+[u S1027 `S1028 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
+[n S1027 . f b w l ]
+"113
+[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1024 . rsvd sec min hour ]
+"111
+[u S1023 `S1024 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1023 . f b w l ]
+"128
+[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1026 . wday mday mon year ]
+"126
+[u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
+[n S1025 . f b w l ]
+"18 head.h
+[c E8281 0 1 2 .. ]
+[n E8281 . ACTIVE DESACTIVE TRIGGED  ]
 "106 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_comand `(v ~T0 @X0 0 ef1`uc ]
 "7249 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
@@ -68,8 +86,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S843 . . . . . . ]
 "13166
 [v _T1CONbits `VS843 ~T0 @X0 0 e@4045 ]
-"74 main.c
-[v _Write_RTC `(i ~T0 @X0 0 ef ]
+"75 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[v _Write_RTC `(v ~T0 @X0 0 ef ]
 "103 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "6359 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
@@ -105,14 +123,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6401
 [v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
 [p mainexit ]
-"10 lcd_vision.h
+"112 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[v _Read_RTC `(v ~T0 @X0 0 ef ]
+"95 main.c
+[v _select_menu `(i ~T0 @X0 0 ef ]
+"6 lcd_vision.h
 [v _set_vision `(v ~T0 @X0 0 ef ]
-"6 keyboard.h
-[v _read_keyboard `(uc ~T0 @X0 0 ef ]
-"104 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
-[v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
-"109
-[v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 [v F8145 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
 [v __delay `JF8145 ~T0 @X0 0 e ]
@@ -7742,185 +7758,344 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 18 `i `uc
 ]
 [; ;headers\unmc_inout_02.h: 14: char key = 18;
-[; ;keyboard.h: 5: void clear_keyboard();
-[; ;keyboard.h: 6: char read_keyboard();
-[; ;reloj.h: 11: void setClock(int8 x);
-[; ;lcd_vision.h: 5: typedef enum{
-[; ;lcd_vision.h: 6: ACTIVE,DESACTIVE, TRIGGED
-[; ;lcd_vision.h: 7: } state;
-"9 lcd_vision.h
-[v _state_alarm `E8245 ~T0 @X0 1 e ]
-[i _state_alarm
-. `E8245 2
-]
-[; ;lcd_vision.h: 9: state state_alarm = TRIGGED;
-[; ;lcd_vision.h: 10: void set_vision();
-"31 main.c
-[v _caratula `(v ~T0 @X0 1 ef ]
+"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
+[v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
+[v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
+[v _Rtcc_read_TimeDate `S1027 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
+"19
+[v _segundo_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
+"20
+[v _segundo_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
+"21
+[v _minuto_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
+"22
+[v _minuto_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
+"23
+[v _hora_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
+"24
+[v _hora_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
+"25
+[v _fecha_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
+"26
+[v _fecha_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
+"27
+[v _mes_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
+"28
+[v _mes_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
+"29
+[v _dia_semana `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
+"30
+[v _anio_u `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
+"31
+[v _anio_d `uc ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
 "32
+[v _flag `b ~T0 @X0 1 e ]
+[i _flag
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
+"33
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 33: int i=0;
+"34
+[v _j `i ~T0 @X0 1 e ]
+[i _j
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 34: int j=0;
+"35
+[v _a `i ~T0 @X0 1 e ]
+[i _a
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 35: int a=0;
+"36
+[v _b `i ~T0 @X0 1 e ]
+[i _b
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 36: int b=0;
+"37
+[v _c `i ~T0 @X0 1 e ]
+[i _c
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 37: int c=0;
+"38
+[v _k `i ~T0 @X0 1 e ]
+[i _k
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 38: int k=0;
+"39
+[v _anio `i ~T0 @X0 1 e ]
+[i _anio
+-> 15 `i
+]
+[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
+"40
+[v _mes `i ~T0 @X0 1 e ]
+[i _mes
+-> 9 `i
+]
+[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
+"41
+[v _diasem `i ~T0 @X0 1 e ]
+[i _diasem
+-> 3 `i
+]
+[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
+"42
+[v _dia `i ~T0 @X0 1 e ]
+[i _dia
+-> 8 `i
+]
+[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
+"43
+[v _hora `i ~T0 @X0 1 e ]
+[i _hora
+-> 18 `i
+]
+[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
+"44
+[v _minuto `i ~T0 @X0 1 e ]
+[i _minuto
+-> 30 `i
+]
+[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
+"45
+[v _segundo `i ~T0 @X0 1 e ]
+[i _segundo
+-> 0 `i
+]
+[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
+"51
+[v _RtccTime `S1023 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
+"52
+[v _RtccTimeVal `S1023 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
+"53
+[v _RtccDate `S1025 ~T0 @X0 1 e ]
+[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
+"55
+[v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
+[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
+[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
+[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
+[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
+[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
+[; ;head.h: 14: typedef enum {
+[; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
+[; ;head.h: 16: } state;
+"18 head.h
+[v _state_alarm `E8281 ~T0 @X0 1 e ]
+[i _state_alarm
+. `E8281 1
+]
+[; ;head.h: 18: state state_alarm = DESACTIVE;
+"19
+[v _sensorDisparado `uc ~T0 @X0 1 e ]
+[i _sensorDisparado
+-> -> 0 `i `uc
+]
+[; ;head.h: 19: int8 sensorDisparado = 0;
+"20
+[v _diaDisparo `i ~T0 @X0 1 e ]
+[i _diaDisparo
+-> 0 `i
+]
+[; ;head.h: 20: int diaDisparo = 0;
+"21
+[v _mesDisparo `i ~T0 @X0 1 e ]
+[i _mesDisparo
+-> 0 `i
+]
+[; ;head.h: 21: int mesDisparo = 0;
+"22
+[v _horaDisparo `i ~T0 @X0 1 e ]
+[i _horaDisparo
+-> 0 `i
+]
+[; ;head.h: 22: int horaDisparo = 0;
+"23
+[v _minDisparo `i ~T0 @X0 1 e ]
+[i _minDisparo
+-> 0 `i
+]
+[; ;head.h: 23: int minDisparo = 0;
+[; ;keyboard.h: 5: char read_keyboard();
+[; ;reloj.h: 11: void setClock(int8 x);
+[; ;reloj.h: 12: void configurar_reloj();
+[; ;stdbool.h: 12: typedef unsigned char bool;
+"4 config.h
+[v _password `i ~T0 @X0 1 e ]
+[i _password
+-> 1234 `i
+]
+[; ;config.h: 4: int password = 1234;
+[; ;config.h: 6: bool checkPass(int pass);
+[; ;config.h: 7: void changePass(int pass);
+[; ;lcd_vision.h: 6: void set_vision();
+[; ;lcd_vision.h: 7: void clear();
+[; ;lcd_vision.h: 8: void write_Date();
+[; ;lcd_vision.h: 9: void _delay_s(int millis);
+[; ;lcd_vision.h: 10: bool is_not_letter(char input);
+[; ;lcd_vision.h: 11: bool not_fill_pass(short digit);
+[; ;lcd_vision.h: 12: void next_code(short *digit, char *input);
+[; ;lcd_vision.h: 13: void review_code(short digit, int pass);
+[; ;lcd_vision.h: 14: int obtain_pass(int pass, char input, short *digit);
+[; ;menu.h: 15: void selectMenu();
+"32 main.c
+[v _caratula `(v ~T0 @X0 1 ef ]
+"33
 {
-[; ;main.c: 31: void caratula(void)
-[; ;main.c: 32: {
+[; ;main.c: 32: void caratula(void)
+[; ;main.c: 33: {
 [e :U _caratula ]
 [f ]
-[; ;main.c: 33: lcd_comand(0b00001100);
-"33
+[; ;main.c: 34: lcd_comand(0b00001100);
+"34
 [e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 43: }
-"43
+[; ;main.c: 44: }
+"44
 [e :UE 1035 ]
 }
-"51
-[v _Setup `(v ~T0 @X0 1 ef ]
 "52
+[v _Setup `(v ~T0 @X0 1 ef ]
+"53
 {
-[; ;main.c: 51: void Setup(void)
-[; ;main.c: 52: {
+[; ;main.c: 52: void Setup(void)
+[; ;main.c: 53: {
 [e :U _Setup ]
 [f ]
-[; ;main.c: 53: OSCTUNEbits.INTSRC=1;
-"53
-[e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 54: OSCTUNEbits.PLLEN=0;
+[; ;main.c: 54: OSCTUNEbits.INTSRC=1;
 "54
-[e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 55: OSCCONbits.IRCF0=1;
+[e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 55: OSCTUNEbits.PLLEN=0;
 "55
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 56: OSCCONbits.IRCF1=1;
+[e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 56: OSCCONbits.IRCF0=1;
 "56
-[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;main.c: 57: OSCCONbits.IRCF2=1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 57: OSCCONbits.IRCF1=1;
 "57
-[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 58: OSCCONbits.SCS0=0;
+[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
+[; ;main.c: 58: OSCCONbits.IRCF2=1;
 "58
-[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 59: OSCCONbits.SCS1=0;
+[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
+[; ;main.c: 59: OSCCONbits.SCS0=0;
 "59
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 60: TRISA = 0b11110000;
+[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 60: OSCCONbits.SCS1=0;
 "60
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;main.c: 61: TRISB = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 61: TRISA = 0b11110000;
 "61
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 62: TRISC = 0b0110111;
+[e = _TRISA -> -> 240 `i `uc ]
+[; ;main.c: 62: TRISB = 0;
 "62
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 63: TRISC = 0b0110111;
+"63
 [e = _TRISC -> -> 55 `i `uc ]
-[; ;main.c: 66: ANCON0=0b11111111;
-"66
+[; ;main.c: 67: ANCON0=0b11111111;
+"67
 [e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 68: ANCON1=0b11111111;
-"68
-[e = _ANCON1 -> -> 255 `i `uc ]
-[; ;main.c: 69: ADCON0=0b00101101;
+[; ;main.c: 69: ANCON1=0b11111111;
 "69
-[e = _ADCON0 -> -> 45 `i `uc ]
-[; ;main.c: 70: ADCON1=0b00010000;
+[e = _ANCON1 -> -> 255 `i `uc ]
+[; ;main.c: 70: ADCON0=0b00101101;
 "70
-[e = _ADCON1 -> -> 16 `i `uc ]
-[; ;main.c: 71: RTCCFGbits.RTCEN=1;
+[e = _ADCON0 -> -> 45 `i `uc ]
+[; ;main.c: 71: ADCON1=0b00010000;
 "71
-[e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 72: RTCCFGbits.RTCWREN=1;
+[e = _ADCON1 -> -> 16 `i `uc ]
+[; ;main.c: 72: RTCCFGbits.RTCEN=1;
 "72
-[e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 73: T1CONbits.T1OSCEN=1;
+[e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 73: RTCCFGbits.RTCWREN=1;
 "73
-[e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 74: Write_RTC();
+[e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 74: T1CONbits.T1OSCEN=1;
 "74
-[e ( _Write_RTC ..  ]
-[; ;main.c: 75: lcd_init();
+[e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 75: Write_RTC();
 "75
-[e ( _lcd_init ..  ]
-[; ;main.c: 76: lcd_comand(0b00001100);
+[e ( _Write_RTC ..  ]
+[; ;main.c: 76: lcd_init();
 "76
-[e ( _lcd_comand (1 -> -> 12 `i `uc ]
-[; ;main.c: 77: LATBbits.LATB1 = 1;;
+[e ( _lcd_init ..  ]
+[; ;main.c: 77: lcd_comand(0b00001100);
 "77
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 78: LATBbits.LATB0 = 1;;
+[e ( _lcd_comand (1 -> -> 12 `i `uc ]
+[; ;main.c: 78: LATBbits.LATB1 = 1;;
 "78
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 79: }
-"79
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 80: }
+"80
 [e :UE 1036 ]
 }
-"87
+"88
 [v _main `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 87: int main(void){
+[; ;main.c: 88: int main(void){
 [e :U _main ]
 [f ]
-[; ;main.c: 88: Setup();
-"88
-[e ( _Setup ..  ]
-[; ;main.c: 89: caratula();
+[; ;main.c: 89: Setup();
 "89
-[e ( _caratula ..  ]
-[; ;main.c: 90: while(1){
+[e ( _Setup ..  ]
+[; ;main.c: 90: caratula();
 "90
+[e ( _caratula ..  ]
+[; ;main.c: 91: while(1){
+"91
 [e :U 1039 ]
 {
-[; ;main.c: 94: set_vision();
-"94
-[e ( _set_vision ..  ]
+[; ;main.c: 92: Read_RTC();
+"92
+[e ( _Read_RTC ..  ]
+[; ;main.c: 93: caratula();
+"93
+[e ( _caratula ..  ]
+[; ;main.c: 95: select_menu();
+"95
+[e ( _select_menu ..  ]
+[; ;main.c: 96: set_vision();
 "96
-[v _input `uc ~T0 @X0 1 a ]
-[; ;main.c: 96: char input = read_keyboard();
-[e = _input ( _read_keyboard ..  ]
-[; ;main.c: 98: if (input == 16){
-"98
-[e $ ! == -> _input `i -> 16 `i 1041  ]
-{
-[; ;main.c: 99: lcd_gotoxy(1,1);
-"99
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 100: lcd_putrs("                                ");
-"100
-[e ( _lcd_putrs (1 :s 1C ]
-[; ;main.c: 101: lcd_gotoxy(1,1);
-"101
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 102: lcd_putrs("null pointer");
-"102
-[e ( _lcd_putrs (1 :s 2C ]
-[; ;main.c: 103: lcd_gotoxy(1,2);
-"103
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 104: lcd_putrs("exception");
-"104
-[e ( _lcd_putrs (1 :s 3C ]
-[; ;main.c: 105: input = 0;
-"105
-[e = _input -> -> 0 `i `uc ]
-[; ;main.c: 106: key = 0;
-"106
-[e = _key -> -> 0 `i `uc ]
-[; ;main.c: 107: _delay((unsigned long)((98)*(8000000/4000.0)));
-"107
+[e ( _set_vision ..  ]
+[; ;main.c: 97: _delay((unsigned long)((98)*(8000000/4000.0)));
+"97
 [e ( __delay (1 -> * -> -> 98 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"108
-}
-[e :U 1041 ]
-"109
+"98
 }
 [e :U 1038 ]
-"90
+"91
 [e $U 1039  ]
 [e :U 1040 ]
-[; ;main.c: 108: }
-[; ;main.c: 109: }
-[; ;main.c: 111: return 0;
-"111
+[; ;main.c: 98: }
+[; ;main.c: 100: return 0;
+"100
 [e ) -> 0 `i ]
 [e $UE 1037  ]
-[; ;main.c: 112: }
-"112
+[; ;main.c: 101: }
+"101
 [e :UE 1037 ]
 }
-[a 2C 110 117 108 108 32 112 111 105 110 116 101 114 0 ]
-[a 3C 101 120 99 101 112 116 105 111 110 0 ]
-[a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

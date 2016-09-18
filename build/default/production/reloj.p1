@@ -17,6 +17,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "126
 [u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1025 . f b w l ]
+"18 head.h
+[c E8281 0 1 2 .. ]
+[n E8281 . ACTIVE DESACTIVE TRIGGED  ]
 "107 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
 [v _lcd_setcursor_vb `(v ~T0 @X0 0 ef2`uc`uc ]
 "75 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
@@ -7650,7 +7653,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 18 `i `uc
 ]
 [; ;headers\unmc_inout_02.h: 14: char key = 18;
-[; ;reloj.h: 11: void setClock(int8 x);
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
@@ -7795,211 +7797,262 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
 [; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
-"3 reloj.c
+[; ;head.h: 14: typedef enum {
+[; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
+[; ;head.h: 16: } state;
+"18 head.h
+[v _state_alarm `E8281 ~T0 @X0 1 e ]
+[i _state_alarm
+. `E8281 1
+]
+[; ;head.h: 18: state state_alarm = DESACTIVE;
+"19
+[v _sensorDisparado `uc ~T0 @X0 1 e ]
+[i _sensorDisparado
+-> -> 0 `i `uc
+]
+[; ;head.h: 19: int8 sensorDisparado = 0;
+"20
+[v _diaDisparo `i ~T0 @X0 1 e ]
+[i _diaDisparo
+-> 0 `i
+]
+[; ;head.h: 20: int diaDisparo = 0;
+"21
+[v _mesDisparo `i ~T0 @X0 1 e ]
+[i _mesDisparo
+-> 0 `i
+]
+[; ;head.h: 21: int mesDisparo = 0;
+"22
+[v _horaDisparo `i ~T0 @X0 1 e ]
+[i _horaDisparo
+-> 0 `i
+]
+[; ;head.h: 22: int horaDisparo = 0;
+"23
+[v _minDisparo `i ~T0 @X0 1 e ]
+[i _minDisparo
+-> 0 `i
+]
+[; ;head.h: 23: int minDisparo = 0;
+[; ;reloj.h: 11: void setClock(int8 x);
+[; ;reloj.h: 12: void configurar_reloj();
+"4 reloj.c
+[v _configurar_reloj `(v ~T0 @X0 1 ef ]
+{
+[; ;reloj.c: 4: void configurar_reloj(){
+[e :U _configurar_reloj ]
+[f ]
+[; ;reloj.c: 6: }
+"6
+[e :UE 1035 ]
+}
+"8
 [v _evalueChanceOfRaw `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;reloj.c: 3: void evalueChanceOfRaw(int8 *x, int8 *y){
+[; ;reloj.c: 8: void evalueChanceOfRaw(int8 *x, int8 *y){
 [e :U _evalueChanceOfRaw ]
 [v _x `*uc ~T0 @X0 1 r1 ]
 [v _y `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 4: if (*x == 17){
-"4
-[e $ ! == -> *U _x `i -> 17 `i 1036  ]
+[; ;reloj.c: 9: if (*x == 17){
+"9
+[e $ ! == -> *U _x `i -> 17 `i 1037  ]
 {
-[; ;reloj.c: 5: *x = 1;
-"5
-[e = *U _x -> -> 1 `i `uc ]
-[; ;reloj.c: 6: *y = 2;
-"6
-[e = *U _y -> -> 2 `i `uc ]
-"7
-}
-[e :U 1036 ]
-[; ;reloj.c: 7: }
-[; ;reloj.c: 8: }
-"8
-[e :UE 1035 ]
-}
+[; ;reloj.c: 10: *x = 1;
 "10
+[e = *U _x -> -> 1 `i `uc ]
+[; ;reloj.c: 11: *y = 2;
+"11
+[e = *U _y -> -> 2 `i `uc ]
+"12
+}
+[e :U 1037 ]
+[; ;reloj.c: 12: }
+[; ;reloj.c: 13: }
+"13
+[e :UE 1036 ]
+}
+"15
 [v _jumpIfNotNumber `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
-[; ;reloj.c: 10: void jumpIfNotNumber(int8 *x, int8 y){
+[; ;reloj.c: 15: void jumpIfNotNumber(int8 *x, int8 y){
 [e :U _jumpIfNotNumber ]
 [v _x `*uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 11: if( (*x==11 && y ==1)
-[; ;reloj.c: 12: || (*x==14 && y ==1)
-[; ;reloj.c: 13: || (*x==3 && y==2)
-[; ;reloj.c: 14: || (*x==6 && y==2)){
-"14
-[e $ ! || || || && == -> *U _x `i -> 11 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 14 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 3 `i == -> _y `i -> 2 `i && == -> *U _x `i -> 6 `i == -> _y `i -> 2 `i 1038  ]
-{
-[; ;reloj.c: 16: lcd_setcursor_vb(0,0);
-"16
-[e ( _lcd_setcursor_vb (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;reloj.c: 17: *x = *x + 1;
-"17
-[e = *U _x -> + -> *U _x `i -> 1 `i `uc ]
-"18
-}
-[e :U 1038 ]
-[; ;reloj.c: 18: }
-[; ;reloj.c: 19: }
+[; ;reloj.c: 16: if( (*x==11 && y ==1)
+[; ;reloj.c: 17: || (*x==14 && y ==1)
+[; ;reloj.c: 18: || (*x==3 && y==2)
+[; ;reloj.c: 19: || (*x==6 && y==2)){
 "19
-[e :UE 1037 ]
-}
+[e $ ! || || || && == -> *U _x `i -> 11 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 14 `i == -> _y `i -> 1 `i && == -> *U _x `i -> 3 `i == -> _y `i -> 2 `i && == -> *U _x `i -> 6 `i == -> _y `i -> 2 `i 1039  ]
+{
+[; ;reloj.c: 21: lcd_setcursor_vb(0,0);
 "21
+[e ( _lcd_setcursor_vb (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;reloj.c: 22: *x = *x + 1;
+"22
+[e = *U _x -> + -> *U _x `i -> 1 `i `uc ]
+"23
+}
+[e :U 1039 ]
+[; ;reloj.c: 23: }
+[; ;reloj.c: 24: }
+"24
+[e :UE 1038 ]
+}
+"26
 [v _evalueFinal `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;reloj.c: 21: void evalueFinal(int8 x,int8 *y){
+[; ;reloj.c: 26: void evalueFinal(int8 x,int8 *y){
 [e :U _evalueFinal ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;reloj.c: 22: if(*y == 2 && x == 9){
-"22
-[e $ ! && == -> *U _y `i -> 2 `i == -> _x `i -> 9 `i 1040  ]
+[; ;reloj.c: 27: if(*y == 2 && x == 9){
+"27
+[e $ ! && == -> *U _y `i -> 2 `i == -> _x `i -> 9 `i 1041  ]
 {
-[; ;reloj.c: 23: *y = 1;
-"23
-[e = *U _y -> -> 1 `i `uc ]
-"24
-}
-[e :U 1040 ]
-[; ;reloj.c: 24: }
-[; ;reloj.c: 25: }
-"25
-[e :UE 1039 ]
-}
+[; ;reloj.c: 28: *y = 1;
 "28
+[e = *U _y -> -> 1 `i `uc ]
+"29
+}
+[e :U 1041 ]
+[; ;reloj.c: 29: }
+[; ;reloj.c: 30: }
+"30
+[e :UE 1040 ]
+}
+"33
 [v _setClock `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;reloj.c: 28: void setClock(int8 x){
+[; ;reloj.c: 33: void setClock(int8 x){
 [e :U _setClock ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;reloj.c: 29: switch (x) {
-"29
-[e $U 1043  ]
-{
-[; ;reloj.c: 30: case 10:
-"30
-[e :U 1044 ]
-[; ;reloj.c: 31: dia++;
-"31
-[e ++ _dia -> 1 `i ]
-[; ;reloj.c: 32: if(dia > 31){
-"32
-[e $ ! > _dia -> 31 `i 1045  ]
-{
-[; ;reloj.c: 33: dia = 1;
-"33
-[e = _dia -> 1 `i ]
+[; ;reloj.c: 34: switch (x) {
 "34
-}
-[e :U 1045 ]
-[; ;reloj.c: 34: }
-[; ;reloj.c: 35: break;
+[e $U 1044  ]
+{
+[; ;reloj.c: 35: case 10:
 "35
-[e $U 1042  ]
-[; ;reloj.c: 36: case 13:
+[e :U 1045 ]
+[; ;reloj.c: 36: dia++;
 "36
-[e :U 1046 ]
-[; ;reloj.c: 37: mes++;
+[e ++ _dia -> 1 `i ]
+[; ;reloj.c: 37: if(dia > 31){
 "37
-[e ++ _mes -> 1 `i ]
-[; ;reloj.c: 38: if(mes > 12){
+[e $ ! > _dia -> 31 `i 1046  ]
+{
+[; ;reloj.c: 38: dia = 1;
 "38
-[e $ ! > _mes -> 12 `i 1047  ]
-{
-[; ;reloj.c: 39: mes = 1;
+[e = _dia -> 1 `i ]
 "39
-[e = _mes -> 1 `i ]
+}
+[e :U 1046 ]
+[; ;reloj.c: 39: }
+[; ;reloj.c: 40: break;
 "40
-}
-[e :U 1047 ]
-[; ;reloj.c: 40: }
-[; ;reloj.c: 41: break;
+[e $U 1043  ]
+[; ;reloj.c: 41: case 13:
 "41
-[e $U 1042  ]
-[; ;reloj.c: 42: case 16:
+[e :U 1047 ]
+[; ;reloj.c: 42: mes++;
 "42
-[e :U 1048 ]
-[; ;reloj.c: 43: anio++;
+[e ++ _mes -> 1 `i ]
+[; ;reloj.c: 43: if(mes > 12){
 "43
-[e ++ _anio -> 1 `i ]
-[; ;reloj.c: 44: break;
+[e $ ! > _mes -> 12 `i 1048  ]
+{
+[; ;reloj.c: 44: mes = 1;
 "44
-[e $U 1042  ]
-[; ;reloj.c: 45: case 2:
+[e = _mes -> 1 `i ]
 "45
-[e :U 1049 ]
-[; ;reloj.c: 46: hora++;
+}
+[e :U 1048 ]
+[; ;reloj.c: 45: }
+[; ;reloj.c: 46: break;
 "46
-[e ++ _hora -> 1 `i ]
-[; ;reloj.c: 47: if(hora > 23){
+[e $U 1043  ]
+[; ;reloj.c: 47: case 16:
 "47
-[e $ ! > _hora -> 23 `i 1050  ]
-{
-[; ;reloj.c: 48: hora = 0;
+[e :U 1049 ]
+[; ;reloj.c: 48: anio++;
 "48
-[e = _hora -> 0 `i ]
+[e ++ _anio -> 1 `i ]
+[; ;reloj.c: 49: break;
 "49
-}
-[e :U 1050 ]
-[; ;reloj.c: 49: }
-[; ;reloj.c: 50: break;
+[e $U 1043  ]
+[; ;reloj.c: 50: case 2:
 "50
-[e $U 1042  ]
-[; ;reloj.c: 51: case 5:
+[e :U 1050 ]
+[; ;reloj.c: 51: hora++;
 "51
-[e :U 1051 ]
-[; ;reloj.c: 52: minuto++;
+[e ++ _hora -> 1 `i ]
+[; ;reloj.c: 52: if(hora > 23){
 "52
-[e ++ _minuto -> 1 `i ]
-[; ;reloj.c: 53: if(minuto > 59){
-"53
-[e $ ! > _minuto -> 59 `i 1052  ]
+[e $ ! > _hora -> 23 `i 1051  ]
 {
-[; ;reloj.c: 54: minuto = 0;
+[; ;reloj.c: 53: hora = 0;
+"53
+[e = _hora -> 0 `i ]
 "54
-[e = _minuto -> 0 `i ]
+}
+[e :U 1051 ]
+[; ;reloj.c: 54: }
+[; ;reloj.c: 55: break;
 "55
-}
-[e :U 1052 ]
-[; ;reloj.c: 55: }
-[; ;reloj.c: 56: break;
+[e $U 1043  ]
+[; ;reloj.c: 56: case 5:
 "56
-[e $U 1042  ]
-[; ;reloj.c: 57: default:
+[e :U 1052 ]
+[; ;reloj.c: 57: minuto++;
 "57
-[e :U 1053 ]
-[; ;reloj.c: 58: break;
+[e ++ _minuto -> 1 `i ]
+[; ;reloj.c: 58: if(minuto > 59){
 "58
-[e $U 1042  ]
+[e $ ! > _minuto -> 59 `i 1053  ]
+{
+[; ;reloj.c: 59: minuto = 0;
 "59
-}
-[; ;reloj.c: 59: }
-[e $U 1042  ]
-"29
-[e :U 1043 ]
-[e [\ _x , $ -> -> 10 `i `uc 1044
- , $ -> -> 13 `i `uc 1046
- , $ -> -> 16 `i `uc 1048
- , $ -> -> 2 `i `uc 1049
- , $ -> -> 5 `i `uc 1051
- 1053 ]
-"59
-[e :U 1042 ]
-[; ;reloj.c: 60: Write_RTC();
+[e = _minuto -> 0 `i ]
 "60
-[e ( _Write_RTC ..  ]
-[; ;reloj.c: 61: _delay((unsigned long)((50)*(8000000/4000.0)));
+}
+[e :U 1053 ]
+[; ;reloj.c: 60: }
+[; ;reloj.c: 61: break;
 "61
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;reloj.c: 62: }
+[e $U 1043  ]
+[; ;reloj.c: 62: default:
 "62
-[e :UE 1041 ]
+[e :U 1054 ]
+[; ;reloj.c: 63: break;
+"63
+[e $U 1043  ]
+"64
+}
+[; ;reloj.c: 64: }
+[e $U 1043  ]
+"34
+[e :U 1044 ]
+[e [\ _x , $ -> -> 10 `i `uc 1045
+ , $ -> -> 13 `i `uc 1047
+ , $ -> -> 16 `i `uc 1049
+ , $ -> -> 2 `i `uc 1050
+ , $ -> -> 5 `i `uc 1052
+ 1054 ]
+"64
+[e :U 1043 ]
+[; ;reloj.c: 65: Write_RTC();
+"65
+[e ( _Write_RTC ..  ]
+[; ;reloj.c: 66: _delay((unsigned long)((50)*(8000000/4000.0)));
+"66
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;reloj.c: 67: }
+"67
+[e :UE 1042 ]
 }
