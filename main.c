@@ -21,6 +21,7 @@
 #include "keyboard.h"
 #include "reloj.h"
 #include "lcd_vision.h"
+#include "menu.h"
 
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 /// Funcion Caratula
@@ -37,7 +38,7 @@
         //lcd_gotoxy(9,1);
         //lcd_putrs(buffer2);
         //sprintf(buffer2,"%01u",key);
-        lcd_gotoxy(1,2);
+        //lcd_gotoxy(1,2);
         //lcd_putrs(buffer2);
      
     }
@@ -59,7 +60,7 @@
     OSCCONbits.SCS1=0;
     TRISA = 0b11110000;
     TRISB = 0;
-    TRISC = 0b00000111;
+    TRISC = 0b0110111;
     //TRISAbits.TRISA0=1;
     //TRISBbits.TRISB0=0;
     //TRISCbits.TRISC0=0;
@@ -75,7 +76,7 @@
     lcd_init();
     lcd_comand(0b00001100);     //Display=on / Cursor=off / Blink=off
     LED_2_On;
-    LED_3_On;
+ //   LED_3_On;
     }
 /*------------------------------------------------------------------------------
 ********************************************************************************
@@ -88,24 +89,12 @@ int main(void){
 Setup();
 caratula();
 while(1){
-    //Read_RTC();
-    //caratula();
+    Read_RTC();
+    caratula();
     //lcd_gotoxy(1,2);
+    select_menu();
     set_vision();
-    
-    char input = read_keyboard();
-    
-    if (input == 16){
-        lcd_gotoxy(1,1);
-        lcd_putrs("                                ");
-        lcd_gotoxy(1,1);
-        lcd_putrs("null pointer");
-        lcd_gotoxy(1,2);
-        lcd_putrs("exception");
-        input = 0;
-        key = 0;
-        __delay_ms(98);
-    }
+    __delay_ms(98);
 }    
        
 return 0;

@@ -1,0 +1,20 @@
+
+# 1 "config.c"
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "config.h"
+int password = 1234;
+
+bool checkPass(int pass);
+void changePass(int pass);
+
+# 3 "config.c"
+bool checkPass(int pass){
+return password == pass;
+}
+
+void changePass(int pass){
+password = pass;
+}

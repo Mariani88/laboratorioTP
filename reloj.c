@@ -1,10 +1,20 @@
 #include "reloj.h"
 #include <unmc_rtcc_01.h>
+#include "keyboard.h"
+
 void evalueChanceOfRaw(int8 *x, int8 *y){
-	if (*x == 17){
-         *x = 1;
+	if (*x > 16){
+         *x = 2;
          *y = 2;
-       }
+    }
+    
+    if(*y == 2 && *x > 5){
+        
+        *y = 1;
+        *x = 10;
+        
+    }
+    
 }
     
 void jumpIfNotNumber(int8 *x, int8 y){
@@ -19,7 +29,7 @@ void jumpIfNotNumber(int8 *x, int8 y){
 }
 
 void evalueFinal(int8 x,int8 *y){
-	if(*y == 2 && x == 9){
+	if(*y == 2 && x == 6){
             *y = 1;
         }
 }
@@ -60,3 +70,35 @@ void setClock(int8 x){
         Write_RTC();
         __delay_ms(50);
 }
+
+
+
+void configurar_reloj(){
+    char input = 18;
+    int8 x = 10;
+    int8 y = 1;
+    
+    while(input != 16){
+        Read_RTC();
+        lcd_setcursor_vb(1,1);
+        lcd_gotoxy(x,y);
+        if(switch2 == 0)
+        {
+            x=x+3;
+            
+            __delay_ms(50);
+        //jumpIfNotNumber(&x,y);
+        evalueChanceOfRaw(&x,&y);
+        lcd_gotoxy(x,y); 
+        }
+
+        if(switch1 == 0){
+            setClock(x);
+            write_Date();
+        }
+        input = read_keyboard();
+            __delay_ms(98);             // 98ms retardo maximo para esta funcion
+
+        }
+    }
+

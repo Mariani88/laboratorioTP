@@ -1,13 +1,176 @@
 
-# 1 "C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c"
+# 1 "menu.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
-extern const char __xc8_OPTIM_SPEED;
+# 8 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+typedef int ptrdiff_t;
+typedef unsigned size_t;
+typedef unsigned short wchar_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 24 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int errno;
+
+# 55
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\conio.h"
+extern int errno;
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 31
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 100 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 192
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
 
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
+
+# 98 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
+extern const char __xc8_OPTIM_SPEED;
 
 # 49 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h"
 extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -8832,12 +8995,7 @@ extern void ReadDSGPR( CONTEXT* ptr );
 
 extern void ULPWakeUpEnable( void );
 
-# 2 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
-typedef int ptrdiff_t;
-typedef unsigned size_t;
-typedef unsigned short wchar_t;
-
-# 13
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
 extern int errno;
 
 # 65 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\GenericTypeDefs.h"
@@ -9790,144 +9948,260 @@ void lcd_setcursor_vb(int8 visible, int8 blink);
 void lcd_puts(char *ptr);
 void lcd_putrs(const char *ptr);
 
-# 16 "C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c"
-const int8 LCD_INIT_STRING[4] =
-{
-0x20 | (2 << 2),
-0x0C,
-1,
-6
-};
 
+# 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h"
+#pragma config CPUDIV=OSC1
+#pragma config CP0=OFF
+#pragma config WDTEN=OFF
+#pragma config PLLDIV=1
+#pragma config STVREN=ON
+#pragma config XINST=OFF
+#pragma config XINST=OFF
+#pragma config OSC=INTOSC
+#pragma config T1DIG=ON
+#pragma config LPT1OSC=OFF
+#pragma config FCMEN=OFF
+#pragma config IESO=OFF
+#pragma config WDTPS=32768
+#pragma config DSWDTOSC=INTOSCREF
+#pragma config RTCOSC=T1OSCREF
+#pragma config DSBOREN=OFF
+#pragma config DSWDTEN=OFF
+#pragma config DSWDTPS=G2
+#pragma config IOL1WAY=OFF
+#pragma config MSSP7B_EN=MSK7
+#pragma config WPCFG=OFF
+#pragma config WPDIS=OFF
 
-void lcd_send_nibble(int8 nibble){
+# 14 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
+char key;
 
-LATBbits.LATB4=!!(nibble & 0x01);
-LATBbits.LATB5=!!(nibble & 0x02);
-LATBbits.LATB6=!!(nibble & 0x04);
-LATBbits.LATB7=!!(nibble & 0x08);
+# 5 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
+rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
 
-__nop();
-LATBbits.LATB2=1;
-__nop();__nop();
-LATBbits.LATB2=0;
+char segundo_u;
+char segundo_d;
+char minuto_u;
+char minuto_d;
+char hora_u;
+char hora_d;
+char fecha_u;
+char fecha_d;
+char mes_u;
+char mes_d;
+char dia_semana;
+char anio_u;
+char anio_d;
+bit flag=0;
+int i=0;
+int j=0;
+int a=0;
+int b=0;
+int c=0;
+int k=0;
+int anio=15;
+int mes=9;
+int diasem=3;
+int dia=8;
+int hora=18;
+int minuto=30;
+int segundo=0;
+
+rtccTime RtccTime;
+rtccTime RtccTimeVal;
+rtccDate RtccDate;
+
+unsigned char buffer2[20];
+
+void DelayFor18TC2(void);
+
+void DelayPORXLCD(void);
+
+void Write_RTC2(void);
+
+void Read_RTC2(void);
+
+# 14 "head.h"
+typedef enum {
+ACTIVE, DESACTIVE, TRIGGED,
+} state;
+
+state state_alarm = DESACTIVE;
+int8 sensorDisparado = 0;
+int diaDisparo = 0;
+int mesDisparo = 0;
+int horaDisparo = 0;
+int minDisparo = 0;
+
+# 5 "keyboard.h"
+char read_keyboard();
+
+# 12 "reloj.h"
+void configurar_reloj();
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "config.h"
+int password = 1234;
+
+bool checkPass(int pass);
+void changePass(int pass);
+
+# 15 "menu.h"
+void selectMenu();
+
+# 6 "lcd_vision.h"
+void set_vision();
+void clear();
+void write_Date();
+void _delay_s(int millis);
+bool is_not_letter(char input);
+bool not_fill_pass(short digit);
+void next_code(short *digit, char *input);
+void review_code(short digit, int pass);
+int obtain_pass(int pass, char input, short *digit);
+
+# 14 "menu.c"
+char menu = 1;
+int newpass = 0;
+
+bool input_old_pass(){
+short digit = 12;
+int pass = 0;
+char input = read_keyboard();
+while(not_fill_pass(digit)){
+if(0<input && input<10){
+pass = pass + input * pow(10, 15 - digit);
+lcd_gotoxy(digit,1);
+_delay_s(50);
+clear_keyboard();
+digit = digit +1;
+input = 18;
 }
 
-# 86
-void lcd_send_byte(int8 address, int8 n){
-
-LATBbits.LATB3=0;
-
-
-
-
-Delay100TCYx(8000000UL/4000000UL);
-
-
-TRISBbits.TRISB4=0;
-TRISBbits.TRISB5=0;
-TRISBbits.TRISB6=0;
-TRISBbits.TRISB7=0;
-
-if(address)
-LATBbits.LATB3=1;
-else
-LATBbits.LATB3=0;
-
-__nop();
-
-# 113
-lcd_send_nibble(n >> 4);
-lcd_send_nibble(n & 0xf);
+input = read_keyboard();
+}
+return checkPass(pass);
 }
 
-
-
-void lcd_init(void){
-int8 i;
-
-TRISBbits.TRISB3=0;
-TRISBbits.TRISB2=0;
-
-# 128
-LATBbits.LATB3=0;
-LATBbits.LATB2=0;
-
-# 134
-TRISBbits.TRISB4=0;
-TRISBbits.TRISB5=0;
-TRISBbits.TRISB6=0;
-TRISBbits.TRISB7=0;
-
-Delay1KTCYx(8000000UL/800000UL);
-Delay1KTCYx(8000000UL/800000UL);
-Delay1KTCYx(8000000UL/800000UL);
-
-for(i=0 ;i < 3; i++){
-lcd_send_nibble(0x03);
-Delay1KTCYx(8000000UL/800000UL);
-}
-
-lcd_send_nibble(0x02);
-
-for(i=0; i < sizeof(LCD_INIT_STRING); i++){
-lcd_send_byte(0, LCD_INIT_STRING[i]);
-
-Delay1KTCYx(8000000UL/800000UL);
-
-}
-}
-
-void lcd_gotoxy(int8 x, int8 y){
-int8 address;
-
-if(y != 1)
-address = 0x40;
-else
-address=0;
-
-address += x-1;
-lcd_send_byte(0, 0x80 | address);
-}
-
-
-
-void lcd_putc(int8 c){
-switch(c){
-case '\f':
-lcd_send_byte(0,1);
-break;
-case '\n':
+void show_success(){
+clear();
+lcd_gotoxy(1,1);
+lcd_putrs("pass success");
 lcd_gotoxy(1,2);
+lcd_putrs("changed");
+_delay_s(1000);
+}
+
+void show_error(){
+clear();
+lcd_gotoxy(1,1);
+lcd_putrs("old pass wrong");
+lcd_gotoxy(1,2);
+lcd_putrs("nothing changed");
+_delay_s(1000);
+}
+
+void input_new_pass(){
+short digit = 12;
+newpass = 0;
+char input = read_keyboard();
+while(not_fill_pass(digit)){
+if(0<input && input<10){
+newpass = newpass + input * pow(10, 15 - digit);
+lcd_gotoxy(digit,2);
+_delay_s(50);
+clear_keyboard();
+digit = digit +1;
+input = 18;
+}
+input = read_keyboard();
+}
+}
+
+void ver_opcion_cambio(){
+clear();
+bool old_correct = 0;
+lcd_gotoxy(2,1);
+lcd_putrs("Old pass:____");
+lcd_gotoxy(2,2);
+lcd_putrs("New pass:____");
+lcd_gotoxy(11,1);
+old_correct = input_old_pass();
+lcd_gotoxy(11,2);
+input_new_pass();
+char input = 0;
+while (input != 16){
+input = read_keyboard();
+}
+if (old_correct)
+{
+changePass(newpass);
+show_success();
+}else{
+show_error();
+}
+}
+
+void ver_info(){
+clear();
+char input = 18;
+while (input != 16){
+lcd_gotoxy(1,1);
+lcd_putrs("Sensor: ");
+sprintf(buffer2,"%02u",sensorDisparado);
+lcd_putrs(buffer2);
+lcd_gotoxy(1,2);
+lcd_putrs("Date:");
+sprintf(buffer2,"%02u/%02u",diaDisparo,mesDisparo);
+lcd_putrs(buffer2);
+lcd_putrs(" ");
+sprintf(buffer2,"%02u:%02u",horaDisparo,minDisparo);
+lcd_putrs(buffer2);
+input = read_keyboard();
+}
+menu = 18;
+}
+
+
+void dispararSensor(int sensor){
+Read_RTC();
+state_alarm = TRIGGED;
+sensorDisparado = sensor;
+diaDisparo = dia;
+mesDisparo = mes;
+horaDisparo = hora;
+minDisparo = minuto;
+}
+
+
+void select_menu(){
+if (state_alarm == DESACTIVE){
+menu = read_keyboard();
+switch (menu){
+case 11:ver_opcion_cambio();
 break;
-case '\b':
-lcd_send_byte(0,0x10);
+case 12:configurar_reloj();
 break;
-default:
-lcd_send_byte(1,c);
+case 13:ver_info();
 break;
+default: ;
 }
+}else{
+if (state_alarm == ACTIVE){
+menu = read_keyboard();
+switch (menu){
+case 11:dispararSensor(1);
+break;
+case 12:dispararSensor(2);
+break;
+case 13:dispararSensor(3);
+break;
+default: ;
+}
+}
+}
+menu = 18;
 }
 
-void lcd_comand(int8 d){
-lcd_send_byte(0,d);
-}
-
-# 210
-void lcd_setcursor_vb(int8 visible, int8 blink) {
-lcd_send_byte(0, 0xC|(visible<<1)|blink);
-}
-
-void lcd_puts(char *ptr){
-
-while(*ptr){
-lcd_putc(*ptr++);
-}
-}
-
-void lcd_putrs(const char *ptr){
-
-while(*ptr){
-lcd_putc(*ptr++);
-}
-}

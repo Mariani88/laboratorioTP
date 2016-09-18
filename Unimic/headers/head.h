@@ -15,7 +15,7 @@ typedef enum {
     ACTIVE, DESACTIVE, TRIGGED,
 } state;
 
-state state_alarm = DESACTIVE;
+state state_alarm = ACTIVE;
 
 #endif	/* HEAD_H */
 
