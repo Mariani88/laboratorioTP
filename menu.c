@@ -152,5 +152,3 @@ void select_menu(){
     }    
     menu = 18;
 }
-
-

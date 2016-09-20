@@ -71,8 +71,6 @@ void setClock(int8 x){
         __delay_ms(50);
 }
 
-
-
 void configurar_reloj(){
     char input = 18;
     int8 x = 10;
@@ -101,4 +99,3 @@ void configurar_reloj(){
 
         }
     }
-
