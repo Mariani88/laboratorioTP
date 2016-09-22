@@ -97,6 +97,8 @@ void twinkle(){
     int time = 0; 
     
     while(input != 16 && time < time_to_stop){  
+        buz_on;
+        //buz_off;
         _delay_s(200);
         lcd_gotoxy(7,2);
         LED_2_Off;
@@ -119,11 +121,6 @@ void twinkle(){
         input_password();
     }
 }
-
-
-
-
-
 
 void set_vision(){
     clear();
