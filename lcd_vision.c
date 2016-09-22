@@ -71,26 +71,6 @@ int obtain_pass(int pass, char input, short *digit){
     return pass;
 }
 
-
-void twinkle(){
-    char input = 1;
-    
-    while(input != 16){
-        _delay_s(200);
-        lcd_gotoxy(7,2);
-        LED_2_Off;
-        LED_3_On;
-        lcd_putrs("WARNING!!!");
-        _delay_s(200);
-        LED_3_Off;
-        LED_2_On;
-        lcd_gotoxy(7,2);
-        lcd_putrs("          ");
-        input = read_keyboard();
-    }
-    clear_keyboard();
-}
-
 void set_desactive_vision(short digit){
     lcd_gotoxy(7,2);
     lcd_putrs("pass:____");
@@ -112,6 +92,38 @@ void input_password(){
     }
 }
 
+void twinkle(){
+    char input = 1;
+    int time = 0; 
+    
+    while(input != 16 && time < time_to_stop){  
+        _delay_s(200);
+        lcd_gotoxy(7,2);
+        LED_2_Off;
+        LED_3_On;
+        lcd_putrs("WARNING!!!");
+        _delay_s(200);
+        LED_3_Off;
+        LED_2_On;
+        lcd_gotoxy(7,2);
+        lcd_putrs("          ");
+        input = read_keyboard();
+        time +=400;
+    }
+    
+    clear_keyboard();
+    
+    if(time >= time_to_stop){
+        state_alarm = ACTIVE;
+    }else{
+        input_password();
+    }
+}
+
+
+
+
+
 
 void set_vision(){
     clear();
@@ -121,7 +133,7 @@ void set_vision(){
     switch (state_alarm){
         case ACTIVE:lcd_putrs("ON");
             LED_3_On;
-            input_password();
+            //input_password();
         break;
         
         case DESACTIVE:lcd_putrs("OFF");
@@ -131,7 +143,7 @@ void set_vision(){
         break;
         default:lcd_putrs("TRIGGED");
             twinkle();
-            input_password();
+            //input_password();
     }
     
 }
