@@ -6,6 +6,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 1234 `i
 ]
 [; ;config.h: 4: int password = 1234;
+"5
+[v _time_to_stop `i ~T0 @X0 1 e ]
+[i _time_to_stop
+-> -> 600000 `l `i
+]
+[; ;config.h: 5: int time_to_stop =600000;
 [; ;config.h: 6: bool checkPass(int pass);
 [; ;config.h: 7: void changePass(int pass);
 "3 config.c

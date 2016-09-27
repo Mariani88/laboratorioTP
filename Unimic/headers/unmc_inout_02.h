@@ -11,7 +11,7 @@
  *
  *********************************************************************/
 
-char key;         //variable key
+char key = 18;         //variable key
 
 //
 ///** L E D **********************************************************/
@@ -33,8 +33,8 @@ char key;         //variable key
 #define LED_3_Toggle    LED_3 = !LED_3;
 //
 ///** S W I T C H *****************************************************/
-//#define switch1         PORTAbits.RA1
-//#define switch2         PORTAbits.RA0
+#define switch1         PORTCbits.RC4
+#define switch2         PORTCbits.RC5
 
 ///** KEYBOARD *****************************************************/
 #define row1            LATAbits.LATA0
@@ -47,3 +47,7 @@ char key;         //variable key
 #define column4         PORTCbits.RC2
 
 /********************************************************************/
+///**BUZ
+#define buz             PORTCbits.RC7
+#define buz_on          buz = 1;
+#define buz_off         buz = 0;

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"6359 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+"6359 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
 "6369
@@ -31,12 +31,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S445 . . . . . . . . . . ]
 "6401
 [v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-"42 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
+"42 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"25 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
-[v _Delay100TCYx `(i ~T0 @X0 0 ef1`uc ]
-"6856 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+"25 C:\Program Files\Microchip\xc8\v1.34\include\plib\delays.h
+[v _Delay100TCYx `(v ~T0 @X0 0 ef1`uc ]
+"6856 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S478 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S478 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
 "6855
@@ -44,12 +44,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S477 . . ]
 "6867
 [v _TRISBbits `VS477 ~T0 @X0 0 e@3987 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
+"31 C:\Program Files\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
-"51 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f26j50.h
+"51 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
 [; ;pic18f26j50.h: 51: asm("RPOR0 equ 0EC6h");
 [; <" RPOR0 equ 0EC6h ;# ">
 [; ;pic18f26j50.h: 55: extern volatile unsigned char RPOR1 @ 0xEC7;
@@ -7571,7 +7571,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xlcd.h: 142: extern void DelayXLCD(void);
 [; ;delays.h: 13: void Delay1TCYx(unsigned char);
 [; ;delays.h: 19: void Delay10TCYx(unsigned char);
-[; ;delays.h: 25: Delay100TCYx(unsigned char);
+[; ;delays.h: 25: void Delay100TCYx(unsigned char);
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
