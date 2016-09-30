@@ -10066,15 +10066,16 @@ void next_code(short *digit, char *input);
 void review_code(short digit, int pass);
 int obtain_pass(int pass, char input, short *digit);
 
-# 14 "menu.c"
+# 7 "menu.c"
 char menu = 1;
 int newpass = 0;
+bool press_out = 0;
 
 bool input_old_pass(){
 short digit = 12;
 int pass = 0;
 char input = read_keyboard();
-while(not_fill_pass(digit)){
+while(not_fill_pass(digit) && input!=16){
 if(0<input && input<10){
 pass = pass + input * pow(10, 15 - digit);
 lcd_gotoxy(digit,1);
@@ -10083,9 +10084,9 @@ clear_keyboard();
 digit = digit +1;
 input = 18;
 }
-
 input = read_keyboard();
 }
+press_out = input == 16;
 return checkPass(pass);
 }
 
@@ -10111,7 +10112,7 @@ void input_new_pass(){
 short digit = 12;
 newpass = 0;
 char input = read_keyboard();
-while(not_fill_pass(digit)){
+while(not_fill_pass(digit) && input!=16 && !press_out){
 if(0<input && input<10){
 newpass = newpass + input * pow(10, 15 - digit);
 lcd_gotoxy(digit,2);
@@ -10121,10 +10122,13 @@ digit = digit +1;
 input = 18;
 }
 input = read_keyboard();
+
 }
+press_out = press_out || input == 16;
 }
 
 void ver_opcion_cambio(){
+press_out = 0;
 clear();
 bool old_correct = 0;
 lcd_gotoxy(2,1);
@@ -10136,16 +10140,17 @@ old_correct = input_old_pass();
 lcd_gotoxy(11,2);
 input_new_pass();
 char input = 0;
-while (input != 16){
+while (input != 16 && !press_out){
 input = read_keyboard();
 }
-if (old_correct)
+if (old_correct && !press_out)
 {
 changePass(newpass);
 show_success();
-}else{
+}else if(!press_out){
 show_error();
 }
+clear_keyboard();
 }
 
 void ver_info(){

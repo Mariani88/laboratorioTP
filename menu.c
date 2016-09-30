@@ -1,10 +1,3 @@
-/* 
- * File:   menu.c
- * Author: seba
- *
- * Created on 9 de septiembre de 2016, 17:54
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -13,12 +6,13 @@
 
 char menu = 1;
 int newpass = 0;
+bool press_out = false;
 
 bool input_old_pass(){
     short digit = 12;
     int pass = 0;
     char input = read_keyboard(); 
-    while(not_fill_pass(digit)){
+    while(not_fill_pass(digit) && input!=16){
         if(0<input && input<10){
             pass = pass + input * pow(10, 15 - digit);
             lcd_gotoxy(digit,1);
@@ -27,9 +21,9 @@ bool input_old_pass(){
             digit = digit +1;
             input = 18;
         }
-        
         input = read_keyboard();
     }
+    press_out = input == 16;
     return checkPass(pass);
 }
 
@@ -55,7 +49,7 @@ void input_new_pass(){
     short digit = 12;
     newpass = 0;
     char input = read_keyboard(); 
-    while(not_fill_pass(digit)){
+    while(not_fill_pass(digit) && input!=16 && !press_out){
         if(0<input && input<10){
             newpass = newpass + input * pow(10, 15 - digit);
             lcd_gotoxy(digit,2);
@@ -65,10 +59,13 @@ void input_new_pass(){
             input = 18;
         }
         input = read_keyboard();
+       
     }
+    press_out = press_out || input == 16;
 }
 
 void ver_opcion_cambio(){
+    press_out = false;
     clear();
     bool old_correct = false;
     lcd_gotoxy(2,1);
@@ -80,16 +77,17 @@ void ver_opcion_cambio(){
     lcd_gotoxy(11,2);
     input_new_pass();
     char input = 0;
-    while (input != 16){
+    while (input != 16 && !press_out){
         input = read_keyboard();
     }
-    if (old_correct)
+    if (old_correct && !press_out)
     {
         changePass(newpass);
         show_success();
-    }else{
+    }else if(!press_out){
         show_error();
     }
+    clear_keyboard();
 }
 
 void ver_info(){

@@ -228,17 +228,17 @@ RTCCPTR_MASK_YEAR 3
 [v _next_code next_code `(v  1 e 0 0 ]
 "47
 [v _change_state change_state `(v  1 e 0 0 ]
-"57
+"58
 [v _review_code review_code `(v  1 e 0 0 ]
-"65
+"66
 [v _obtain_pass obtain_pass `(i  1 e 2 0 ]
-"74
+"75
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
-"81
+"82
 [v _input_password input_password `(v  1 e 0 0 ]
-"95
+"96
 [v _twinkle twinkle `(v  1 e 0 0 ]
-"125
+"126
 [v _set_vision set_vision `(v  1 e 0 0 ]
 "32 C:\laboratorioTP\main.c
 [v _caratula caratula `(v  1 e 0 0 ]
@@ -246,21 +246,21 @@ RTCCPTR_MASK_YEAR 3
 [v _Setup Setup `(v  1 e 0 0 ]
 "88
 [v _main main `(i  1 e 2 0 ]
-"17 C:\laboratorioTP\menu.c
+"11 C:\laboratorioTP\menu.c
 [v _input_old_pass input_old_pass `(uc  1 e 1 0 ]
-"36
+"30
 [v _show_success show_success `(v  1 e 0 0 ]
-"45
+"39
 [v _show_error show_error `(v  1 e 0 0 ]
-"54
+"48
 [v _input_new_pass input_new_pass `(v  1 e 0 0 ]
-"71
+"67
 [v _ver_opcion_cambio ver_opcion_cambio `(v  1 e 0 0 ]
-"95
+"93
 [v _ver_info ver_info `(v  1 e 0 0 ]
-"116
+"114
 [v _dispararSensor dispararSensor `(v  1 e 0 0 ]
-"127
+"125
 [v _select_menu select_menu `(i  1 e 2 0 ]
 "5 C:\laboratorioTP\reloj.c
 [v _evalueChanceOfRaw evalueChanceOfRaw `(v  1 e 0 0 ]
@@ -531,21 +531,21 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S251 . 1 `S219 1 . 1 0 `S228 1 . 1 0 `S230 1 . 1 0 `S233 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 `S242 1 . 1 0 `S245 1 . 1 0 `S248 1 . 1 0 ]
 [v _LATBbits LATBbits `VES251  1 e 1 @3978 ]
-[s S2195 . 1 `uc 1 ALRMPTR 1 0 :2:0 
+[s S2197 . 1 `uc 1 ALRMPTR 1 0 :2:0 
 `uc 1 AMASK 1 0 :4:2 
 `uc 1 CHIME 1 0 :1:6 
 `uc 1 ALRMEN 1 0 :1:7 
 ]
 "6740
-[s S2200 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
+[s S2202 . 1 `uc 1 ALRMPTR0 1 0 :1:0 
 `uc 1 ALRMPTR1 1 0 :1:1 
 `uc 1 AMASK0 1 0 :1:2 
 `uc 1 AMASK1 1 0 :1:3 
 `uc 1 AMASK2 1 0 :1:4 
 `uc 1 AMASK3 1 0 :1:5 
 ]
-[u S2207 . 1 `S2195 1 . 1 0 `S2200 1 . 1 0 ]
-[v _ALRMCFGbits ALRMCFGbits `VES2207  1 e 1 @3985 ]
+[u S2209 . 1 `S2197 1 . 1 0 `S2202 1 . 1 0 ]
+[v _ALRMCFGbits ALRMCFGbits `VES2209  1 e 1 @3985 ]
 "6794
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "6850
@@ -582,7 +582,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S75 . 1 `S64 1 . 1 0 `S68 1 . 1 0 ]
 [v _OSCTUNEbits OSCTUNEbits `VES75  1 e 1 @3995 ]
-[s S1635 . 1 `uc 1 RTCCIE 1 0 :1:0 
+[s S1637 . 1 `uc 1 RTCCIE 1 0 :1:0 
 `uc 1 TMR3GIE 1 0 :1:1 
 `uc 1 CTMUIE 1 0 :1:2 
 `uc 1 TMR4IE 1 0 :1:3 
@@ -592,28 +592,28 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 SSP2IE 1 0 :1:7 
 ]
 "7958
-[s S1644 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S1646 . 1 `uc 1 RXB0IE 1 0 :1:0 
 ]
-[s S1646 . 1 `uc 1 . 1 0 :1:0 
+[s S1648 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 ]
-[s S1649 . 1 `uc 1 . 1 0 :1:0 
+[s S1651 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIE 1 0 :1:1 
 ]
-[s S1652 . 1 `uc 1 . 1 0 :2:0 
+[s S1654 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TXB0IE 1 0 :1:2 
 ]
-[s S1655 . 1 `uc 1 . 1 0 :3:0 
+[s S1657 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TXB1IE 1 0 :1:3 
 ]
-[s S1658 . 1 `uc 1 . 1 0 :4:0 
+[s S1660 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXB2IE 1 0 :1:4 
 ]
-[s S1661 . 1 `uc 1 . 1 0 :4:0 
+[s S1663 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXBNIE 1 0 :1:4 
 ]
-[u S1664 . 1 `S1635 1 . 1 0 `S1644 1 . 1 0 `S1646 1 . 1 0 `S1649 1 . 1 0 `S1652 1 . 1 0 `S1655 1 . 1 0 `S1658 1 . 1 0 `S1661 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1664  1 e 1 @4003 ]
+[u S1666 . 1 `S1637 1 . 1 0 `S1646 1 . 1 0 `S1648 1 . 1 0 `S1651 1 . 1 0 `S1654 1 . 1 0 `S1657 1 . 1 0 `S1660 1 . 1 0 `S1663 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1666  1 e 1 @4003 ]
 "8239
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "10682
@@ -667,7 +667,7 @@ RTCCPTR_MASK_YEAR 3
 ]
 [u S103 . 1 `S90 1 . 1 0 `S96 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES103  1 e 1 @4051 ]
-[s S2002 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S2004 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -677,7 +677,7 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "14949
-[s S2011 . 1 `uc 1 . 1 0 :1:0 
+[s S2013 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -686,12 +686,12 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S2020 . 1 `uc 1 . 1 0 :6:0 
+[s S2022 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S2037 . 1 `S2002 1 . 1 0 `S2011 1 . 1 0 `S2020 1 . 1 0 `S2011 1 . 1 0 `S2020 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES2037  1 e 1 @4082 ]
+[u S2039 . 1 `S2004 1 . 1 0 `S2013 1 . 1 0 `S2022 1 . 1 0 `S2013 1 . 1 0 `S2022 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES2039  1 e 1 @4082 ]
 "354 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
 "3 C:\Program Files\Microchip\xc8\v1.34\sources\common\errno.c
@@ -712,65 +712,67 @@ RTCCPTR_MASK_YEAR 3
 [v _horaDisparo horaDisparo `i  1 e 2 0 ]
 "23
 [v _minDisparo minDisparo `i  1 e 2 0 ]
-"14 C:\laboratorioTP\menu.c
+"7 C:\laboratorioTP\menu.c
 [v _menu menu `uc  1 e 1 0 ]
-"15
+"8
 [v _newpass newpass `i  1 e 2 0 ]
+"9
+[v _press_out press_out `uc  1 e 1 0 ]
 "88 C:\laboratorioTP\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "101
 } 0
-"125 C:\laboratorioTP\lcd_vision.c
+"126 C:\laboratorioTP\lcd_vision.c
 [v _set_vision set_vision `(v  1 e 0 0 ]
 {
-"146
+"147
 } 0
-"95
+"96
 [v _twinkle twinkle `(v  1 e 0 0 ]
 {
-"97
+"98
 [v twinkle@time time `i  1 a 2 23 ]
-"96
+"97
 [v twinkle@input input `uc  1 a 1 22 ]
-"123
+"124
 } 0
-"81
+"82
 [v _input_password input_password `(v  1 e 0 0 ]
 {
-"82
-[v input_password@digit digit `s  1 a 2 20 ]
 "83
+[v input_password@digit digit `s  1 a 2 20 ]
+"84
 [v input_password@pass pass `i  1 a 2 17 ]
-"86
+"87
 [v input_password@input input `uc  1 a 1 19 ]
-"93
+"94
 } 0
-"74
+"75
 [v _set_desactive_vision set_desactive_vision `(v  1 e 0 0 ]
 {
 [v set_desactive_vision@digit digit `s  1 p 2 10 ]
-"79
+"80
 } 0
-"57
+"58
 [v _review_code review_code `(v  1 e 0 0 ]
 {
 [v review_code@digit digit `s  1 p 2 2 ]
 [v review_code@pass pass `i  1 p 2 4 ]
-"63
+"64
 } 0
 "47
 [v _change_state change_state `(v  1 e 0 0 ]
 {
-"55
+"56
 } 0
-"65
+"66
 [v _obtain_pass obtain_pass `(i  1 e 2 0 ]
 {
 [v obtain_pass@pass pass `i  1 p 2 87 ]
 [v obtain_pass@input input `uc  1 p 1 89 ]
 [v obtain_pass@digit digit `*.39s  1 p 2 90 ]
-"72
+"73
 } 0
 "40
 [v _next_code next_code `(v  1 e 0 0 ]
@@ -787,40 +789,40 @@ RTCCPTR_MASK_YEAR 3
 [v is_not_letter@input input `uc  1 a 1 1 ]
 "33
 } 0
-"127 C:\laboratorioTP\menu.c
+"125 C:\laboratorioTP\menu.c
 [v _select_menu select_menu `(i  1 e 2 0 ]
 {
-"154
+"152
 } 0
-"71
+"67
 [v _ver_opcion_cambio ver_opcion_cambio `(v  1 e 0 0 ]
 {
-"82
+"79
 [v ver_opcion_cambio@input input `uc  1 a 1 90 ]
-"73
+"70
 [v ver_opcion_cambio@old_correct old_correct `uc  1 a 1 89 ]
-"93
+"91
 } 0
-"36
+"30
 [v _show_success show_success `(v  1 e 0 0 ]
 {
-"43
+"37
 } 0
-"45
+"39
 [v _show_error show_error `(v  1 e 0 0 ]
 {
-"52
+"46
 } 0
-"17
+"11
 [v _input_old_pass input_old_pass `(uc  1 e 1 0 ]
 {
-"18
-[v input_old_pass@digit digit `s  1 a 2 20 ]
-"19
+"12
+[v input_old_pass@digit digit `s  1 a 2 19 ]
+"13
 [v input_old_pass@pass pass `i  1 a 2 17 ]
-"20
-[v input_old_pass@input input `uc  1 a 1 19 ]
-"34
+"14
+[v input_old_pass@input input `uc  1 a 1 21 ]
+"28
 } 0
 "3 C:\laboratorioTP\config.c
 [v _checkPass checkPass `(uc  1 e 1 0 ]
@@ -828,14 +830,14 @@ RTCCPTR_MASK_YEAR 3
 [v checkPass@pass pass `i  1 p 2 0 ]
 "5
 } 0
-"54 C:\laboratorioTP\menu.c
+"48 C:\laboratorioTP\menu.c
 [v _input_new_pass input_new_pass `(v  1 e 0 0 ]
 {
-"55
+"49
 [v input_new_pass@digit digit `s  1 a 2 18 ]
-"57
-[v input_new_pass@input input `uc  1 a 1 17 ]
-"69
+"51
+[v input_new_pass@input input `uc  1 a 1 20 ]
+"65
 } 0
 "5 C:\Program Files\Microchip\xc8\v1.34\sources\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
@@ -1054,23 +1056,23 @@ RTCCPTR_MASK_YEAR 3
 [v changePass@pass pass `i  1 p 2 0 ]
 "9
 } 0
-"95 C:\laboratorioTP\menu.c
+"93 C:\laboratorioTP\menu.c
 [v _ver_info ver_info `(v  1 e 0 0 ]
 {
-"97
+"95
 [v ver_info@input input `uc  1 a 1 36 ]
-"113
+"111
 } 0
 "7 C:\laboratorioTP\lcd_vision.c
 [v _clear clear `(v  1 e 0 0 ]
 {
 "10
 } 0
-"116 C:\laboratorioTP\menu.c
+"114 C:\laboratorioTP\menu.c
 [v _dispararSensor dispararSensor `(v  1 e 0 0 ]
 {
 [v dispararSensor@sensor sensor `i  1 p 2 18 ]
-"124
+"122
 } 0
 "74 C:\laboratorioTP\reloj.c
 [v _configurar_reloj configurar_reloj `(v  1 e 0 0 ]
@@ -1319,9 +1321,9 @@ RTCCPTR_MASK_YEAR 3
 "34 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteTime.c
 [v _RtccWriteTime RtccWriteTime `(E7121  1 e 1 0 ]
 {
-[s S2115 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S2117 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "36
-[s S2118 . 2 `uc 1 b0 1 0 :1:0 
+[s S2120 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1338,10 +1340,10 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S2135 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2115 1 byte 2 0 `S2118 1 bits 2 0 ]
-[v RtccWriteTime@tempHourWDay tempHourWDay `S2135  1 a 2 9 ]
+[u S2137 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2117 1 byte 2 0 `S2120 1 bits 2 0 ]
+[v RtccWriteTime@tempHourWDay tempHourWDay `S2137  1 a 2 9 ]
 "37
-[v RtccWriteTime@tempMinSec tempMinSec `S2135  1 a 2 7 ]
+[v RtccWriteTime@tempMinSec tempMinSec `S2137  1 a 2 7 ]
 "40
 [v RtccWriteTime@wasWrEn wasWrEn `E7121  1 a 1 6 ]
 "42
@@ -1358,9 +1360,9 @@ RTCCPTR_MASK_YEAR 3
 "35 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\plib\rtcc\RtccWriteDate.c
 [v _RtccWriteDate RtccWriteDate `(E7121  1 e 1 0 ]
 {
-[s S2115 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[s S2117 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
 "37
-[s S2118 . 2 `uc 1 b0 1 0 :1:0 
+[s S2120 . 2 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1377,12 +1379,12 @@ RTCCPTR_MASK_YEAR 3
 `uc 1 b14 1 1 :1:6 
 `uc 1 b15 1 1 :1:7 
 ]
-[u S2135 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2115 1 byte 2 0 `S2118 1 bits 2 0 ]
-[v RtccWriteDate@tempHourWDay tempHourWDay `S2135  1 a 2 11 ]
+[u S2137 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S2117 1 byte 2 0 `S2120 1 bits 2 0 ]
+[v RtccWriteDate@tempHourWDay tempHourWDay `S2137  1 a 2 11 ]
 "38
-[v RtccWriteDate@tempDayMonth tempDayMonth `S2135  1 a 2 9 ]
+[v RtccWriteDate@tempDayMonth tempDayMonth `S2137  1 a 2 9 ]
 "39
-[v RtccWriteDate@tempYear tempYear `S2135  1 a 2 6 ]
+[v RtccWriteDate@tempYear tempYear `S2137  1 a 2 6 ]
 "41
 [v RtccWriteDate@wasWrEn wasWrEn `E7121  1 a 1 8 ]
 "43

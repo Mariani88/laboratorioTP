@@ -51,6 +51,7 @@ void change_state(){
         case ACTIVE:state_alarm = DESACTIVE;
         break;
         default:state_alarm = DESACTIVE;
+                buz_off;    
     }
 }
 

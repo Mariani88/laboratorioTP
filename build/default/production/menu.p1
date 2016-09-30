@@ -28,7 +28,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_gotoxy `(v ~T0 @X0 0 ef2`uc`uc ]
 "9 lcd_vision.h
 [v __delay_s `(v ~T0 @X0 0 ef1`i ]
-"26 menu.c
+"20 menu.c
 [v _clear_keyboard `(i ~T0 @X0 0 ef ]
 "11 lcd_vision.h
 [v _not_fill_pass `(uc ~T0 @X0 0 ef1`s ]
@@ -7956,508 +7956,528 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd_vision.h: 12: void next_code(short *digit, char *input);
 [; ;lcd_vision.h: 13: void review_code(short digit, int pass);
 [; ;lcd_vision.h: 14: int obtain_pass(int pass, char input, short *digit);
-"14 menu.c
+"7 menu.c
 [v _menu `uc ~T0 @X0 1 e ]
 [i _menu
 -> -> 1 `i `uc
 ]
-[; ;menu.c: 14: char menu = 1;
-"15
+[; ;menu.c: 7: char menu = 1;
+"8
 [v _newpass `i ~T0 @X0 1 e ]
 [i _newpass
 -> 0 `i
 ]
-[; ;menu.c: 15: int newpass = 0;
-"17
+[; ;menu.c: 8: int newpass = 0;
+"9
+[v _press_out `uc ~T0 @X0 1 e ]
+[i _press_out
+-> -> 0 `i `uc
+]
+[; ;menu.c: 9: bool press_out = 0;
+"11
 [v _input_old_pass `(uc ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 17: bool input_old_pass(){
+[; ;menu.c: 11: bool input_old_pass(){
 [e :U _input_old_pass ]
 [f ]
-"18
+"12
 [v _digit `s ~T0 @X0 1 a ]
-[; ;menu.c: 18: short digit = 12;
+[; ;menu.c: 12: short digit = 12;
 [e = _digit -> -> 12 `i `s ]
-"19
+"13
 [v _pass `i ~T0 @X0 1 a ]
-[; ;menu.c: 19: int pass = 0;
+[; ;menu.c: 13: int pass = 0;
 [e = _pass -> 0 `i ]
-"20
+"14
 [v _input `uc ~T0 @X0 1 a ]
-[; ;menu.c: 20: char input = read_keyboard();
+[; ;menu.c: 14: char input = read_keyboard();
 [e = _input ( _read_keyboard ..  ]
-[; ;menu.c: 21: while(not_fill_pass(digit)){
-"21
+[; ;menu.c: 15: while(not_fill_pass(digit) && input!=16){
+"15
 [e $U 1040  ]
 [e :U 1041 ]
 {
-[; ;menu.c: 22: if(0<input && input<10){
-"22
+[; ;menu.c: 16: if(0<input && input<10){
+"16
 [e $ ! && < -> 0 `i -> _input `i < -> _input `i -> 10 `i 1043  ]
 {
-[; ;menu.c: 23: pass = pass + input * pow(10, 15 - digit);
-"23
+[; ;menu.c: 17: pass = pass + input * pow(10, 15 - digit);
+"17
 [e = _pass -> + -> _pass `d * -> _input `d ( _pow (2 , -> -> 10 `i `d -> - -> 15 `i -> _digit `i `d `i ]
-[; ;menu.c: 24: lcd_gotoxy(digit,1);
-"24
+[; ;menu.c: 18: lcd_gotoxy(digit,1);
+"18
 [e ( _lcd_gotoxy (2 , -> _digit `uc -> -> 1 `i `uc ]
-[; ;menu.c: 25: _delay_s(50);
-"25
+[; ;menu.c: 19: _delay_s(50);
+"19
 [e ( __delay_s (1 -> 50 `i ]
-[; ;menu.c: 26: clear_keyboard();
-"26
+[; ;menu.c: 20: clear_keyboard();
+"20
 [e ( _clear_keyboard ..  ]
-[; ;menu.c: 27: digit = digit +1;
-"27
+[; ;menu.c: 21: digit = digit +1;
+"21
 [e = _digit -> + -> _digit `i -> 1 `i `s ]
-[; ;menu.c: 28: input = 18;
-"28
+[; ;menu.c: 22: input = 18;
+"22
 [e = _input -> -> 18 `i `uc ]
-"29
+"23
 }
 [e :U 1043 ]
-[; ;menu.c: 29: }
-[; ;menu.c: 31: input = read_keyboard();
-"31
+[; ;menu.c: 23: }
+[; ;menu.c: 24: input = read_keyboard();
+"24
 [e = _input ( _read_keyboard ..  ]
-"32
+"25
 }
 [e :U 1040 ]
-"21
-[e $ != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i 1041  ]
+"15
+[e $ && != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i != -> _input `i -> 16 `i 1041  ]
 [e :U 1042 ]
-[; ;menu.c: 32: }
-[; ;menu.c: 33: return checkPass(pass);
-"33
+[; ;menu.c: 25: }
+[; ;menu.c: 26: press_out = input == 16;
+"26
+[e = _press_out -> -> == -> _input `i -> 16 `i `i `uc ]
+[; ;menu.c: 27: return checkPass(pass);
+"27
 [e ) ( _checkPass (1 _pass ]
 [e $UE 1039  ]
-[; ;menu.c: 34: }
-"34
+[; ;menu.c: 28: }
+"28
 [e :UE 1039 ]
 }
-"36
+"30
 [v _show_success `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 36: void show_success(){
+[; ;menu.c: 30: void show_success(){
 [e :U _show_success ]
 [f ]
-[; ;menu.c: 37: clear();
-"37
+[; ;menu.c: 31: clear();
+"31
 [e ( _clear ..  ]
-[; ;menu.c: 38: lcd_gotoxy(1,1);
-"38
+[; ;menu.c: 32: lcd_gotoxy(1,1);
+"32
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 39: lcd_putrs("pass success");
-"39
+[; ;menu.c: 33: lcd_putrs("pass success");
+"33
 [e ( _lcd_putrs (1 :s 1C ]
-[; ;menu.c: 40: lcd_gotoxy(1,2);
-"40
+[; ;menu.c: 34: lcd_gotoxy(1,2);
+"34
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;menu.c: 41: lcd_putrs("changed");
-"41
+[; ;menu.c: 35: lcd_putrs("changed");
+"35
 [e ( _lcd_putrs (1 :s 2C ]
-[; ;menu.c: 42: _delay_s(1000);
-"42
+[; ;menu.c: 36: _delay_s(1000);
+"36
 [e ( __delay_s (1 -> 1000 `i ]
-[; ;menu.c: 43: }
-"43
+[; ;menu.c: 37: }
+"37
 [e :UE 1044 ]
 }
-"45
+"39
 [v _show_error `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 45: void show_error(){
+[; ;menu.c: 39: void show_error(){
 [e :U _show_error ]
 [f ]
-[; ;menu.c: 46: clear();
-"46
+[; ;menu.c: 40: clear();
+"40
 [e ( _clear ..  ]
-[; ;menu.c: 47: lcd_gotoxy(1,1);
-"47
+[; ;menu.c: 41: lcd_gotoxy(1,1);
+"41
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 48: lcd_putrs("old pass wrong");
-"48
+[; ;menu.c: 42: lcd_putrs("old pass wrong");
+"42
 [e ( _lcd_putrs (1 :s 3C ]
-[; ;menu.c: 49: lcd_gotoxy(1,2);
-"49
+[; ;menu.c: 43: lcd_gotoxy(1,2);
+"43
 [e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;menu.c: 50: lcd_putrs("nothing changed");
-"50
+[; ;menu.c: 44: lcd_putrs("nothing changed");
+"44
 [e ( _lcd_putrs (1 :s 4C ]
-[; ;menu.c: 51: _delay_s(1000);
-"51
+[; ;menu.c: 45: _delay_s(1000);
+"45
 [e ( __delay_s (1 -> 1000 `i ]
-[; ;menu.c: 52: }
-"52
+[; ;menu.c: 46: }
+"46
 [e :UE 1045 ]
 }
-"54
+"48
 [v _input_new_pass `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 54: void input_new_pass(){
+[; ;menu.c: 48: void input_new_pass(){
 [e :U _input_new_pass ]
 [f ]
-"55
+"49
 [v _digit `s ~T0 @X0 1 a ]
-[; ;menu.c: 55: short digit = 12;
+[; ;menu.c: 49: short digit = 12;
 [e = _digit -> -> 12 `i `s ]
-[; ;menu.c: 56: newpass = 0;
-"56
+[; ;menu.c: 50: newpass = 0;
+"50
 [e = _newpass -> 0 `i ]
-"57
+"51
 [v _input `uc ~T0 @X0 1 a ]
-[; ;menu.c: 57: char input = read_keyboard();
+[; ;menu.c: 51: char input = read_keyboard();
 [e = _input ( _read_keyboard ..  ]
-[; ;menu.c: 58: while(not_fill_pass(digit)){
-"58
+[; ;menu.c: 52: while(not_fill_pass(digit) && input!=16 && !press_out){
+"52
 [e $U 1047  ]
 [e :U 1048 ]
 {
-[; ;menu.c: 59: if(0<input && input<10){
-"59
+[; ;menu.c: 53: if(0<input && input<10){
+"53
 [e $ ! && < -> 0 `i -> _input `i < -> _input `i -> 10 `i 1050  ]
 {
-[; ;menu.c: 60: newpass = newpass + input * pow(10, 15 - digit);
-"60
+[; ;menu.c: 54: newpass = newpass + input * pow(10, 15 - digit);
+"54
 [e = _newpass -> + -> _newpass `d * -> _input `d ( _pow (2 , -> -> 10 `i `d -> - -> 15 `i -> _digit `i `d `i ]
-[; ;menu.c: 61: lcd_gotoxy(digit,2);
-"61
+[; ;menu.c: 55: lcd_gotoxy(digit,2);
+"55
 [e ( _lcd_gotoxy (2 , -> _digit `uc -> -> 2 `i `uc ]
-[; ;menu.c: 62: _delay_s(50);
-"62
+[; ;menu.c: 56: _delay_s(50);
+"56
 [e ( __delay_s (1 -> 50 `i ]
-[; ;menu.c: 63: clear_keyboard();
-"63
+[; ;menu.c: 57: clear_keyboard();
+"57
 [e ( _clear_keyboard ..  ]
-[; ;menu.c: 64: digit = digit +1;
-"64
+[; ;menu.c: 58: digit = digit +1;
+"58
 [e = _digit -> + -> _digit `i -> 1 `i `s ]
-[; ;menu.c: 65: input = 18;
-"65
+[; ;menu.c: 59: input = 18;
+"59
 [e = _input -> -> 18 `i `uc ]
-"66
+"60
 }
 [e :U 1050 ]
-[; ;menu.c: 66: }
-[; ;menu.c: 67: input = read_keyboard();
-"67
+[; ;menu.c: 60: }
+[; ;menu.c: 61: input = read_keyboard();
+"61
 [e = _input ( _read_keyboard ..  ]
-"68
+"63
 }
 [e :U 1047 ]
-"58
-[e $ != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i 1048  ]
+"52
+[e $ && && != -> ( _not_fill_pass (1 _digit `i -> -> -> 0 `i `uc `i != -> _input `i -> 16 `i ! != -> _press_out `i -> -> -> 0 `i `uc `i 1048  ]
 [e :U 1049 ]
-[; ;menu.c: 68: }
-[; ;menu.c: 69: }
-"69
+[; ;menu.c: 63: }
+[; ;menu.c: 64: press_out = press_out || input == 16;
+"64
+[e = _press_out -> -> || != -> _press_out `i -> -> -> 0 `i `uc `i == -> _input `i -> 16 `i `i `uc ]
+[; ;menu.c: 65: }
+"65
 [e :UE 1046 ]
 }
-"71
+"67
 [v _ver_opcion_cambio `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 71: void ver_opcion_cambio(){
+[; ;menu.c: 67: void ver_opcion_cambio(){
 [e :U _ver_opcion_cambio ]
 [f ]
-[; ;menu.c: 72: clear();
-"72
+[; ;menu.c: 68: press_out = 0;
+"68
+[e = _press_out -> -> 0 `i `uc ]
+[; ;menu.c: 69: clear();
+"69
 [e ( _clear ..  ]
-"73
+"70
 [v _old_correct `uc ~T0 @X0 1 a ]
-[; ;menu.c: 73: bool old_correct = 0;
+[; ;menu.c: 70: bool old_correct = 0;
 [e = _old_correct -> -> 0 `i `uc ]
-[; ;menu.c: 74: lcd_gotoxy(2,1);
-"74
+[; ;menu.c: 71: lcd_gotoxy(2,1);
+"71
 [e ( _lcd_gotoxy (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 75: lcd_putrs("Old pass:____");
-"75
+[; ;menu.c: 72: lcd_putrs("Old pass:____");
+"72
 [e ( _lcd_putrs (1 :s 5C ]
-[; ;menu.c: 76: lcd_gotoxy(2,2);
-"76
+[; ;menu.c: 73: lcd_gotoxy(2,2);
+"73
 [e ( _lcd_gotoxy (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
-[; ;menu.c: 77: lcd_putrs("New pass:____");
-"77
+[; ;menu.c: 74: lcd_putrs("New pass:____");
+"74
 [e ( _lcd_putrs (1 :s 6C ]
-[; ;menu.c: 78: lcd_gotoxy(11,1);
-"78
+[; ;menu.c: 75: lcd_gotoxy(11,1);
+"75
 [e ( _lcd_gotoxy (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 79: old_correct = input_old_pass();
-"79
+[; ;menu.c: 76: old_correct = input_old_pass();
+"76
 [e = _old_correct ( _input_old_pass ..  ]
-[; ;menu.c: 80: lcd_gotoxy(11,2);
-"80
+[; ;menu.c: 77: lcd_gotoxy(11,2);
+"77
 [e ( _lcd_gotoxy (2 , -> -> 11 `i `uc -> -> 2 `i `uc ]
-[; ;menu.c: 81: input_new_pass();
-"81
+[; ;menu.c: 78: input_new_pass();
+"78
 [e ( _input_new_pass ..  ]
-"82
+"79
 [v _input `uc ~T0 @X0 1 a ]
-[; ;menu.c: 82: char input = 0;
+[; ;menu.c: 79: char input = 0;
 [e = _input -> -> 0 `i `uc ]
-[; ;menu.c: 83: while (input != 16){
-"83
+[; ;menu.c: 80: while (input != 16 && !press_out){
+"80
 [e $U 1052  ]
 [e :U 1053 ]
 {
-[; ;menu.c: 84: input = read_keyboard();
-"84
+[; ;menu.c: 81: input = read_keyboard();
+"81
 [e = _input ( _read_keyboard ..  ]
-"85
+"82
 }
 [e :U 1052 ]
-"83
-[e $ != -> _input `i -> 16 `i 1053  ]
+"80
+[e $ && != -> _input `i -> 16 `i ! != -> _press_out `i -> -> -> 0 `i `uc `i 1053  ]
 [e :U 1054 ]
-[; ;menu.c: 85: }
-[; ;menu.c: 86: if (old_correct)
-"86
-[e $ ! != -> _old_correct `i -> -> -> 0 `i `uc `i 1055  ]
-[; ;menu.c: 87: {
-"87
+[; ;menu.c: 82: }
+[; ;menu.c: 83: if (old_correct && !press_out)
+"83
+[e $ ! && != -> _old_correct `i -> -> -> 0 `i `uc `i ! != -> _press_out `i -> -> -> 0 `i `uc `i 1055  ]
+[; ;menu.c: 84: {
+"84
 {
-[; ;menu.c: 88: changePass(newpass);
-"88
+[; ;menu.c: 85: changePass(newpass);
+"85
 [e ( _changePass (1 _newpass ]
-[; ;menu.c: 89: show_success();
-"89
+[; ;menu.c: 86: show_success();
+"86
 [e ( _show_success ..  ]
-"90
+"87
 }
-[; ;menu.c: 90: }else{
+[; ;menu.c: 87: }else if(!press_out){
 [e $U 1056  ]
 [e :U 1055 ]
+[e $ ! ! != -> _press_out `i -> -> -> 0 `i `uc `i 1057  ]
 {
-[; ;menu.c: 91: show_error();
-"91
+[; ;menu.c: 88: show_error();
+"88
 [e ( _show_error ..  ]
-"92
+"89
 }
+[e :U 1057 ]
+"90
 [e :U 1056 ]
-[; ;menu.c: 92: }
-[; ;menu.c: 93: }
-"93
+[; ;menu.c: 89: }
+[; ;menu.c: 90: clear_keyboard();
+[e ( _clear_keyboard ..  ]
+[; ;menu.c: 91: }
+"91
 [e :UE 1051 ]
 }
-"95
+"93
 [v _ver_info `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 95: void ver_info(){
+[; ;menu.c: 93: void ver_info(){
 [e :U _ver_info ]
 [f ]
-[; ;menu.c: 96: clear();
-"96
+[; ;menu.c: 94: clear();
+"94
 [e ( _clear ..  ]
-"97
+"95
 [v _input `uc ~T0 @X0 1 a ]
-[; ;menu.c: 97: char input = 18;
+[; ;menu.c: 95: char input = 18;
 [e = _input -> -> 18 `i `uc ]
-[; ;menu.c: 98: while (input != 16){
-"98
-[e $U 1058  ]
-[e :U 1059 ]
-{
-[; ;menu.c: 99: lcd_gotoxy(1,1);
-"99
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 100: lcd_putrs("Sensor: ");
-"100
-[e ( _lcd_putrs (1 :s 7C ]
-[; ;menu.c: 101: sprintf(buffer2,"%02u",sensorDisparado);
-"101
-[e ( _sprintf (1 , (. , &U _buffer2 :s 8C -> _sensorDisparado `i ]
-[; ;menu.c: 102: lcd_putrs(buffer2);
-"102
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;menu.c: 103: lcd_gotoxy(1,2);
-"103
-[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-[; ;menu.c: 104: lcd_putrs("Date:");
-"104
-[e ( _lcd_putrs (1 :s 9C ]
-[; ;menu.c: 105: sprintf(buffer2,"%02u/%02u",diaDisparo,mesDisparo);
-"105
-[e ( _sprintf (1 , , (. , &U _buffer2 :s 10C _diaDisparo _mesDisparo ]
-[; ;menu.c: 106: lcd_putrs(buffer2);
-"106
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;menu.c: 107: lcd_putrs(" ");
-"107
-[e ( _lcd_putrs (1 :s 11C ]
-[; ;menu.c: 108: sprintf(buffer2,"%02u:%02u",horaDisparo,minDisparo);
-"108
-[e ( _sprintf (1 , , (. , &U _buffer2 :s 12C _horaDisparo _minDisparo ]
-[; ;menu.c: 109: lcd_putrs(buffer2);
-"109
-[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
-[; ;menu.c: 110: input = read_keyboard();
-"110
-[e = _input ( _read_keyboard ..  ]
-"111
-}
-[e :U 1058 ]
-"98
-[e $ != -> _input `i -> 16 `i 1059  ]
+[; ;menu.c: 96: while (input != 16){
+"96
+[e $U 1059  ]
 [e :U 1060 ]
-[; ;menu.c: 111: }
-[; ;menu.c: 112: menu = 18;
-"112
-[e = _menu -> -> 18 `i `uc ]
-[; ;menu.c: 113: }
-"113
-[e :UE 1057 ]
+{
+[; ;menu.c: 97: lcd_gotoxy(1,1);
+"97
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;menu.c: 98: lcd_putrs("Sensor: ");
+"98
+[e ( _lcd_putrs (1 :s 7C ]
+[; ;menu.c: 99: sprintf(buffer2,"%02u",sensorDisparado);
+"99
+[e ( _sprintf (1 , (. , &U _buffer2 :s 8C -> _sensorDisparado `i ]
+[; ;menu.c: 100: lcd_putrs(buffer2);
+"100
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;menu.c: 101: lcd_gotoxy(1,2);
+"101
+[e ( _lcd_gotoxy (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;menu.c: 102: lcd_putrs("Date:");
+"102
+[e ( _lcd_putrs (1 :s 9C ]
+[; ;menu.c: 103: sprintf(buffer2,"%02u/%02u",diaDisparo,mesDisparo);
+"103
+[e ( _sprintf (1 , , (. , &U _buffer2 :s 10C _diaDisparo _mesDisparo ]
+[; ;menu.c: 104: lcd_putrs(buffer2);
+"104
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;menu.c: 105: lcd_putrs(" ");
+"105
+[e ( _lcd_putrs (1 :s 11C ]
+[; ;menu.c: 106: sprintf(buffer2,"%02u:%02u",horaDisparo,minDisparo);
+"106
+[e ( _sprintf (1 , , (. , &U _buffer2 :s 12C _horaDisparo _minDisparo ]
+[; ;menu.c: 107: lcd_putrs(buffer2);
+"107
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
+[; ;menu.c: 108: input = read_keyboard();
+"108
+[e = _input ( _read_keyboard ..  ]
+"109
 }
-"116
+[e :U 1059 ]
+"96
+[e $ != -> _input `i -> 16 `i 1060  ]
+[e :U 1061 ]
+[; ;menu.c: 109: }
+[; ;menu.c: 110: menu = 18;
+"110
+[e = _menu -> -> 18 `i `uc ]
+[; ;menu.c: 111: }
+"111
+[e :UE 1058 ]
+}
+"114
 [v _dispararSensor `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;menu.c: 116: void dispararSensor(int sensor){
+[; ;menu.c: 114: void dispararSensor(int sensor){
 [e :U _dispararSensor ]
 [v _sensor `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;menu.c: 117: Read_RTC();
-"117
+[; ;menu.c: 115: Read_RTC();
+"115
 [e ( _Read_RTC ..  ]
-[; ;menu.c: 118: state_alarm = TRIGGED;
-"118
+[; ;menu.c: 116: state_alarm = TRIGGED;
+"116
 [e = _state_alarm . `E8458 2 ]
-[; ;menu.c: 119: sensorDisparado = sensor;
-"119
+[; ;menu.c: 117: sensorDisparado = sensor;
+"117
 [e = _sensorDisparado -> _sensor `uc ]
-[; ;menu.c: 120: diaDisparo = dia;
-"120
+[; ;menu.c: 118: diaDisparo = dia;
+"118
 [e = _diaDisparo _dia ]
-[; ;menu.c: 121: mesDisparo = mes;
-"121
+[; ;menu.c: 119: mesDisparo = mes;
+"119
 [e = _mesDisparo _mes ]
-[; ;menu.c: 122: horaDisparo = hora;
-"122
+[; ;menu.c: 120: horaDisparo = hora;
+"120
 [e = _horaDisparo _hora ]
-[; ;menu.c: 123: minDisparo = minuto;
-"123
+[; ;menu.c: 121: minDisparo = minuto;
+"121
 [e = _minDisparo _minuto ]
-[; ;menu.c: 124: }
-"124
-[e :UE 1061 ]
+[; ;menu.c: 122: }
+"122
+[e :UE 1062 ]
 }
-"127
+"125
 [v _select_menu `(v ~T0 @X0 1 ef ]
 {
-[; ;menu.c: 127: void select_menu(){
+[; ;menu.c: 125: void select_menu(){
 [e :U _select_menu ]
 [f ]
-[; ;menu.c: 128: if (state_alarm == DESACTIVE){
-"128
-[e $ ! == -> _state_alarm `i -> . `E8458 1 `i 1063  ]
+[; ;menu.c: 126: if (state_alarm == DESACTIVE){
+"126
+[e $ ! == -> _state_alarm `i -> . `E8458 1 `i 1064  ]
 {
-[; ;menu.c: 129: menu = read_keyboard();
-"129
+[; ;menu.c: 127: menu = read_keyboard();
+"127
 [e = _menu ( _read_keyboard ..  ]
-[; ;menu.c: 130: switch (menu){
+[; ;menu.c: 128: switch (menu){
+"128
+[e $U 1066  ]
+{
+[; ;menu.c: 129: case 11:ver_opcion_cambio();
+"129
+[e :U 1067 ]
+[e ( _ver_opcion_cambio ..  ]
+[; ;menu.c: 130: break;
 "130
 [e $U 1065  ]
-{
-[; ;menu.c: 131: case 11:ver_opcion_cambio();
+[; ;menu.c: 131: case 12:configurar_reloj();
 "131
-[e :U 1066 ]
-[e ( _ver_opcion_cambio ..  ]
+[e :U 1068 ]
+[e ( _configurar_reloj ..  ]
 [; ;menu.c: 132: break;
 "132
-[e $U 1064  ]
-[; ;menu.c: 133: case 12:configurar_reloj();
+[e $U 1065  ]
+[; ;menu.c: 133: case 13:ver_info();
 "133
-[e :U 1067 ]
-[e ( _configurar_reloj ..  ]
+[e :U 1069 ]
+[e ( _ver_info ..  ]
 [; ;menu.c: 134: break;
 "134
-[e $U 1064  ]
-[; ;menu.c: 135: case 13:ver_info();
+[e $U 1065  ]
+[; ;menu.c: 135: default: ;
 "135
-[e :U 1068 ]
-[e ( _ver_info ..  ]
-[; ;menu.c: 136: break;
+[e :U 1070 ]
 "136
-[e $U 1064  ]
-[; ;menu.c: 137: default: ;
-"137
-[e :U 1069 ]
-"138
 }
-[; ;menu.c: 138: }
-[e $U 1064  ]
-"130
+[; ;menu.c: 136: }
+[e $U 1065  ]
+"128
+[e :U 1066 ]
+[e [\ _menu , $ -> -> 11 `i `uc 1067
+ , $ -> -> 12 `i `uc 1068
+ , $ -> -> 13 `i `uc 1069
+ 1070 ]
+"136
 [e :U 1065 ]
-[e [\ _menu , $ -> -> 11 `i `uc 1066
- , $ -> -> 12 `i `uc 1067
- , $ -> -> 13 `i `uc 1068
- 1069 ]
-"138
-[e :U 1064 ]
-"139
+"137
 }
-[; ;menu.c: 139: }else{
-[e $U 1070  ]
-[e :U 1063 ]
+[; ;menu.c: 137: }else{
+[e $U 1071  ]
+[e :U 1064 ]
 {
-[; ;menu.c: 140: if (state_alarm == ACTIVE){
-"140
-[e $ ! == -> _state_alarm `i -> . `E8458 0 `i 1071  ]
+[; ;menu.c: 138: if (state_alarm == ACTIVE){
+"138
+[e $ ! == -> _state_alarm `i -> . `E8458 0 `i 1072  ]
 {
-[; ;menu.c: 141: menu = read_keyboard();
-"141
+[; ;menu.c: 139: menu = read_keyboard();
+"139
 [e = _menu ( _read_keyboard ..  ]
-[; ;menu.c: 142: switch (menu){
+[; ;menu.c: 140: switch (menu){
+"140
+[e $U 1074  ]
+{
+[; ;menu.c: 141: case 11:dispararSensor(1);
+"141
+[e :U 1075 ]
+[e ( _dispararSensor (1 -> 1 `i ]
+[; ;menu.c: 142: break;
 "142
 [e $U 1073  ]
-{
-[; ;menu.c: 143: case 11:dispararSensor(1);
+[; ;menu.c: 143: case 12:dispararSensor(2);
 "143
-[e :U 1074 ]
-[e ( _dispararSensor (1 -> 1 `i ]
+[e :U 1076 ]
+[e ( _dispararSensor (1 -> 2 `i ]
 [; ;menu.c: 144: break;
 "144
-[e $U 1072  ]
-[; ;menu.c: 145: case 12:dispararSensor(2);
+[e $U 1073  ]
+[; ;menu.c: 145: case 13:dispararSensor(3);
 "145
-[e :U 1075 ]
-[e ( _dispararSensor (1 -> 2 `i ]
+[e :U 1077 ]
+[e ( _dispararSensor (1 -> 3 `i ]
 [; ;menu.c: 146: break;
 "146
-[e $U 1072  ]
-[; ;menu.c: 147: case 13:dispararSensor(3);
+[e $U 1073  ]
+[; ;menu.c: 147: default: ;
 "147
-[e :U 1076 ]
-[e ( _dispararSensor (1 -> 3 `i ]
-[; ;menu.c: 148: break;
+[e :U 1078 ]
 "148
-[e $U 1072  ]
-[; ;menu.c: 149: default: ;
-"149
-[e :U 1077 ]
-"150
 }
-[; ;menu.c: 150: }
-[e $U 1072  ]
-"142
+[; ;menu.c: 148: }
+[e $U 1073  ]
+"140
+[e :U 1074 ]
+[e [\ _menu , $ -> -> 11 `i `uc 1075
+ , $ -> -> 12 `i `uc 1076
+ , $ -> -> 13 `i `uc 1077
+ 1078 ]
+"148
 [e :U 1073 ]
-[e [\ _menu , $ -> -> 11 `i `uc 1074
- , $ -> -> 12 `i `uc 1075
- , $ -> -> 13 `i `uc 1076
- 1077 ]
-"150
+"149
+}
 [e :U 1072 ]
-"151
+"150
 }
 [e :U 1071 ]
-"152
-}
-[e :U 1070 ]
-[; ;menu.c: 151: }
-[; ;menu.c: 152: }
-[; ;menu.c: 153: menu = 18;
-"153
+[; ;menu.c: 149: }
+[; ;menu.c: 150: }
+[; ;menu.c: 151: menu = 18;
+"151
 [e = _menu -> -> 18 `i `uc ]
-[; ;menu.c: 154: }
-"154
-[e :UE 1062 ]
+[; ;menu.c: 152: }
+"152
+[e :UE 1063 ]
 }
 [p f _sprintf 8422404 ]
 [a 12C 37 48 50 117 58 37 48 50 117 0 ]

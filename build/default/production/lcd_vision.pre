@@ -10041,6 +10041,7 @@ break;
 case ACTIVE:state_alarm = DESACTIVE;
 break;
 default:state_alarm = DESACTIVE;
+PORTCbits.RC7 = 0;;
 }
 }
 
